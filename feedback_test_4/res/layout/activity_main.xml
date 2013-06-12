@@ -1,0 +1,234 @@
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical"
+        android:orientation="vertical"
+>
+
+    <ProgressBar android:id = "@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/Widget.Holo.ProgressBar.Large"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight = "5dp" />
+
+    <RelativeLayout android:id="@+id/layoutMain"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical"
+        android:orientation="vertical">
+
+        <LinearLayout
+                android:id="@+id/layout1"
+                android:layout_width="fill_parent"
+                android:layout_height="50dip"
+                android:layout_alignParentBottom="true"
+                android:orientation="vertical">
+
+            <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dip"
+                    android:background="#000000"
+                    />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="49dip"
+                android:orientation="horizontal">
+
+                <Button
+                        android:id="@+id/button1"
+                        android:layout_height="fill_parent"
+                        android:layout_width="0dip"
+                        android:text="@string/button1_text"
+                        android:onClick="funSending"
+                        android:layout_weight="1"
+                        android:textSize="13sp"
+                        android:background="?android:attr/selectableItemBackground"
+                        />
+
+                <View
+                        android:layout_width="0dip"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="0.01"
+                        android:background="#000000"
+                        />
+
+                <Button
+                        android:id="@+id/button3"
+                        android:layout_height="fill_parent"
+                        android:layout_width="0dp"
+                        android:text="@string/button3_text"
+                        android:onClick="funPreview"
+                        android:layout_weight="1"
+                        android:textSize="13sp"
+                        android:background="?android:attr/selectableItemBackground"
+                        />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <ScrollView android:id="@+id/scrollview1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_above="@id/layout1" >
+
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+
+                <LinearLayout
+                        android:id="@+id/layout3"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:scrollbars="vertical"
+                        android:minHeight="150dp"
+                        android:orientation="vertical"
+                        >
+
+                    <EditText android:id="@+id/EditText1"
+                              android:layout_width="fill_parent"
+                              android:layout_height="wrap_content"
+                              android:minLines="3"
+                              android:hint="@string/edittext_hint1"
+                              android:scrollbars="vertical"
+                              android:gravity="top|left"
+                            />
+
+                </LinearLayout>
+
+                <LinearLayout
+                        android:id="@+id/lay1"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_alignParentBottom="true"
+                        android:layout_below="@id/layout3"
+                        >
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        >
+
+                        <View
+                                android:layout_width="fill_parent"
+                                android:layout_height="1dip"
+                                android:background="?android:attr/dividerHorizontal"
+                                />
+
+                        <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                >
+
+                            <TextView
+                                    android:text="@string/systemdata"
+                                    android:layout_width="0dip"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="6"
+                                    android:padding="3sp"
+                                    android:textSize="15sp"/>
+
+                            <CheckBox
+                                    android:id="@+id/checkBoxSystemData"
+                                    android:layout_width="0dip"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:checked="true"/>
+
+                        </LinearLayout>
+
+                        <Button android:id="@+id/buttonSystemData"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="?android:attr/selectableItemBackground"
+                            android:onClick="funSystemAndSnapshot"
+                            />
+
+                    </RelativeLayout>
+
+                    <View
+                            android:layout_width="fill_parent"
+                            android:layout_height="1dip"
+                            android:background="?android:attr/dividerHorizontal"
+                            />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        >
+
+                        <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                >
+
+                            <TextView
+                                    android:layout_width="0dip"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/snapshot"
+                                    android:layout_weight="6"
+                                    android:textSize="15sp"
+                                    android:paddingLeft="3sp"/>
+
+                            <CheckBox android:id="@+id/checkBoxSnapshot"
+                                      android:layout_width="0dip"
+                                      android:layout_height="wrap_content"
+                                      android:layout_weight="1"
+                                      android:checked="true"/>
+
+                        </LinearLayout>
+
+                        <Button android:id="@+id/buttonSnapShot"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="?android:attr/selectableItemBackground"
+                                android:onClick="funSystemAndSnapshot"
+                                />
+
+                    </RelativeLayout>
+
+                    <View
+                            android:layout_width="fill_parent"
+                            android:layout_height="1dip"
+                            android:background="?android:attr/dividerHorizontal"
+                            />
+
+                    <LinearLayout
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        >
+
+                        <TextView
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:text="@string/prompt1"
+                                android:textSize="15sp"
+                                android:gravity="left|bottom"
+                                android:paddingLeft="3sp"
+                                android:paddingTop="10sp"/>
+
+                        <Spinner    android:id = "@+id/sendAsSpinner"
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </ScrollView>
+
+    </RelativeLayout>
+
+</RelativeLayout>
