@@ -16,9 +16,9 @@
     <list default="true" id="293b2dc0-c051-406f-9b4d-b4fd50889740" name="Default" comment="" />
     <ignored path="feedback_test_3.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="293b2dc0-c051-406f-9b4d-b4fd50889740" time="1371045038496" ignored="false" />
+    <file path="/Dummy.txt" changelist="293b2dc0-c051-406f-9b4d-b4fd50889740" time="1371045986683" ignored="false" />
     <file path="/fragment.java" changelist="293b2dc0-c051-406f-9b4d-b4fd50889740" time="1370517284891" ignored="false" />
-    <file path="/MainActivity.java" changelist="293b2dc0-c051-406f-9b4d-b4fd50889740" time="1371019408428" ignored="false" />
+    <file path="/MainActivity.java" changelist="293b2dc0-c051-406f-9b4d-b4fd50889740" time="1371046233948" ignored="false" />
     <file path="/activity_main.xml" changelist="293b2dc0-c051-406f-9b4d-b4fd50889740" time="1370929320586" ignored="false" />
     <file path="/LongOperation.java" changelist="293b2dc0-c051-406f-9b4d-b4fd50889740" time="1370250439994" ignored="false" />
     <file path="/Preview1.java" changelist="293b2dc0-c051-406f-9b4d-b4fd50889740" time="1370848448643" ignored="false" />
@@ -34,7 +34,7 @@
     <file path="/activity_process_list.xml" changelist="293b2dc0-c051-406f-9b4d-b4fd50889740" time="1370843848016" ignored="false" />
     <file path="/ProcessList.java" changelist="293b2dc0-c051-406f-9b4d-b4fd50889740" time="1370845123803" ignored="false" />
     <file path="/activity_event_log_list.xml" changelist="293b2dc0-c051-406f-9b4d-b4fd50889740" time="1370498714277" ignored="false" />
-    <file path="/GetData.java" changelist="293b2dc0-c051-406f-9b4d-b4fd50889740" time="1370933118490" ignored="false" />
+    <file path="/GetData.java" changelist="293b2dc0-c051-406f-9b4d-b4fd50889740" time="1371046316597" ignored="false" />
     <file path="/LogList.java" changelist="293b2dc0-c051-406f-9b4d-b4fd50889740" time="1370798124893" ignored="false" />
     <file path="/SendFeedback.java" changelist="293b2dc0-c051-406f-9b4d-b4fd50889740" time="1370852629665" ignored="false" />
     <file path="/RunningAppsList.java" changelist="293b2dc0-c051-406f-9b4d-b4fd50889740" time="1370842678325" ignored="false" />
@@ -71,7 +71,7 @@
   <component name="DebuggerManager">
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <method_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
-      <breakpoint url="file://$PROJECT_DIR$/src/com/example/feedback_test_3/MainActivity.java" line="112" class="com.example.feedback_test_3.MainActivity" package="com.example.feedback_test_3">
+      <breakpoint url="file://$PROJECT_DIR$/src/com/example/feedback_test_3/MainActivity.java" line="120" class="com.example.feedback_test_3.MainActivity" package="com.example.feedback_test_3">
         <option name="WATCH_ENTRY" value="true" />
         <option name="WATCH_EXIT" value="true" />
         <option name="ENABLED" value="true" />
@@ -137,12 +137,32 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/example/feedback_test_3/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="161" column="21" selection-start="6155" selection-end="6155" vertical-scroll-proportion="0.94880545">
+            <state line="152" column="0" selection-start="5852" selection-end="5852" vertical-scroll-proportion="0.74232084">
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2677#2685#0" expanded="true" />
-                <element signature="e#2816#2824#0" expanded="true" />
+                <element signature="e#3031#3039#0" expanded="true" />
+                <element signature="e#3170#3178#0" expanded="true" />
+                <element signature="e#5072#6018#0" expanded="true" />
+                <element signature="e#6007#6008#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GetData.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/feedback_test_3/GetData.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="161" column="40" selection-start="6438" selection-end="6438" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MakeMessage.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/feedback_test_3/MakeMessage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="5" selection-start="223" selection-end="223" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -183,13 +203,13 @@
         <option value="$PROJECT_DIR$/res/layout/activity_log_list.xml" />
         <option value="$PROJECT_DIR$/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/src/com/example/feedback_test_3/LongOperation.java" />
-        <option value="$PROJECT_DIR$/src/com/example/feedback_test_3/GetData.java" />
         <option value="$PROJECT_DIR$/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/src/com/example/feedback_test_3/Preview.java" />
         <option value="$PROJECT_DIR$/src/com/example/feedback_test_3/FeedbackSender.java" />
         <option value="$PROJECT_DIR$/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/src/com/example/feedback_test_3/MakeMessage.java" />
+        <option value="$PROJECT_DIR$/src/com/example/feedback_test_3/GetData.java" />
         <option value="$PROJECT_DIR$/src/com/example/feedback_test_3/MainActivity.java" />
+        <option value="$PROJECT_DIR$/src/com/example/feedback_test_3/MakeMessage.java" />
       </list>
     </option>
   </component>
@@ -259,6 +279,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -276,11 +298,31 @@
               <option name="myItemId" value="feedback_test_3" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="feedback_test_4" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="feedback_test_3" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="feedback_test_4" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="feedback_test_3" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -295,11 +337,11 @@
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="avd_test1" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="MemberChooser.showClasses" value="true" />
     <property name="FullScreen" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -478,11 +520,12 @@
       <workItem from="1370943607995" duration="13955000" />
       <workItem from="1371013620967" duration="7117000" />
       <workItem from="1371045038257" duration="44000" />
+      <workItem from="1371045986040" duration="534000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="197859000" />
+    <option name="totallyTimeSpent" value="198393000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1301" height="744" extended-state="6" />
@@ -499,14 +542,14 @@
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24940239" sideWeight="0.6576" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32988048" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32988048" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5003984" sideWeight="0.672" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.312" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15537849" sideWeight="0.6608" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15537849" sideWeight="0.6608" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.035856575" sideWeight="0.6576" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.035856575" sideWeight="0.6576" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -606,11 +649,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/feedback_test_3/GetData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="48" selection-start="640" selection-end="640" vertical-scroll-proportion="-4.324232" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/feedback_test_3/LogList.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="13" selection-start="139" selection-end="139" vertical-scroll-proportion="0.15025042" />
@@ -651,11 +689,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/feedback_test_3/MakeMessage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="13" selection-start="1692" selection-end="1692" vertical-scroll-proportion="0.7440273" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/feedback_test_3/FeedbackSender.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="47" column="29" selection-start="1722" selection-end="1722" vertical-scroll-proportion="0.0">
@@ -663,13 +696,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/feedback_test_3/GetData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="161" column="40" selection-start="6438" selection-end="6438" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/feedback_test_3/MakeMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="5" selection-start="223" selection-end="223" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/feedback_test_3/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="161" column="21" selection-start="6155" selection-end="6155" vertical-scroll-proportion="0.94880545">
+        <state line="152" column="0" selection-start="5852" selection-end="5852" vertical-scroll-proportion="0.74232084">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2677#2685#0" expanded="true" />
-            <element signature="e#2816#2824#0" expanded="true" />
+            <element signature="e#3031#3039#0" expanded="true" />
+            <element signature="e#3170#3178#0" expanded="true" />
+            <element signature="e#5072#6018#0" expanded="true" />
+            <element signature="e#6007#6008#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -21,6 +21,14 @@ import android.widget.*;
 
 public class MainActivity extends Activity {
 
+    static String baseDir = Environment.getExternalStorageDirectory().getAbsolutePath();
+
+    static File systemLogFile = new File(baseDir + File.separator + "SystemLog.txt");
+
+    static File eventsLogFile = new File(baseDir + File.separator + "EventsLog.txt");
+
+    static File runningAppFile = new File(baseDir + File.separator + "RunningApps.txt");
+
     public enum DeviceData {
         Instance;
         public static String packageName,packageVersion,currentDate,device,sdkVersion,buildId,buildRelease,buildType,
@@ -125,30 +133,6 @@ public class MainActivity extends Activity {
         MakeMessage sendFeedback = new MakeMessage(Body.getText().toString());
 
         final String feedbackBody = sendFeedback.send();
-
-        final String baseDir = Environment.getExternalStorageDirectory().getAbsolutePath();
-
-        final File systemLogFile = new File(baseDir + File.separator + "SystemLog.txt");
-
-        final File eventsLogFile = new File(baseDir + File.separator + "EventsLog.txt");
-
-        final File runningAppFile = new File(baseDir + File.separator + "RunningApps.txt");
-
-        if(StateFlags.includeSystemDataCheck)
-        {
-            sendFeedback.writeToFile(systemLogFile,DeviceData.systemLog);
-
-            sendFeedback.writeToFile(eventsLogFile,DeviceData.eventsLog);
-
-            StringBuilder temp = new StringBuilder();
-            for(ActivityManager.RunningAppProcessInfo iterator : DeviceData.runningApps)
-            {
-                temp.append("\n");
-                temp.append(iterator.processName);
-            }
-            sendFeedback.writeToFile(runningAppFile,temp.toString());
-
-        }
 
         new Thread(new Runnable() {
             public void run() {

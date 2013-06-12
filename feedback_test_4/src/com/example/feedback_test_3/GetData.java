@@ -12,9 +12,7 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.util.Calendar;
 
 public class GetData extends AsyncTask<Void, Integer, Void> {
@@ -161,7 +159,7 @@ public class GetData extends AsyncTask<Void, Integer, Void> {
             String lineE;
             while(null != (lineE = bufferedReaderE.readLine())) {
                 tempEventsLog.append(lineE);
-                tempEventsLog.append(lineE);
+                tempEventsLog.append("\n");
             }
             String tempEventsLogString = (tempEventsLog.toString());
             int indE = Math.max(0,tempEventsLogString.length()-100000);
@@ -181,7 +179,32 @@ public class GetData extends AsyncTask<Void, Integer, Void> {
         }
         MainActivity.DeviceData.userId = "abcd@xyz.com";
         MainActivity.DeviceData.runningApps = activityManager.getRunningAppProcesses();
+
+        writeToFile(MainActivity.systemLogFile,MainActivity.DeviceData.systemLog);
+
+        writeToFile(MainActivity.eventsLogFile,MainActivity.DeviceData.eventsLog);
+
+            StringBuilder temp = new StringBuilder();
+            for(ActivityManager.RunningAppProcessInfo iterator : MainActivity.DeviceData.runningApps)
+            {
+                temp.append("\n");
+                temp.append(iterator.processName);
+            }
+            writeToFile(MainActivity.runningAppFile,temp.toString());
+
         return null;
+    }
+
+    void writeToFile(File f,String data)
+    {
+        try{
+            BufferedWriter in = new BufferedWriter(new FileWriter(f));
+            in.write(data);
+            in.close();
+        }
+        catch (IOException e){
+            Log.e("error",e.getMessage(),e);
+        }
     }
 
     @Override

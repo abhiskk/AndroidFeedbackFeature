@@ -1,10 +1,5 @@
 package com.example.feedback_test_3;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-
 public class MakeMessage extends MainActivity {
 
     private String feedbackBody;
@@ -33,18 +28,6 @@ public class MakeMessage extends MainActivity {
 
         return feedbackBodyStringBuilder.toString();
 
-    }
-
-    void writeToFile(File f,String data)
-    {
-        try{
-            BufferedWriter in = new BufferedWriter(new FileWriter(f));
-            in.write(data);
-            in.close();
-        }
-            catch (IOException e){
-
-            }
     }
 
 }
