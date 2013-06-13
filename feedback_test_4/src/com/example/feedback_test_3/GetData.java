@@ -14,6 +14,8 @@ import android.widget.RelativeLayout;
 
 import java.io.*;
 import java.util.Calendar;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipOutputStream;
 
 public class GetData extends AsyncTask<Void, Integer, Void> {
 
@@ -184,13 +186,13 @@ public class GetData extends AsyncTask<Void, Integer, Void> {
 
         writeToFile(MainActivity.eventsLogFile,MainActivity.DeviceData.eventsLog);
 
-            StringBuilder temp = new StringBuilder();
-            for(ActivityManager.RunningAppProcessInfo iterator : MainActivity.DeviceData.runningApps)
-            {
-                temp.append("\n");
-                temp.append(iterator.processName);
-            }
-            writeToFile(MainActivity.runningAppFile,temp.toString());
+        StringBuilder temp = new StringBuilder();
+        for(ActivityManager.RunningAppProcessInfo iterator : MainActivity.DeviceData.runningApps)
+        {
+            temp.append("\n");
+            temp.append(iterator.processName);
+        }
+        writeToFile(MainActivity.runningAppFile,temp.toString());
 
         return null;
     }

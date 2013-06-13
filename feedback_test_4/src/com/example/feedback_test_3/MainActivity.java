@@ -1,9 +1,11 @@
 package com.example.feedback_test_3;
 
-import java.io.File;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.EnumSet;
 import java.util.List;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipOutputStream;
 
 import android.content.Context;
 import android.content.pm.PackageInfo;
@@ -24,11 +26,17 @@ public class MainActivity extends Activity {
 
     static String baseDir = Environment.getExternalStorageDirectory().getAbsolutePath();
 
-    static File systemLogFile = new File(baseDir + File.separator + "SystemLog.txt");
+    static String systemLogFileName = "SystemLog.txt";
 
-    static File eventsLogFile = new File(baseDir + File.separator + "EventsLog.txt");
+    static String eventsLogFileName = "EventsLog.txt";
 
-    static File runningAppFile = new File(baseDir + File.separator + "RunningApps.txt");
+    static String runningAppFileName = "RunningApps.txt";
+
+    static File systemLogFile = new File(baseDir + File.separator + systemLogFileName);
+
+    static File eventsLogFile = new File(baseDir + File.separator + eventsLogFileName);
+
+    static File runningAppFile = new File(baseDir + File.separator + runningAppFileName);
 
     public enum DeviceData {
         Instance;
@@ -154,9 +162,40 @@ public class MainActivity extends Activity {
 
                     if( state.contains(StateParameters.includeSystemDataCheck) )
                     {
-                        sender.addAttachment( baseDir + File.separator + "RunningApps.txt");
-                        sender.addAttachment( baseDir + File.separator + "SystemLog.txt");
-                        sender.addAttachment( baseDir + File.separator + "EventsLog.txt");
+                        byte[] buffer = new byte[1024];
+
+                        try{
+
+                            FileOutputStream fos = new FileOutputStream(baseDir + File.separator + "zipTest1.zip");
+                            ZipOutputStream zos = new ZipOutputStream(fos);
+
+                            String[] files = {systemLogFileName , eventsLogFileName , runningAppFileName};
+
+                            for(int i=0;i<files.length;i++)
+                            {
+                                    ZipEntry ze = new ZipEntry(files[i]);
+                                    zos.putNextEntry(ze);
+                                    FileInputStream in = new FileInputStream(baseDir + File.separator + files[i]);
+
+                                    int len;
+
+                                    while((len = in.read(buffer)) > 0) {
+                                        zos.write(buffer,0,len);
+                                    }
+
+                                    in.close();
+                            }
+
+                                zos.closeEntry();
+
+                                zos.close();
+
+                            }   catch (IOException ex){
+                                ex.printStackTrace();
+                        }
+
+                        sender.addAttachment( baseDir + File.separator + "zipTest1.zip");
+
                     }
 
                     sender.sendMail("Feedback",feedbackBody,"abhishekkadiyan@gmail.com","abhishekkadiyan@gmail.com");
@@ -164,6 +203,11 @@ public class MainActivity extends Activity {
                     systemLogFile.delete();
                     eventsLogFile.delete();
                     runningAppFile.delete();
+
+                    if( state.contains(StateParameters.includeSystemDataCheck))
+                    {
+                        (new File(baseDir + File.separator + "zipTest1.zip")).delete();
+                    }
 
                 }
                 catch(Exception e)
@@ -174,5 +218,33 @@ public class MainActivity extends Activity {
         }).start();
 
         finish();
+
 	}
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
