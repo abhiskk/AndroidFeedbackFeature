@@ -13,12 +13,14 @@
     </shared>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="293b2dc0-c051-406f-9b4d-b4fd50889740" name="Default" comment="" />
+    <list default="true" id="293b2dc0-c051-406f-9b4d-b4fd50889740" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/feedback_test_3/GetData.java" afterPath="$PROJECT_DIR$/src/com/example/feedback_test_3/GetData.java" />
+    </list>
     <ignored path="feedback_test_3.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="293b2dc0-c051-406f-9b4d-b4fd50889740" time="1371045986683" ignored="false" />
+    <file path="/Dummy.txt" changelist="293b2dc0-c051-406f-9b4d-b4fd50889740" time="1371097623418" ignored="false" />
     <file path="/fragment.java" changelist="293b2dc0-c051-406f-9b4d-b4fd50889740" time="1370517284891" ignored="false" />
-    <file path="/MainActivity.java" changelist="293b2dc0-c051-406f-9b4d-b4fd50889740" time="1371046233948" ignored="false" />
+    <file path="/MainActivity.java" changelist="293b2dc0-c051-406f-9b4d-b4fd50889740" time="1371099882338" ignored="false" />
     <file path="/activity_main.xml" changelist="293b2dc0-c051-406f-9b4d-b4fd50889740" time="1370929320586" ignored="false" />
     <file path="/LongOperation.java" changelist="293b2dc0-c051-406f-9b4d-b4fd50889740" time="1370250439994" ignored="false" />
     <file path="/Preview1.java" changelist="293b2dc0-c051-406f-9b4d-b4fd50889740" time="1370848448643" ignored="false" />
@@ -34,9 +36,9 @@
     <file path="/activity_process_list.xml" changelist="293b2dc0-c051-406f-9b4d-b4fd50889740" time="1370843848016" ignored="false" />
     <file path="/ProcessList.java" changelist="293b2dc0-c051-406f-9b4d-b4fd50889740" time="1370845123803" ignored="false" />
     <file path="/activity_event_log_list.xml" changelist="293b2dc0-c051-406f-9b4d-b4fd50889740" time="1370498714277" ignored="false" />
-    <file path="/GetData.java" changelist="293b2dc0-c051-406f-9b4d-b4fd50889740" time="1371046316597" ignored="false" />
+    <file path="/GetData.java" changelist="293b2dc0-c051-406f-9b4d-b4fd50889740" time="1371099930285" ignored="false" />
     <file path="/LogList.java" changelist="293b2dc0-c051-406f-9b4d-b4fd50889740" time="1370798124893" ignored="false" />
-    <file path="/SendFeedback.java" changelist="293b2dc0-c051-406f-9b4d-b4fd50889740" time="1370852629665" ignored="false" />
+    <file path="/SendFeedback.java" changelist="293b2dc0-c051-406f-9b4d-b4fd50889740" time="1371099500927" ignored="false" />
     <file path="/RunningAppsList.java" changelist="293b2dc0-c051-406f-9b4d-b4fd50889740" time="1370842678325" ignored="false" />
     <file path="/activity_running_apps_list.xml" changelist="293b2dc0-c051-406f-9b4d-b4fd50889740" time="1370841017463" ignored="false" />
     <file path="/running_apps.xml" changelist="293b2dc0-c051-406f-9b4d-b4fd50889740" time="1370844926089" ignored="false" />
@@ -54,7 +56,8 @@
     <file path="$USER_HOME$/workspace/ProgressBar/ProgressBar/build.gradle" changelist="293b2dc0-c051-406f-9b4d-b4fd50889740" time="1371014609198" ignored="false" />
     <file path="/build.gradle" changelist="293b2dc0-c051-406f-9b4d-b4fd50889740" time="1371014567534" ignored="false" />
     <file path="/Sender.java" changelist="293b2dc0-c051-406f-9b4d-b4fd50889740" time="1371015097106" ignored="false" />
-    <file path="/MakeMessage.java" changelist="293b2dc0-c051-406f-9b4d-b4fd50889740" time="1371016656017" ignored="false" />
+    <file path="/MakeMessage.java" changelist="293b2dc0-c051-406f-9b4d-b4fd50889740" time="1371099443938" ignored="false" />
+    <file path="/Preview.java" changelist="293b2dc0-c051-406f-9b4d-b4fd50889740" time="1371099668252" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +74,7 @@
   <component name="DebuggerManager">
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <method_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
-      <breakpoint url="file://$PROJECT_DIR$/src/com/example/feedback_test_3/MainActivity.java" line="120" class="com.example.feedback_test_3.MainActivity" package="com.example.feedback_test_3">
+      <breakpoint url="file://$PROJECT_DIR$/src/com/example/feedback_test_3/MainActivity.java" line="128" class="com.example.feedback_test_3.MainActivity" package="com.example.feedback_test_3">
         <option name="WATCH_ENTRY" value="true" />
         <option name="WATCH_EXIT" value="true" />
         <option name="ENABLED" value="true" />
@@ -137,13 +140,11 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/example/feedback_test_3/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="153" column="0" selection-start="5853" selection-end="5853" vertical-scroll-proportion="0.74232084">
+            <state line="170" column="52" selection-start="6490" selection-end="6490" vertical-scroll-proportion="0.6672355">
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3031#3039#0" expanded="true" />
-                <element signature="e#3170#3178#0" expanded="true" />
-                <element signature="e#5072#6018#0" expanded="true" />
-                <element signature="e#6007#6008#0" expanded="true" />
+                <element signature="e#3095#3103#0" expanded="true" />
+                <element signature="e#3234#3242#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -152,7 +153,7 @@
       <file leaf-file-name="GetData.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/feedback_test_3/GetData.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="161" column="40" selection-start="6438" selection-end="6438" vertical-scroll-proportion="0.0">
+            <state line="213" column="70" selection-start="8353" selection-end="8353" vertical-scroll-proportion="-5.48">
               <folding />
             </state>
           </provider>
@@ -161,7 +162,52 @@
       <file leaf-file-name="MakeMessage.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/feedback_test_3/MakeMessage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="5" selection-start="223" selection-end="223" vertical-scroll-proportion="0.0">
+            <state line="15" column="16" selection-start="391" selection-end="396" vertical-scroll-proportion="-9.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Preview.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/feedback_test_3/Preview.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="34" column="70" selection-start="1694" selection-end="1699" vertical-scroll-proportion="-4.88">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProcessList.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/feedback_test_3/ProcessList.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="20" column="51" selection-start="568" selection-end="568" vertical-scroll-proportion="-5.4">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SendFeedback.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/feedback_test_3/SendFeedback.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="28" column="27" selection-start="1231" selection-end="1231" vertical-scroll-proportion="-5.04">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JSSEProvider.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/feedback_test_3/JSSEProvider.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="25" column="11" selection-start="933" selection-end="933" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LogList.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/feedback_test_3/LogList.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="13" selection-start="139" selection-end="139" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -170,7 +216,7 @@
       <file leaf-file-name="FeedbackSender.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/feedback_test_3/FeedbackSender.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="29" selection-start="1722" selection-end="1722" vertical-scroll-proportion="0.0">
+            <state line="24" column="6" selection-start="711" selection-end="713" vertical-scroll-proportion="-4.88">
               <folding />
             </state>
           </provider>
@@ -184,7 +230,7 @@
     </FindUsagesManager>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$USER_HOME$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="GitLogSettings">
     <option name="myDateState">
@@ -199,16 +245,16 @@
         <option value="$PROJECT_DIR$/src/com/example/feedback_test_3/ProcessList.java" />
         <option value="$PROJECT_DIR$/src/com/example/feedback_test_3/Preview1.java" />
         <option value="$PROJECT_DIR$/src/com/example/feedback_test_3/LogList.java" />
-        <option value="$PROJECT_DIR$/src/com/example/feedback_test_3/SendFeedback.java" />
         <option value="$PROJECT_DIR$/res/layout/activity_log_list.xml" />
         <option value="$PROJECT_DIR$/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/src/com/example/feedback_test_3/LongOperation.java" />
         <option value="$PROJECT_DIR$/res/layout/activity_main.xml" />
-        <option value="$PROJECT_DIR$/src/com/example/feedback_test_3/Preview.java" />
         <option value="$PROJECT_DIR$/src/com/example/feedback_test_3/FeedbackSender.java" />
         <option value="$PROJECT_DIR$/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/src/com/example/feedback_test_3/GetData.java" />
         <option value="$PROJECT_DIR$/src/com/example/feedback_test_3/MakeMessage.java" />
+        <option value="$PROJECT_DIR$/src/com/example/feedback_test_3/SendFeedback.java" />
+        <option value="$PROJECT_DIR$/src/com/example/feedback_test_3/Preview.java" />
+        <option value="$PROJECT_DIR$/src/com/example/feedback_test_3/GetData.java" />
         <option value="$PROJECT_DIR$/src/com/example/feedback_test_3/MainActivity.java" />
       </list>
     </option>
@@ -279,8 +325,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -323,6 +367,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -337,11 +383,11 @@
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="avd_test1" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="FullScreen" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
+    <property name="FullScreen" value="false" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -521,11 +567,12 @@
       <workItem from="1371013620967" duration="7117000" />
       <workItem from="1371045038257" duration="44000" />
       <workItem from="1371045986040" duration="860000" />
+      <workItem from="1371097623087" duration="2579000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="198719000" />
+    <option name="totallyTimeSpent" value="201298000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1301" height="744" extended-state="6" />
@@ -544,7 +591,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24940239" sideWeight="0.6576" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32988048" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5003984" sideWeight="0.672" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5003984" sideWeight="0.688" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.312" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15537849" sideWeight="0.6608" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -618,17 +665,12 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$APPLICATION_HOME_DIR$/sdk/platforms/android-17/android.jar!/android/R.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="559" column="71" selection-start="40316" selection-end="40316" vertical-scroll-proportion="13.973289" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/running_apps.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="12" selection-start="257" selection-end="257" vertical-scroll-proportion="0.15679443" />
-      </provider>
       <provider editor-type-id="android-designer">
         <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="12" selection-start="257" selection-end="257" vertical-scroll-proportion="0.15679443" />
       </provider>
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/sdk/platforms/android-17/android.jar!/java/util/ArrayList.class">
@@ -642,39 +684,19 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/activity_log_list.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="33" selection-start="265" selection-end="265" vertical-scroll-proportion="0.13066202" />
       </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/feedback_test_3/LogList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="13" selection-start="139" selection-end="139" vertical-scroll-proportion="0.15025042" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/feedback_test_3/ProcessList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="59" selection-start="898" selection-end="898" vertical-scroll-proportion="0.47579297" />
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/activity_main.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="49" selection-start="1539" selection-end="1539" vertical-scroll-proportion="0.026132405" />
-      </provider>
       <provider editor-type-id="android-designer">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/feedback_test_3/Preview.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="55" selection-start="1974" selection-end="1974" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/feedback_test_3/JSSEProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="11" selection-start="933" selection-end="933" vertical-scroll-proportion="0.0" />
+        <state line="41" column="49" selection-start="1539" selection-end="1539" vertical-scroll-proportion="0.026132405" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gen/com/example/feedback_test_3/BuildConfig.java">
@@ -691,34 +713,67 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/feedback_test_3/FeedbackSender.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="29" selection-start="1722" selection-end="1722" vertical-scroll-proportion="0.0">
+        <state line="24" column="6" selection-start="711" selection-end="713" vertical-scroll-proportion="-4.88">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/feedback_test_3/GetData.java">
+    <entry file="file://$PROJECT_DIR$/src/com/example/feedback_test_3/JSSEProvider.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="161" column="40" selection-start="6438" selection-end="6438" vertical-scroll-proportion="0.0">
+        <state line="25" column="11" selection-start="933" selection-end="933" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/feedback_test_3/LogList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="13" selection-start="139" selection-end="139" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/feedback_test_3/SendFeedback.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="27" selection-start="1231" selection-end="1231" vertical-scroll-proportion="-5.04">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/feedback_test_3/ProcessList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="51" selection-start="568" selection-end="568" vertical-scroll-proportion="-5.4">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/feedback_test_3/Preview.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="70" selection-start="1694" selection-end="1699" vertical-scroll-proportion="-4.88">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/feedback_test_3/MakeMessage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="5" selection-start="223" selection-end="223" vertical-scroll-proportion="0.0">
+        <state line="15" column="16" selection-start="391" selection-end="396" vertical-scroll-proportion="-9.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/feedback_test_3/GetData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="213" column="70" selection-start="8353" selection-end="8353" vertical-scroll-proportion="-5.48">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/feedback_test_3/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="153" column="0" selection-start="5853" selection-end="5853" vertical-scroll-proportion="0.74232084">
+        <state line="170" column="52" selection-start="6490" selection-end="6490" vertical-scroll-proportion="0.6672355">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3031#3039#0" expanded="true" />
-            <element signature="e#3170#3178#0" expanded="true" />
-            <element signature="e#5072#6018#0" expanded="true" />
-            <element signature="e#6007#6008#0" expanded="true" />
+            <element signature="e#3095#3103#0" expanded="true" />
+            <element signature="e#3234#3242#0" expanded="true" />
           </folding>
         </state>
       </provider>

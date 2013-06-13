@@ -2,6 +2,7 @@ package com.example.feedback_test_3;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.EnumSet;
 import java.util.List;
 
 import android.content.Context;
@@ -36,11 +37,11 @@ public class MainActivity extends Activity {
         public static List<RunningAppProcessInfo> runningApps;
     }
 
-    public enum StateFlags {
-        Instance;
-        public static boolean includeSystemDataCheck,includeSnapshotCheck,systemLogCheck,sendAsAnonymous;
-        public static boolean dataLoad = false;
+    public enum StateParameters {
+        includeSystemDataCheck,includeSnapshotCheck,systemLogCheck,sendAsAnonymous,dataLoad
     }
+
+    public static EnumSet<StateParameters> state = EnumSet.noneOf(StateParameters.class);
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -71,12 +72,13 @@ public class MainActivity extends Activity {
                 Log.e("Logcat ", e.getMessage(), e);
             }
         }
+
     }
 
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
         super.onSaveInstanceState(savedInstanceState);
-        savedInstanceState.putBoolean("dataLoad",StateFlags.dataLoad);
+        savedInstanceState.putBoolean("dataLoad",state.contains(StateParameters.dataLoad));
     }
 
     public void addItemsToSpinner()
@@ -110,10 +112,16 @@ public class MainActivity extends Activity {
         Intent intent = new Intent(this,Preview.class);
 
         CheckBox includeSystemData = (CheckBox)findViewById(R.id.checkBoxSystemData);
-        StateFlags.includeSystemDataCheck = includeSystemData.isChecked();
+        if(includeSystemData.isChecked())
+            state.add(StateParameters.includeSystemDataCheck);
+        else
+            state.remove(StateParameters.includeSystemDataCheck);
 
         CheckBox includeSnapshot = (CheckBox)findViewById(R.id.checkBoxSnapshot);
-        StateFlags.includeSnapshotCheck = includeSnapshot.isChecked();
+        if(includeSnapshot.isChecked())
+            state.add(StateParameters.includeSnapshotCheck);
+        else
+            state.remove(StateParameters.includeSnapshotCheck);
 
         startActivity(intent);
     }
@@ -123,10 +131,16 @@ public class MainActivity extends Activity {
 
         Spinner sendAsSpinner = (Spinner)findViewById(R.id.sendAsSpinner);
 
-        StateFlags.sendAsAnonymous = sendAsSpinner.getSelectedItem().toString().equals("Anonymous");
+        if(sendAsSpinner.getSelectedItem().toString().equals("Anonymous"))
+            state.add(StateParameters.sendAsAnonymous);
+        else
+            state.remove(StateParameters.sendAsAnonymous);
 
         CheckBox includeSystemDataCheckBox = (CheckBox)findViewById(R.id.checkBoxSystemData);
-        StateFlags.includeSystemDataCheck = includeSystemDataCheckBox.isChecked();
+        if(includeSystemDataCheckBox.isChecked())
+            state.add(StateParameters.includeSystemDataCheck);
+        else
+            state.remove(StateParameters.includeSystemDataCheck);
 
         Toast.makeText(this,"Your feedback is being sent", Toast.LENGTH_SHORT).show();
 
@@ -138,7 +152,7 @@ public class MainActivity extends Activity {
             public void run() {
                 try{FeedbackSender sender = new FeedbackSender("abhishekkadiyan@gmail.com","****");
 
-                    if(StateFlags.includeSystemDataCheck)
+                    if( state.contains(StateParameters.includeSystemDataCheck) )
                     {
                         sender.addAttachment( baseDir + File.separator + "RunningApps.txt");
                         sender.addAttachment( baseDir + File.separator + "SystemLog.txt");

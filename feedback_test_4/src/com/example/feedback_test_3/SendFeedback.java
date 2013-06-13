@@ -15,7 +15,7 @@ public class SendFeedback extends MainActivity {
         StringBuilder feedbackBodyStringBuilder = new StringBuilder();
         feedbackBodyStringBuilder.append("Sent by : ");
 
-        if(StateFlags.sendAsAnonymous)
+        if(state.contains(StateParameters.sendAsAnonymous))
             feedbackBodyStringBuilder.append("Anonymous");
         else
             feedbackBodyStringBuilder.append(DeviceData.userId);
@@ -28,7 +28,7 @@ public class SendFeedback extends MainActivity {
                 "\nBuild Id : "+DeviceData.buildId+"\nBuild Release : "+DeviceData.buildRelease+"\nBuild Type : "+DeviceData.buildType+"\nBuild fingerprint : "+DeviceData.buildFingerPrint
                 +"\nBrand : "+DeviceData.brand+"\nPhone type : "+DeviceData.phoneType+"\nNetwork Type : "+DeviceData.networkType+"\n");
 
-        if(StateFlags.includeSystemDataCheck)
+        if(state.contains(StateParameters.includeSystemDataCheck))
         {
             feedbackBodyStringBuilder.append("\n" + "List of Running Activities: ");
             for(ActivityManager.RunningAppProcessInfo iterator : DeviceData.runningApps)

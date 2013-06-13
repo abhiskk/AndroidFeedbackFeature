@@ -13,7 +13,7 @@ public class MakeMessage extends MainActivity {
         StringBuilder feedbackBodyStringBuilder = new StringBuilder();
         feedbackBodyStringBuilder.append("Sent by : ");
 
-        if(StateFlags.sendAsAnonymous)
+        if(state.contains(StateParameters.sendAsAnonymous))
             feedbackBodyStringBuilder.append("Anonymous");
         else
             feedbackBodyStringBuilder.append(DeviceData.userId);

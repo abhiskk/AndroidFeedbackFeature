@@ -211,7 +211,7 @@ public class GetData extends AsyncTask<Void, Integer, Void> {
     protected void onPostExecute(final Void result) {
         progress.setVisibility(View.GONE);
         relativeLayout.setVisibility(View.VISIBLE);
-        MainActivity.StateFlags.dataLoad = true;
+        MainActivity.state.add(MainActivity.StateParameters.dataLoad);
     }
 
 }

@@ -32,7 +32,7 @@ public class Preview extends ListActivity {
         for(int i=0;i<items.length;i++)
         {
             if(((items[i].equals("Running Apps") || items[i].equals("System Log") ||
-                 items[i].equals("Events Log")) && !MainActivity.StateFlags.includeSystemDataCheck) || (items[i].equals("Snapshot") && !MainActivity.StateFlags.includeSnapshotCheck))
+                 items[i].equals("Events Log")) && !MainActivity.state.contains(MainActivity.StateParameters.includeSystemDataCheck)) || (items[i].equals("Snapshot") && !MainActivity.state.contains(MainActivity.StateParameters.includeSnapshotCheck)))
                 continue;
             mData.add(items[i]);
             mData2.add(iteminfo[i]);
