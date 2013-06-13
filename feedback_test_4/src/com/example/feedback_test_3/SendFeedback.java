@@ -2,10 +2,6 @@ package com.example.feedback_test_3;
 
 import android.app.ActivityManager;
 
-import java.io.BufferedInputStream;
-import java.io.File;
-import java.io.FileOutputStream;
-
 public class SendFeedback extends MainActivity {
 
     private String feedbackBody;

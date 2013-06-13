@@ -38,18 +38,13 @@ public class GetData extends AsyncTask<Void, Integer, Void> {
     @Override
     protected Void doInBackground(final Void... params) {
 
-//        try {
-//            Thread.sleep(3000);
-//        }   catch(InterruptedException ex) {
-//            Thread.currentThread().interrupt();
-//        }
-
         MainActivity.DeviceData.packageName = mainContext.getPackageName();
+
         MainActivity.DeviceData.packageVersion = manager.versionName;
+
         Calendar c =Calendar.getInstance();
-        MainActivity.DeviceData.currentDate = String.valueOf(c.get(Calendar.DATE)) + "-"  +
-                String.valueOf(c.get(Calendar.MONTH)) + "-"
-                + String.valueOf(c.get(Calendar.YEAR));
+
+        MainActivity.DeviceData.currentDate = String.valueOf(c.get(Calendar.DATE)) + "-"  + String.valueOf(c.get(Calendar.MONTH)) + "-" + String.valueOf(c.get(Calendar.YEAR));
 
         MainActivity.DeviceData.device = android.os.Build.MODEL;
 
@@ -65,75 +60,98 @@ public class GetData extends AsyncTask<Void, Integer, Void> {
 
         MainActivity.DeviceData.brand = Build.BRAND;
 
-        int phoneTypeVal = tManager.getPhoneType();
+        MainActivity.DeviceData.phoneType = getPhoneType(tManager.getPhoneType());
+
+        MainActivity.DeviceData.networkType = getNetworkType(tManager.getNetworkType());
+
+        getLogs();
+
+        MainActivity.DeviceData.userId = "abcd@xyz.com";
+
+        MainActivity.DeviceData.runningApps = activityManager.getRunningAppProcesses();
+
+        writeToFile(MainActivity.systemLogFile,MainActivity.DeviceData.systemLog);
+
+        writeToFile(MainActivity.eventsLogFile,MainActivity.DeviceData.eventsLog);
+
+        getRunningApps();
+
+        populateFiles();
+
+        return null;
+    }
+
+    @Override
+    protected void onPostExecute(final Void result)     {
+        progress.setVisibility(View.GONE);
+        relativeLayout.setVisibility(View.VISIBLE);
+        MainActivity.state.add(MainActivity.StateParameters.dataLoad);
+    }
+
+    void writeToFile(File f,String data)    {
+        try{
+            BufferedWriter in = new BufferedWriter(new FileWriter(f));
+            in.write(data);
+            in.close();
+        }
+        catch (IOException e){
+            Log.e("error",e.getMessage(),e);
+        }
+    }
+
+    String getPhoneType(int phoneTypeVal)   {
         switch (phoneTypeVal)
         {
             case TelephonyManager.PHONE_TYPE_NONE:
-                MainActivity.DeviceData.phoneType = "None";
-                break;
+                return "None";
             case TelephonyManager.PHONE_TYPE_GSM:
-                MainActivity.DeviceData.phoneType = "GSM";
-                break;
+                return "GSM";
             case TelephonyManager.PHONE_TYPE_CDMA:
-                MainActivity.DeviceData.phoneType = "CDMA";
-                break;
+                return "CDMA";
             default:
-                MainActivity.DeviceData.phoneType = "SIP";
-                break;
+                return "SIP";
         }
+    }
 
-        switch (tManager.getNetworkType())
+    String getNetworkType(int networkVal)   {
+        switch (networkVal)
         {
             case TelephonyManager.NETWORK_TYPE_1xRTT:
-                MainActivity.DeviceData.networkType = "1xRTT";
-                break;
+                return "1xRTT";
             case TelephonyManager.NETWORK_TYPE_CDMA:
-                MainActivity.DeviceData.networkType = "CDMA";
-                break;
+                return "CDMA";
             case TelephonyManager.NETWORK_TYPE_EDGE:
-                MainActivity.DeviceData.networkType = "EDGE";
-                break;
+                return "EDGE";
             case TelephonyManager.NETWORK_TYPE_EHRPD:
-                MainActivity.DeviceData.networkType = "eHRPD";
-                break;
+                return "eHRPD";
             case TelephonyManager.NETWORK_TYPE_EVDO_0:
-                MainActivity.DeviceData.networkType = "EVDO rev. 0";
-                break;
+                return "EVDO rev. 0";
             case TelephonyManager.NETWORK_TYPE_EVDO_A:
-                MainActivity.DeviceData.networkType = "EVDO rev. A";
-                break;
+                return "EVDO rev. A";
             case TelephonyManager.NETWORK_TYPE_EVDO_B:
-                MainActivity.DeviceData.networkType = "EVDO rev. B";
-                break;
+                return "EVDO rev. B";
             case TelephonyManager.NETWORK_TYPE_GPRS:
-                MainActivity.DeviceData.networkType = "GPRS";
-                break;
+                return "GPRS";
             case TelephonyManager.NETWORK_TYPE_HSDPA:
-                MainActivity.DeviceData.networkType = "HSDPA";
-                break;
+                return "HSDPA";
             case TelephonyManager.NETWORK_TYPE_HSPA:
-                MainActivity.DeviceData.networkType = "HSPA";
-                break;
+                return "HSPA";
             case TelephonyManager.NETWORK_TYPE_HSPAP:
-                MainActivity.DeviceData.networkType = "HSPA+";
-                break;
+                return "HSPA+";
             case TelephonyManager.NETWORK_TYPE_HSUPA:
-                MainActivity.DeviceData.networkType = "HSUPA";
-                break;
+                return "HSUPA";
             case TelephonyManager.NETWORK_TYPE_IDEN:
-                MainActivity.DeviceData.networkType = "iDen";
-                break;
+                return "iDen";
             case TelephonyManager.NETWORK_TYPE_LTE:
-                MainActivity.DeviceData.networkType = "LTE";
-                break;
+                return "LTE";
             case TelephonyManager.NETWORK_TYPE_UMTS:
-                MainActivity.DeviceData.networkType = "UMTS";
-                break;
-            case 0:
-                MainActivity.DeviceData.networkType = "Unknown";
-                break;
+                return "UMTS";
+            default:
+                return "Unknown";
         }
+    }
 
+    void getLogs() {
         try {
 
             Process process = Runtime.getRuntime().exec("logcat -v time -d");
@@ -179,13 +197,9 @@ public class GetData extends AsyncTask<Void, Integer, Void> {
             MainActivity.DeviceData.systemLog = "";
             MainActivity.DeviceData.eventsLog = "";
         }
-        MainActivity.DeviceData.userId = "abcd@xyz.com";
-        MainActivity.DeviceData.runningApps = activityManager.getRunningAppProcesses();
+    }
 
-        writeToFile(MainActivity.systemLogFile,MainActivity.DeviceData.systemLog);
-
-        writeToFile(MainActivity.eventsLogFile,MainActivity.DeviceData.eventsLog);
-
+    void getRunningApps() {
         StringBuilder temp = new StringBuilder();
         for(ActivityManager.RunningAppProcessInfo iterator : MainActivity.DeviceData.runningApps)
         {
@@ -193,27 +207,40 @@ public class GetData extends AsyncTask<Void, Integer, Void> {
             temp.append(iterator.processName);
         }
         writeToFile(MainActivity.runningAppFile,temp.toString());
-
-        return null;
     }
 
-    void writeToFile(File f,String data)
-    {
+    void populateFiles() {
+        byte[] buffer = new byte[1024];
+
         try{
-            BufferedWriter in = new BufferedWriter(new FileWriter(f));
-            in.write(data);
-            in.close();
-        }
-        catch (IOException e){
-            Log.e("error",e.getMessage(),e);
-        }
-    }
 
-    @Override
-    protected void onPostExecute(final Void result) {
-        progress.setVisibility(View.GONE);
-        relativeLayout.setVisibility(View.VISIBLE);
-        MainActivity.state.add(MainActivity.StateParameters.dataLoad);
+            FileOutputStream fos = new FileOutputStream(MainActivity.baseDir + File.separator + "zipTest1.zip");
+            ZipOutputStream zos = new ZipOutputStream(fos);
+
+            String[] files = {MainActivity.systemLogFileName , MainActivity.eventsLogFileName , MainActivity.runningAppFileName};
+
+            for(int i=0;i<files.length;i++)
+            {
+                ZipEntry ze = new ZipEntry(files[i]);
+                zos.putNextEntry(ze);
+                FileInputStream in = new FileInputStream(MainActivity.baseDir + File.separator + files[i]);
+
+                int len;
+
+                while((len = in.read(buffer)) > 0) {
+                    zos.write(buffer,0,len);
+                }
+
+                in.close();
+            }
+
+            zos.closeEntry();
+
+            zos.close();
+
+        }   catch (IOException ex){
+            ex.printStackTrace();
+        }
     }
 
 }

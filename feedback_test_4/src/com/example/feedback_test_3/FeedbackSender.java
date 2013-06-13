@@ -20,11 +20,12 @@ public class FeedbackSender extends javax.mail.Authenticator {
     private String user;
     private String password;   
     private Session session;
-    private Multipart _multipart;
+    private Multipart multipart;
 
     static {   
         Security.addProvider(new JSSEProvider());   
     }
+
     public FeedbackSender(String user, String password) {
         this.user = user;
         this.password = password;
@@ -38,7 +39,7 @@ public class FeedbackSender extends javax.mail.Authenticator {
         props.put("mail.smtp.socketFactory.fallback", "false");   
         props.setProperty("mail.smtp.quitwait", "false");
         session = Session.getDefaultInstance(props, this);
-        _multipart = new MimeMultipart();
+        multipart = new MimeMultipart();
     }   
 
     protected PasswordAuthentication getPasswordAuthentication() {   
@@ -48,14 +49,12 @@ public class FeedbackSender extends javax.mail.Authenticator {
     public synchronized void sendMail(String subject, String body, String sender, String recipients) throws Exception {
         
         MimeMessage message = new MimeMessage(session);
-        //DataHandler handler = new DataHandler(new ByteArrayDataSource(body.getBytes(), "text/plain"));
         BodyPart messageBodyPart = new MimeBodyPart();
         messageBodyPart.setText(body);
-        _multipart.addBodyPart(messageBodyPart);
+        multipart.addBodyPart(messageBodyPart);
         message.setSender(new InternetAddress(sender));
         message.setSubject(subject);
-        //message.setDataHandler(handler);
-        message.setContent(_multipart);
+        message.setContent(multipart);
 
         if (recipients.indexOf(',') > 0)
             message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(recipients));
@@ -71,7 +70,7 @@ public class FeedbackSender extends javax.mail.Authenticator {
         messageBodyPart.setDataHandler(new DataHandler(source));
         messageBodyPart.setFileName(filename);
 
-        _multipart.addBodyPart(messageBodyPart);
+        multipart.addBodyPart(messageBodyPart);
     }
 
     public class ByteArrayDataSource implements DataSource {   

@@ -4,8 +4,6 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.EnumSet;
 import java.util.List;
-import java.util.zip.ZipEntry;
-import java.util.zip.ZipOutputStream;
 
 import android.content.Context;
 import android.content.pm.PackageInfo;
@@ -24,19 +22,10 @@ import android.widget.*;
 
 public class MainActivity extends Activity {
 
-    static String baseDir = Environment.getExternalStorageDirectory().getAbsolutePath();
 
-    static String systemLogFileName = "SystemLog.txt";
+    static String baseDir,systemLogFileName,eventsLogFileName,runningAppFileName;
 
-    static String eventsLogFileName = "EventsLog.txt";
-
-    static String runningAppFileName = "RunningApps.txt";
-
-    static File systemLogFile = new File(baseDir + File.separator + systemLogFileName);
-
-    static File eventsLogFile = new File(baseDir + File.separator + eventsLogFileName);
-
-    static File runningAppFile = new File(baseDir + File.separator + runningAppFileName);
+    static File systemLogFile,eventsLogFile,runningAppFile;
 
     public enum DeviceData {
         Instance;
@@ -58,17 +47,17 @@ public class MainActivity extends Activity {
 
         setContentView(R.layout.activity_main);
 
-        final ProgressBar progress = (ProgressBar)findViewById(R.id.progressBar);
-        final RelativeLayout layoutMain = (RelativeLayout)findViewById(R.id.layoutMain);
+        hideKeyboardOnStart();
 
-		getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
+        nameFiles();
 
         addItemsToSpinner();
 
+        final ProgressBar progress = (ProgressBar)findViewById(R.id.progressBar);
+        final RelativeLayout layoutMain = (RelativeLayout)findViewById(R.id.layoutMain);
+
         if ( savedInstanceState != null && savedInstanceState.getBoolean("dataLoad"))
-        {
             progress.setVisibility(View.GONE);
-        }
         else
         {
 
@@ -89,20 +78,20 @@ public class MainActivity extends Activity {
         savedInstanceState.putBoolean("dataLoad",state.contains(StateParameters.dataLoad));
     }
 
-    public void addItemsToSpinner()
-    {
+    public void addItemsToSpinner() {
+
         Spinner spinner = (Spinner) findViewById(R.id.sendAsSpinner);
-        List<String> list = new ArrayList<String>();
-        list.add("abcd@xyz.com");
-        list.add("Anonymous");
+
+        List<String> list = addFieldsToSpinnerList();
+
         ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,list);
+
         spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(spinnerAdapter);
 
     }
 
-    public void funSystemAndSnapshot(View v)
-    {
+    public void systemAndSnapshotButtonClick(View v) {
         switch (v.getId()) {
             case R.id.buttonSystemData:
                 CheckBox checkSystemData = (CheckBox) findViewById(R.id.checkBoxSystemData);
@@ -116,7 +105,7 @@ public class MainActivity extends Activity {
 
     }
 
-    public void funPreview(View v) {
+    public void previewButtonClick(View v) {
         Intent intent = new Intent(this,Preview.class);
 
         CheckBox includeSystemData = (CheckBox)findViewById(R.id.checkBoxSystemData);
@@ -134,7 +123,7 @@ public class MainActivity extends Activity {
         startActivity(intent);
     }
 
-	public void funSending(View v) {
+	public void sendButtonClick(View v) {
 		final EditText Body = (EditText) findViewById(R.id.EditText1);
 
         Spinner sendAsSpinner = (Spinner)findViewById(R.id.sendAsSpinner);
@@ -150,7 +139,7 @@ public class MainActivity extends Activity {
         else
             state.remove(StateParameters.includeSystemDataCheck);
 
-        Toast.makeText(this,"Your feedback is being sent", Toast.LENGTH_SHORT).show();
+        displaySendingMessage();
 
         MakeMessage sendFeedback = new MakeMessage(Body.getText().toString());
 
@@ -162,37 +151,6 @@ public class MainActivity extends Activity {
 
                     if( state.contains(StateParameters.includeSystemDataCheck) )
                     {
-                        byte[] buffer = new byte[1024];
-
-                        try{
-
-                            FileOutputStream fos = new FileOutputStream(baseDir + File.separator + "zipTest1.zip");
-                            ZipOutputStream zos = new ZipOutputStream(fos);
-
-                            String[] files = {systemLogFileName , eventsLogFileName , runningAppFileName};
-
-                            for(int i=0;i<files.length;i++)
-                            {
-                                    ZipEntry ze = new ZipEntry(files[i]);
-                                    zos.putNextEntry(ze);
-                                    FileInputStream in = new FileInputStream(baseDir + File.separator + files[i]);
-
-                                    int len;
-
-                                    while((len = in.read(buffer)) > 0) {
-                                        zos.write(buffer,0,len);
-                                    }
-
-                                    in.close();
-                            }
-
-                                zos.closeEntry();
-
-                                zos.close();
-
-                            }   catch (IOException ex){
-                                ex.printStackTrace();
-                        }
 
                         sender.addAttachment( baseDir + File.separator + "zipTest1.zip");
 
@@ -205,9 +163,7 @@ public class MainActivity extends Activity {
                     runningAppFile.delete();
 
                     if( state.contains(StateParameters.includeSystemDataCheck))
-                    {
                         (new File(baseDir + File.separator + "zipTest1.zip")).delete();
-                    }
 
                 }
                 catch(Exception e)
@@ -221,6 +177,34 @@ public class MainActivity extends Activity {
 
 	}
 
+    public void hideKeyboardOnStart() {
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
+    }
+
+    public void nameFiles() {
+
+        baseDir = Environment.getExternalStorageDirectory().getAbsolutePath();
+
+        systemLogFileName = "SystemLog.txt";
+        systemLogFile = new File(baseDir + File.separator + systemLogFileName);
+
+        eventsLogFileName = "EventsLog.txt";
+        eventsLogFile = new File(baseDir + File.separator + eventsLogFileName);
+
+        runningAppFileName = "RunningApps.txt";
+        runningAppFile = new File(baseDir + File.separator + runningAppFileName);
+    }
+
+    List<String> addFieldsToSpinnerList() {
+        List<String> list = new ArrayList<String>();
+        list.add("abcd@xyz.com");
+        list.add("Anonymous");
+        return list;
+    }
+
+    public void displaySendingMessage() {
+        Toast.makeText(this,"Your feedback is being sent",Toast.LENGTH_SHORT).show();
+    }
 
 }
 

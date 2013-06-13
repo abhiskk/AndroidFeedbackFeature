@@ -16,12 +16,14 @@ public class Preview extends ListActivity {
 	private static String[] items={"Package name","Package Version","Date","Device","SDK version","Bulid Id",
             "Build Release","Build Type","Build Fingerprint","Brand","Phone type","Network Type","Running Apps",
             "System Log","Events Log","Snapshot"};
+
 	private static String[] iteminfo={MainActivity.DeviceData.packageName,MainActivity.DeviceData.packageVersion,MainActivity.DeviceData.currentDate,MainActivity.DeviceData.device
 			,MainActivity.DeviceData.sdkVersion,MainActivity.DeviceData.buildId,MainActivity.DeviceData.buildRelease,MainActivity.DeviceData.buildType
             ,MainActivity.DeviceData.buildFingerPrint,MainActivity.DeviceData.brand,MainActivity.DeviceData.phoneType,MainActivity.DeviceData.networkType,"Click for list of running apps"
 			,"Click for viewing System Log","Click for viewing Events Log",""};
 
     private ArrayList<String> mData = new ArrayList<String>();
+
     private ArrayList<String> mData2 = new ArrayList<String>();
 
 	@Override

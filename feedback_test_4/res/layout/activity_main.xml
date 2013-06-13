@@ -43,7 +43,7 @@
                         android:layout_height="fill_parent"
                         android:layout_width="0dip"
                         android:text="@string/button1_text"
-                        android:onClick="funSending"
+                        android:onClick="sendButtonClick"
                         android:layout_weight="1"
                         android:textSize="13sp"
                         android:background="?android:attr/selectableItemBackground"
@@ -61,7 +61,7 @@
                         android:layout_height="fill_parent"
                         android:layout_width="0dp"
                         android:text="@string/button3_text"
-                        android:onClick="funPreview"
+                        android:onClick="previewButtonClick"
                         android:layout_weight="1"
                         android:textSize="13sp"
                         android:background="?android:attr/selectableItemBackground"
@@ -148,7 +148,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:background="?android:attr/selectableItemBackground"
-                            android:onClick="funSystemAndSnapshot"
+                            android:onClick="systemAndSnapshotButtonClick"
                             />
 
                     </RelativeLayout>
@@ -190,7 +190,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:background="?android:attr/selectableItemBackground"
-                                android:onClick="funSystemAndSnapshot"
+                                android:onClick="systemAndSnapshotButtonClick"
                                 />
 
                     </RelativeLayout>
