@@ -1,5 +1,12 @@
 package com.example.feedback_test_3;
 
+import android.app.ActivityManager;
+import android.util.Log;
+
+import java.io.*;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipOutputStream;
+
 public class MakeMessage extends MainActivity {
 
     private String feedbackBody;
@@ -9,7 +16,7 @@ public class MakeMessage extends MainActivity {
         feedbackBody = feedbackBodyValue;
     }
 
-    public String send() {
+    public String message() {
         StringBuilder feedbackBodyStringBuilder = new StringBuilder();
         feedbackBodyStringBuilder.append("Sent by : ");
 
@@ -28,6 +35,61 @@ public class MakeMessage extends MainActivity {
 
         return feedbackBodyStringBuilder.toString();
 
+    }
+
+    void writeToFile(File f,String data)    {
+        try{
+            BufferedWriter in = new BufferedWriter(new FileWriter(f));
+            in.write(data);
+            in.close();
+        }
+        catch (IOException e){
+            Log.e("error", e.getMessage(), e);
+        }
+    }
+
+    void populateZipFile() {
+        byte[] buffer = new byte[1024];
+
+        try{
+
+            FileOutputStream fos = new FileOutputStream(MainActivity.baseDir + File.separator + "zipTest1.zip");
+            ZipOutputStream zos = new ZipOutputStream(fos);
+
+            String[] files = {MainActivity.systemLogFileName , MainActivity.eventsLogFileName , MainActivity.runningAppFileName};
+
+            for(int i=0;i<files.length;i++)
+            {
+                ZipEntry ze = new ZipEntry(files[i]);
+                zos.putNextEntry(ze);
+                FileInputStream in = new FileInputStream(MainActivity.baseDir + File.separator + files[i]);
+
+                int len;
+
+                while((len = in.read(buffer)) > 0) {
+                    zos.write(buffer,0,len);
+                }
+
+                in.close();
+            }
+
+            zos.closeEntry();
+
+            zos.close();
+
+        }   catch (IOException ex){
+            ex.printStackTrace();
+        }
+    }
+
+    String getRunningApps() {
+        StringBuilder temp = new StringBuilder();
+        for(ActivityManager.RunningAppProcessInfo iterator : MainActivity.DeviceData.runningApps)
+        {
+            temp.append("\n");
+            temp.append(iterator.processName);
+        }
+        return temp.toString();
     }
 
 }

@@ -64,11 +64,11 @@ public class FeedbackSender extends javax.mail.Authenticator {
 
     }
 
-    public void addAttachment(String filename) throws Exception {
+    public void addAttachment(String sourcePath,String fileName) throws Exception {
         BodyPart messageBodyPart = new MimeBodyPart();
-        DataSource source = new FileDataSource(filename);
+        DataSource source = new FileDataSource(sourcePath);
         messageBodyPart.setDataHandler(new DataHandler(source));
-        messageBodyPart.setFileName(filename);
+        messageBodyPart.setFileName(fileName);
 
         multipart.addBodyPart(messageBodyPart);
     }

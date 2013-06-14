@@ -22,6 +22,7 @@ import android.widget.*;
 
 public class MainActivity extends Activity {
 
+    public static boolean testB = false;
 
     static String baseDir,systemLogFileName,eventsLogFileName,runningAppFileName;
 
@@ -143,7 +144,7 @@ public class MainActivity extends Activity {
 
         MakeMessage sendFeedback = new MakeMessage(Body.getText().toString());
 
-        final String feedbackBody = sendFeedback.send();
+        final String feedbackBody = sendFeedback.message();
 
         new Thread(new Runnable() {
             public void run() {
@@ -152,24 +153,21 @@ public class MainActivity extends Activity {
                     if( state.contains(StateParameters.includeSystemDataCheck) )
                     {
 
-                        sender.addAttachment( baseDir + File.separator + "zipTest1.zip");
+                        sender.addAttachment( baseDir + File.separator + "zipTest1.zip", "zipTest1.zip");
 
                     }
 
+
                     sender.sendMail("Feedback",feedbackBody,"abhishekkadiyan@gmail.com","abhishekkadiyan@gmail.com");
-
-                    systemLogFile.delete();
-                    eventsLogFile.delete();
-                    runningAppFile.delete();
-
-                    if( state.contains(StateParameters.includeSystemDataCheck))
-                        (new File(baseDir + File.separator + "zipTest1.zip")).delete();
 
                 }
                 catch(Exception e)
                 {
                     Log.e("error",e.getMessage(),e);
                 }
+
+                (new File(baseDir + File.separator + "zipTest1.zip")).delete();
+
             }
         }).start();
 
@@ -183,7 +181,7 @@ public class MainActivity extends Activity {
 
     public void nameFiles() {
 
-        baseDir = Environment.getExternalStorageDirectory().getAbsolutePath();
+        baseDir = getFilesDir().getAbsolutePath();
 
         systemLogFileName = "SystemLog.txt";
         systemLogFile = new File(baseDir + File.separator + systemLogFileName);

@@ -20,10 +20,15 @@ import java.util.zip.ZipOutputStream;
 public class GetData extends AsyncTask<Void, Integer, Void> {
 
     private final ProgressBar progress;
+
     private final RelativeLayout relativeLayout;
+
     private Context mainContext;
+
     PackageInfo manager;
+
     TelephonyManager tManager;
+
     ActivityManager activityManager;
 
     public GetData( final ProgressBar progress,final RelativeLayout relativeLayout ,Context cValue,PackageInfo mValue,TelephonyManager tValue,ActivityManager aValue) {
@@ -37,6 +42,12 @@ public class GetData extends AsyncTask<Void, Integer, Void> {
 
     @Override
     protected Void doInBackground(final Void... params) {
+
+//        try {
+//            Thread.sleep(10000);
+//            } catch(InterruptedException ex) {
+//            Thread.currentThread().interrupt();
+//            }
 
         MainActivity.DeviceData.packageName = mainContext.getPackageName();
 
@@ -74,9 +85,15 @@ public class GetData extends AsyncTask<Void, Integer, Void> {
 
         writeToFile(MainActivity.eventsLogFile,MainActivity.DeviceData.eventsLog);
 
-        getRunningApps();
+        writeToFile(MainActivity.runningAppFile,getRunningApps());
 
-        populateFiles();
+        populateZipFile();
+
+        MainActivity.systemLogFile.delete();
+
+        MainActivity.eventsLogFile.delete();
+
+        MainActivity.runningAppFile.delete();
 
         return null;
     }
@@ -86,6 +103,7 @@ public class GetData extends AsyncTask<Void, Integer, Void> {
         progress.setVisibility(View.GONE);
         relativeLayout.setVisibility(View.VISIBLE);
         MainActivity.state.add(MainActivity.StateParameters.dataLoad);
+//        MainActivity.testB = true;
     }
 
     void writeToFile(File f,String data)    {
@@ -199,17 +217,17 @@ public class GetData extends AsyncTask<Void, Integer, Void> {
         }
     }
 
-    void getRunningApps() {
+    String getRunningApps() {
         StringBuilder temp = new StringBuilder();
         for(ActivityManager.RunningAppProcessInfo iterator : MainActivity.DeviceData.runningApps)
         {
             temp.append("\n");
             temp.append(iterator.processName);
         }
-        writeToFile(MainActivity.runningAppFile,temp.toString());
+        return temp.toString();
     }
 
-    void populateFiles() {
+    void populateZipFile() {
         byte[] buffer = new byte[1024];
 
         try{
