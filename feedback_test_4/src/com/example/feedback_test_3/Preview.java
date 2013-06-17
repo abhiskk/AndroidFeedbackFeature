@@ -29,7 +29,7 @@ public class Preview extends ListActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_preview1);
+		setContentView(R.layout.activity_preview);
 		setListAdapter(new PreviewAdapter());
         for(int i=0;i<items.length;i++)
         {
