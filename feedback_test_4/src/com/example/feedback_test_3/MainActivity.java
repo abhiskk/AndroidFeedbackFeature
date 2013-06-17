@@ -22,7 +22,7 @@ import android.widget.*;
 public class MainActivity extends Activity {
 
 
-    static String baseDir,systemLogFileName,eventsLogFileName,runningAppFileName;
+    static String baseDir,systemLogFileName,eventsLogFileName,runningAppFileName,zipFileName;
 
     static File systemLogFile,eventsLogFile,runningAppFile;
 
@@ -152,9 +152,7 @@ public class MainActivity extends Activity {
 
                     if( state.contains(StateParameters.includeSystemDataCheck) )
                     {
-
-                        sender.addAttachment( baseDir + File.separator + "zipTest1.zip" , "zipTest1.zip");
-
+                        sender.addAttachment( baseDir + File.separator + zipFileName , zipFileName);
                     }
 
                     Log.e("Logcat ", "here2");
@@ -167,7 +165,7 @@ public class MainActivity extends Activity {
 
                     Log.e("Logcat ", "here3");
 
-                    (new File(baseDir + File.separator + "zipTest1.zip")).delete();
+                    (new File(baseDir + File.separator + zipFileName)).delete();
 
                     Log.e("Logcat ", "here4");
 
@@ -199,6 +197,8 @@ public class MainActivity extends Activity {
 
         runningAppFileName = "RunningApps.txt";
         runningAppFile = new File(baseDir + File.separator + runningAppFileName);
+
+        zipFileName = "ZipTest.zip";
     }
 
     List<String> addFieldsToSpinnerList() {

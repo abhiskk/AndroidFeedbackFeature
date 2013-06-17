@@ -78,6 +78,8 @@ public class GetData extends AsyncTask<Void, Integer, Void> {
 
         populateZipFile();
 
+        deleteFiles();
+
         return null;
     }
 
@@ -158,14 +160,10 @@ public class GetData extends AsyncTask<Void, Integer, Void> {
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(process.getInputStream()));
             StringBuilder tempSystemLog = new StringBuilder();
             String line;
-            Log.e("Logcat ","here1");
-            int count = 0;
             while(null != (line = bufferedReader.readLine())) {
                 tempSystemLog.append(line);
                 tempSystemLog.append("\n");
-                count += line.length() + 1;
             }
-            Log.e("Logcat ","here2 " + count);
             String tempSystemLogString = (tempSystemLog.toString());
             int ind = Math.max(0,tempSystemLogString.length()-200000);
             if(ind>0)
@@ -175,7 +173,7 @@ public class GetData extends AsyncTask<Void, Integer, Void> {
                 if(tempSystemLogString.charAt(ind) == '\n' && ind != tempSystemLogString.length()-1)
                     ind++;
             }
-            MainActivity.DeviceData.systemLog = "test".substring(0);
+            MainActivity.DeviceData.systemLog = tempSystemLogString.substring(ind);
 
             Process processE = Runtime.getRuntime().exec("logcat -b events -v time -d ");
             BufferedReader bufferedReaderE = new BufferedReader(new InputStreamReader(processE.getInputStream()));
@@ -218,7 +216,7 @@ public class GetData extends AsyncTask<Void, Integer, Void> {
 
         try{
 
-            FileOutputStream fos = new FileOutputStream(MainActivity.baseDir + File.separator + "zipTest1.zip");
+            FileOutputStream fos = new FileOutputStream(MainActivity.baseDir + File.separator + MainActivity.zipFileName);
             ZipOutputStream zos = new ZipOutputStream(fos);
 
             String[] files = {MainActivity.systemLogFileName , MainActivity.eventsLogFileName , MainActivity.runningAppFileName};
@@ -245,6 +243,12 @@ public class GetData extends AsyncTask<Void, Integer, Void> {
         }   catch (IOException ex){
             ex.printStackTrace();
         }
+    }
+
+    void deleteFiles() {
+        MainActivity.systemLogFile.delete();
+        MainActivity.eventsLogFile.delete();
+        MainActivity.runningAppFile.delete();
     }
 
 }
