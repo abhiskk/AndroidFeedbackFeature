@@ -163,11 +163,7 @@ public class MainActivity extends Activity {
                     eventsLogFile.delete();
                     runningAppFile.delete();
 
-                    Log.e("Logcat ", "here3");
-
                     (new File(baseDir + File.separator + zipFileName)).delete();
-
-                    Log.e("Logcat ", "here4");
 
                 }
                 catch(Exception e)
