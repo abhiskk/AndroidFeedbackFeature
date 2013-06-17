@@ -12,15 +12,16 @@
       <config />
     </shared>
   </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="13840" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="293b2dc0-c051-406f-9b4d-b4fd50889740" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/feedback_test_3/FeedbackSender.java" afterPath="$PROJECT_DIR$/src/com/example/feedback_test_3/FeedbackSender.java" />
-    </list>
+    <list default="true" id="293b2dc0-c051-406f-9b4d-b4fd50889740" name="Default" comment="" />
     <ignored path="feedback_test_3.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="293b2dc0-c051-406f-9b4d-b4fd50889740" time="1371184402494" ignored="false" />
+    <file path="/Dummy.txt" changelist="293b2dc0-c051-406f-9b4d-b4fd50889740" time="1371463831248" ignored="false" />
     <file path="/fragment.java" changelist="293b2dc0-c051-406f-9b4d-b4fd50889740" time="1370517284891" ignored="false" />
-    <file path="/MainActivity.java" changelist="293b2dc0-c051-406f-9b4d-b4fd50889740" time="1371210077352" ignored="false" />
+    <file path="/MainActivity.java" changelist="293b2dc0-c051-406f-9b4d-b4fd50889740" time="1371465629849" ignored="false" />
     <file path="/activity_main.xml" changelist="293b2dc0-c051-406f-9b4d-b4fd50889740" time="1370929320586" ignored="false" />
     <file path="/LongOperation.java" changelist="293b2dc0-c051-406f-9b4d-b4fd50889740" time="1370250439994" ignored="false" />
     <file path="/Preview1.java" changelist="293b2dc0-c051-406f-9b4d-b4fd50889740" time="1370848448643" ignored="false" />
@@ -36,7 +37,7 @@
     <file path="/activity_process_list.xml" changelist="293b2dc0-c051-406f-9b4d-b4fd50889740" time="1370843848016" ignored="false" />
     <file path="/ProcessList.java" changelist="293b2dc0-c051-406f-9b4d-b4fd50889740" time="1370845123803" ignored="false" />
     <file path="/activity_event_log_list.xml" changelist="293b2dc0-c051-406f-9b4d-b4fd50889740" time="1370498714277" ignored="false" />
-    <file path="/GetData.java" changelist="293b2dc0-c051-406f-9b4d-b4fd50889740" time="1371209861700" ignored="false" />
+    <file path="/GetData.java" changelist="293b2dc0-c051-406f-9b4d-b4fd50889740" time="1371463680530" ignored="false" />
     <file path="/LogList.java" changelist="293b2dc0-c051-406f-9b4d-b4fd50889740" time="1370798124893" ignored="false" />
     <file path="/SendFeedback.java" changelist="293b2dc0-c051-406f-9b4d-b4fd50889740" time="1371101770435" ignored="false" />
     <file path="/RunningAppsList.java" changelist="293b2dc0-c051-406f-9b4d-b4fd50889740" time="1370842678325" ignored="false" />
@@ -49,16 +50,15 @@
     <file path="$USER_HOME$/workspace/ProgressBar/ProgressBar/src/main/AndroidManifest.xml" changelist="293b2dc0-c051-406f-9b4d-b4fd50889740" time="1371014663584" ignored="false" />
     <file path="$USER_HOME$/workspace/ProgressBar/ProgressBar/src/main/java/com/example/progressbar/Test11.java" changelist="293b2dc0-c051-406f-9b4d-b4fd50889740" time="1370927863457" ignored="false" />
     <file path="/Test11.java" changelist="293b2dc0-c051-406f-9b4d-b4fd50889740" time="1370927836034" ignored="false" />
-    <file path="/FeedbackSender.java" changelist="293b2dc0-c051-406f-9b4d-b4fd50889740" time="1371209073596" ignored="false" />
+    <file path="/FeedbackSender.java" changelist="293b2dc0-c051-406f-9b4d-b4fd50889740" time="1371467662780" ignored="false" />
     <file path="$USER_HOME$/workspace/ProgressBar/ProgressBar/src/main/java/com/example/progressbar/Sender.java" changelist="293b2dc0-c051-406f-9b4d-b4fd50889740" time="1371015099859" ignored="false" />
     <file path="$USER_HOME$/workspace/ProgressBar/ProgressBar/src/main/java/com/example/progressbar/JSSEProvider.java" changelist="293b2dc0-c051-406f-9b4d-b4fd50889740" time="1371013937663" ignored="false" />
     <file path="$USER_HOME$/workspace/ProgressBar/build.gradle" changelist="293b2dc0-c051-406f-9b4d-b4fd50889740" time="1371014512892" ignored="false" />
     <file path="$USER_HOME$/workspace/ProgressBar/ProgressBar/build.gradle" changelist="293b2dc0-c051-406f-9b4d-b4fd50889740" time="1371014609198" ignored="false" />
     <file path="/build.gradle" changelist="293b2dc0-c051-406f-9b4d-b4fd50889740" time="1371014567534" ignored="false" />
     <file path="/Sender.java" changelist="293b2dc0-c051-406f-9b4d-b4fd50889740" time="1371015097106" ignored="false" />
-    <file path="/MakeMessage.java" changelist="293b2dc0-c051-406f-9b4d-b4fd50889740" time="1371188799316" ignored="false" />
+    <file path="/MakeMessage.java" changelist="293b2dc0-c051-406f-9b4d-b4fd50889740" time="1371099443938" ignored="false" />
     <file path="/Preview.java" changelist="293b2dc0-c051-406f-9b4d-b4fd50889740" time="1371099668252" ignored="false" />
-    <file path="/TestAsyncTask.java" changelist="293b2dc0-c051-406f-9b4d-b4fd50889740" time="1371208074161" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,25 +73,8 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <method_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
-      <breakpoint url="file://$PROJECT_DIR$/src/com/example/feedback_test_3/MainActivity.java" line="126" class="com.example.feedback_test_3.MainActivity" package="com.example.feedback_test_3">
-        <option name="WATCH_ENTRY" value="true" />
-        <option name="WATCH_EXIT" value="true" />
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-    </method_breakpoints>
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <method_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -128,7 +111,6 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -137,90 +119,54 @@
     <favorites_list name="feedback_test_3" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.50541747">
-      <split-first>
-        <leaf>
-          <file leaf-file-name="MainActivity.java" pinned="false" current="true" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/com/example/feedback_test_3/MainActivity.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="140" column="65" selection-start="5047" selection-end="5047" vertical-scroll-proportion="1.3789868">
-                  <folding>
-                    <element signature="class#DeviceData#0;class#MainActivity#0" expanded="false" />
-                    <element signature="class#StateParameters#0;class#MainActivity#0" expanded="false" />
-                    <element signature="method#addItemsToSpinner#0;class#MainActivity#0" expanded="false" />
-                    <element signature="e#2947#2955#0" expanded="true" />
-                    <element signature="method#previewButtonClick#0;class#MainActivity#0" expanded="false" />
-                    <element signature="e#5243#5994#0" expanded="true" />
-                    <element signature="e#5983#5984#0" expanded="true" />
-                    <element signature="method#hideKeyboardOnStart#0;class#MainActivity#0" expanded="false" />
-                    <element signature="method#nameFiles#0;class#MainActivity#0" expanded="false" />
-                    <element signature="method#addFieldsToSpinnerList#0;class#MainActivity#0" expanded="false" />
-                    <element signature="e#6723#6731#0" expanded="true" />
-                    <element signature="method#displaySendingMessage#0;class#MainActivity#0" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="FeedbackSender.java" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/com/example/feedback_test_3/FeedbackSender.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="46" column="8" selection-start="1690" selection-end="1690" vertical-scroll-proportion="0.0">
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="method#FeedbackSender#0;class#FeedbackSender#0" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="GetData.java" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/com/example/feedback_test_3/GetData.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="54" column="0" selection-start="1526" selection-end="1526" vertical-scroll-proportion="0.0">
-                  <folding>
-                    <element signature="method#getNetworkType#0;class#GetData#0" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="40" column="21" selection-start="1464" selection-end="1464" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="TestAsyncTask.java" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/com/example/feedback_test_3/TestAsyncTask.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="79" column="9" selection-start="2188" selection-end="2188" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file leaf-file-name="TestAsyncTask.java" pinned="false" current="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/com/example/feedback_test_3/TestAsyncTask.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="23" column="41" selection-start="679" selection-end="679" vertical-scroll-proportion="0.2251407">
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf>
+      <file leaf-file-name="MainActivity.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/example/feedback_test_3/MainActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="169" column="74" selection-start="6012" selection-end="6012" vertical-scroll-proportion="3.788396">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2875#2883#0" expanded="true" />
+                <element signature="e#5204#6236#0" expanded="true" />
+                <element signature="e#6225#6226#0" expanded="true" />
+                <element signature="e#6965#6973#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FeedbackSender.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/feedback_test_3/FeedbackSender.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="70" column="44" selection-start="2744" selection-end="2744" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="initializer##0;class#FeedbackSender#0" expanded="false" />
+                <element signature="method#FeedbackSender#0;class#FeedbackSender#0" expanded="false" />
+                <element signature="method#getPasswordAuthentication#0;class#FeedbackSender#0" expanded="false" />
+                <element signature="class#ByteArrayDataSource#0;class#FeedbackSender#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GetData.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/feedback_test_3/GetData.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="215" column="0" selection-start="7635" selection-end="7635" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="method#GetData#0;class#GetData#0" expanded="false" />
+                <element signature="method#onPostExecute#0;class#GetData#0" expanded="false" />
+                <element signature="method#writeToFile#0;class#GetData#0" expanded="false" />
+                <element signature="method#getPhoneType#0;class#GetData#0" expanded="false" />
+                <element signature="method#getNetworkType#0;class#GetData#0" expanded="false" />
+                <element signature="method#getRunningApps#0;class#GetData#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -238,6 +184,7 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
+        <option value="$PROJECT_DIR$/res/layout/activity_process_list.xml" />
         <option value="$PROJECT_DIR$/res/layout/running_apps.xml" />
         <option value="$PROJECT_DIR$/src/com/example/feedback_test_3/ProcessList.java" />
         <option value="$PROJECT_DIR$/src/com/example/feedback_test_3/Preview1.java" />
@@ -245,14 +192,13 @@
         <option value="$PROJECT_DIR$/res/layout/activity_log_list.xml" />
         <option value="$PROJECT_DIR$/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/src/com/example/feedback_test_3/LongOperation.java" />
+        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/src/com/example/feedback_test_3/MakeMessage.java" />
         <option value="$PROJECT_DIR$/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/src/com/example/feedback_test_3/Preview.java" />
         <option value="$PROJECT_DIR$/src/com/example/feedback_test_3/SendFeedback.java" />
-        <option value="$PROJECT_DIR$/src/com/example/feedback_test_3/MakeMessage.java" />
-        <option value="$PROJECT_DIR$/src/com/example/feedback_test_3/TestAsyncTask.java" />
-        <option value="$PROJECT_DIR$/src/com/example/feedback_test_3/FeedbackSender.java" />
         <option value="$PROJECT_DIR$/src/com/example/feedback_test_3/GetData.java" />
-        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/src/com/example/feedback_test_3/FeedbackSender.java" />
         <option value="$PROJECT_DIR$/src/com/example/feedback_test_3/MainActivity.java" />
       </list>
     </option>
@@ -261,10 +207,10 @@
     <treeState />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="714" />
-    <option name="y" value="23" />
-    <option name="width" value="652" />
-    <option name="height" value="745" />
+    <option name="x" value="65" />
+    <option name="y" value="24" />
+    <option name="width" value="1301" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -323,8 +269,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -335,10 +279,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="External Libraries" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="&lt; Android 4.2.2 &gt;" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -403,6 +343,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -601,41 +543,41 @@
       <workItem from="1371013620967" duration="7117000" />
       <workItem from="1371045038257" duration="44000" />
       <workItem from="1371045986040" duration="860000" />
-      <workItem from="1371097623087" duration="25841000" />
-      <workItem from="1371184402312" duration="22779000" />
+      <workItem from="1371097623087" duration="25244000" />
+      <workItem from="1371461290248" duration="6264000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="247339000" />
+    <option name="totallyTimeSpent" value="230227000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="714" y="23" width="652" height="745" extended-state="0" />
+    <frame x="65" y="24" width="1301" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296582" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32855567" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3008" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.50758183" sideWeight="0.3424" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30319735" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296582" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30319735" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.592" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24940239" sideWeight="0.6576" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32988048" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.0" sideWeight="0.6890849" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3109151" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32988048" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.49880478" sideWeight="0.6896" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3104" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15537849" sideWeight="0.6608" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15537849" sideWeight="0.6608" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.035856575" sideWeight="0.6576" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15537849" sideWeight="0.6608" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.035856575" sideWeight="0.6576" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24984066" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24984066" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -700,17 +642,34 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/res/layout/activity_log_list.xml">
-      <provider editor-type-id="android-designer">
-        <state />
+    <entry file="jar://$APPLICATION_HOME_DIR$/sdk/platforms/android-17/android.jar!/java/util/ArrayList.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="11" selection-start="351" selection-end="351" vertical-scroll-proportion="0.2003339" />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="0" selection-start="915" selection-end="915" vertical-scroll-proportion="0.47579297" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/activity_log_list.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="33" selection-start="265" selection-end="265" vertical-scroll-proportion="0.13066202" />
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gen/com/example/feedback_test_3/BuildConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="19" selection-start="137" selection-end="137" vertical-scroll-proportion="0.07512521" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="0" selection-start="598" selection-end="598" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/feedback_test_3/JSSEProvider.java">
@@ -732,12 +691,28 @@
         <state line="7" column="24" selection-start="251" selection-end="251" vertical-scroll-proportion="0.15025042" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/feedback_test_3/MakeMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="24" selection-start="51" selection-end="62" vertical-scroll-proportion="0.03405221">
+          <folding>
+            <element signature="method#send#0;class#MakeMessage#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/activity_main.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="0" selection-start="1465" selection-end="1465" vertical-scroll-proportion="0.68341124">
+          <folding />
+        </state>
+      </provider>
       <provider editor-type-id="android-designer">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/feedback_test_3/Preview.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="0" selection-start="1465" selection-end="1465" vertical-scroll-proportion="0.68341124">
+        <state line="82" column="1" selection-start="3237" selection-end="3237" vertical-scroll-proportion="1.296083">
           <folding />
         </state>
       </provider>
@@ -749,88 +724,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/feedback_test_3/Preview.java">
+    <entry file="file://$PROJECT_DIR$/src/com/example/feedback_test_3/GetData.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="82" column="1" selection-start="3229" selection-end="3229" vertical-scroll-proportion="0.94880545">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/sdk/platforms/android-17/android.jar!/android/content/Context.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="123" column="27" selection-start="6162" selection-end="6162" vertical-scroll-proportion="0.3327645">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/sdk/platforms/android-17/android.jar!/android/content/ContextWrapper.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="181" column="40" selection-start="10664" selection-end="10664" vertical-scroll-proportion="1.9726963">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/feedback_test_3/MakeMessage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="92" column="5" selection-start="3094" selection-end="3094" vertical-scroll-proportion="0.7321226">
+        <state line="215" column="0" selection-start="7635" selection-end="7635" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#writeToFile#0;class#MakeMessage#0" expanded="false" />
-            <element signature="method#populateZipFile#0;class#MakeMessage#0" expanded="false" />
-            <element signature="method#getRunningApps#0;class#MakeMessage#0" expanded="false" />
+            <element signature="method#GetData#0;class#GetData#0" expanded="false" />
+            <element signature="method#onPostExecute#0;class#GetData#0" expanded="false" />
+            <element signature="method#writeToFile#0;class#GetData#0" expanded="false" />
+            <element signature="method#getPhoneType#0;class#GetData#0" expanded="false" />
+            <element signature="method#getNetworkType#0;class#GetData#0" expanded="false" />
+            <element signature="method#getRunningApps#0;class#GetData#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/feedback_test_3/TestAsyncTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="9" selection-start="2188" selection-end="2188" vertical-scroll-proportion="0.0">
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/feedback_test_3/FeedbackSender.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="8" selection-start="1690" selection-end="1690" vertical-scroll-proportion="0.0">
+        <state line="70" column="44" selection-start="2744" selection-end="2744" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="initializer##0;class#FeedbackSender#0" expanded="false" />
             <element signature="method#FeedbackSender#0;class#FeedbackSender#0" expanded="false" />
+            <element signature="method#getPasswordAuthentication#0;class#FeedbackSender#0" expanded="false" />
+            <element signature="class#ByteArrayDataSource#0;class#FeedbackSender#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/feedback_test_3/GetData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="0" selection-start="1526" selection-end="1526" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="method#getNetworkType#0;class#GetData#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="21" selection-start="1464" selection-end="1464" vertical-scroll-proportion="0.0">
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/feedback_test_3/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="140" column="65" selection-start="5047" selection-end="5047" vertical-scroll-proportion="1.3789868">
+        <state line="169" column="74" selection-start="6012" selection-end="6012" vertical-scroll-proportion="3.788396">
           <folding>
-            <element signature="class#DeviceData#0;class#MainActivity#0" expanded="false" />
-            <element signature="class#StateParameters#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#addItemsToSpinner#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#2947#2955#0" expanded="true" />
-            <element signature="method#previewButtonClick#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#5243#5994#0" expanded="true" />
-            <element signature="e#5983#5984#0" expanded="true" />
-            <element signature="method#hideKeyboardOnStart#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#nameFiles#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#addFieldsToSpinnerList#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#6723#6731#0" expanded="true" />
-            <element signature="method#displaySendingMessage#0;class#MainActivity#0" expanded="false" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#2875#2883#0" expanded="true" />
+            <element signature="e#5204#6236#0" expanded="true" />
+            <element signature="e#6225#6226#0" expanded="true" />
+            <element signature="e#6965#6973#0" expanded="true" />
           </folding>
         </state>
       </provider>

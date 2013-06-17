@@ -13,7 +13,6 @@ import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.ActivityManager.RunningAppProcessInfo;
 import android.content.Intent;
-import android.os.Environment;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.View;
@@ -22,7 +21,6 @@ import android.widget.*;
 
 public class MainActivity extends Activity {
 
-    public static boolean testB = false;
 
     static String baseDir,systemLogFileName,eventsLogFileName,runningAppFileName;
 
@@ -144,7 +142,9 @@ public class MainActivity extends Activity {
 
         MakeMessage sendFeedback = new MakeMessage(Body.getText().toString());
 
-        final String feedbackBody = sendFeedback.message();
+        final String feedbackBody = sendFeedback.send();
+
+        Log.e("Logcat ", "here1");
 
         new Thread(new Runnable() {
             public void run() {
@@ -153,21 +153,29 @@ public class MainActivity extends Activity {
                     if( state.contains(StateParameters.includeSystemDataCheck) )
                     {
 
-                        sender.addAttachment( baseDir + File.separator + "zipTest1.zip", "zipTest1.zip");
+                        sender.addAttachment( baseDir + File.separator + "zipTest1.zip" , "zipTest1.zip");
 
                     }
 
+                    Log.e("Logcat ", "here2");
 
                     sender.sendMail("Feedback",feedbackBody,"abhishekkadiyan@gmail.com","abhishekkadiyan@gmail.com");
+
+                    systemLogFile.delete();
+                    eventsLogFile.delete();
+                    runningAppFile.delete();
+
+                    Log.e("Logcat ", "here3");
+
+                    (new File(baseDir + File.separator + "zipTest1.zip")).delete();
+
+                    Log.e("Logcat ", "here4");
 
                 }
                 catch(Exception e)
                 {
                     Log.e("error",e.getMessage(),e);
                 }
-
-                (new File(baseDir + File.separator + "zipTest1.zip")).delete();
-
             }
         }).start();
 

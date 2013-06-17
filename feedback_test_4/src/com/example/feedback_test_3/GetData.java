@@ -20,15 +20,10 @@ import java.util.zip.ZipOutputStream;
 public class GetData extends AsyncTask<Void, Integer, Void> {
 
     private final ProgressBar progress;
-
     private final RelativeLayout relativeLayout;
-
     private Context mainContext;
-
     PackageInfo manager;
-
     TelephonyManager tManager;
-
     ActivityManager activityManager;
 
     public GetData( final ProgressBar progress,final RelativeLayout relativeLayout ,Context cValue,PackageInfo mValue,TelephonyManager tValue,ActivityManager aValue) {
@@ -42,12 +37,6 @@ public class GetData extends AsyncTask<Void, Integer, Void> {
 
     @Override
     protected Void doInBackground(final Void... params) {
-
-//        try {
-//            Thread.sleep(10000);
-//            } catch(InterruptedException ex) {
-//            Thread.currentThread().interrupt();
-//            }
 
         MainActivity.DeviceData.packageName = mainContext.getPackageName();
 
@@ -85,15 +74,9 @@ public class GetData extends AsyncTask<Void, Integer, Void> {
 
         writeToFile(MainActivity.eventsLogFile,MainActivity.DeviceData.eventsLog);
 
-        writeToFile(MainActivity.runningAppFile,getRunningApps());
+        getRunningApps();
 
         populateZipFile();
-
-        MainActivity.systemLogFile.delete();
-
-        MainActivity.eventsLogFile.delete();
-
-        MainActivity.runningAppFile.delete();
 
         return null;
     }
@@ -103,7 +86,6 @@ public class GetData extends AsyncTask<Void, Integer, Void> {
         progress.setVisibility(View.GONE);
         relativeLayout.setVisibility(View.VISIBLE);
         MainActivity.state.add(MainActivity.StateParameters.dataLoad);
-//        MainActivity.testB = true;
     }
 
     void writeToFile(File f,String data)    {
@@ -176,10 +158,14 @@ public class GetData extends AsyncTask<Void, Integer, Void> {
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(process.getInputStream()));
             StringBuilder tempSystemLog = new StringBuilder();
             String line;
+            Log.e("Logcat ","here1");
+            int count = 0;
             while(null != (line = bufferedReader.readLine())) {
                 tempSystemLog.append(line);
                 tempSystemLog.append("\n");
+                count += line.length() + 1;
             }
+            Log.e("Logcat ","here2 " + count);
             String tempSystemLogString = (tempSystemLog.toString());
             int ind = Math.max(0,tempSystemLogString.length()-200000);
             if(ind>0)
@@ -189,7 +175,7 @@ public class GetData extends AsyncTask<Void, Integer, Void> {
                 if(tempSystemLogString.charAt(ind) == '\n' && ind != tempSystemLogString.length()-1)
                     ind++;
             }
-            MainActivity.DeviceData.systemLog = tempSystemLogString.substring(ind);
+            MainActivity.DeviceData.systemLog = "test".substring(0);
 
             Process processE = Runtime.getRuntime().exec("logcat -b events -v time -d ");
             BufferedReader bufferedReaderE = new BufferedReader(new InputStreamReader(processE.getInputStream()));
@@ -217,14 +203,14 @@ public class GetData extends AsyncTask<Void, Integer, Void> {
         }
     }
 
-    String getRunningApps() {
+    void getRunningApps() {
         StringBuilder temp = new StringBuilder();
         for(ActivityManager.RunningAppProcessInfo iterator : MainActivity.DeviceData.runningApps)
         {
             temp.append("\n");
             temp.append(iterator.processName);
         }
-        return temp.toString();
+        writeToFile(MainActivity.runningAppFile,temp.toString());
     }
 
     void populateZipFile() {
