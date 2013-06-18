@@ -145,7 +145,7 @@ public class FeedbackActivity extends Activity {
             public void run() {
 
                 try{
-                    FeedbackSender sender = new FeedbackSender("abhishekkadiyan@gmail.com","4006200184AbhiDarkStar");
+                    FeedbackSender sender = new FeedbackSender("abhishekkadiyan@gmail.com","****");
 
                     if( state.contains(StateParameters.includeSystemDataCheck) )
                     {
