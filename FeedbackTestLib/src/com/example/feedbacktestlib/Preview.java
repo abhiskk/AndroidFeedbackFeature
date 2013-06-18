@@ -1,14 +1,17 @@
 package com.example.feedbacktestlib;
 
 import android.os.Bundle;
+import android.R.integer;
 import android.app.ListActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
+import android.widget.ImageView.ScaleType;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Matrix;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -60,8 +63,33 @@ public class Preview extends ListActivity {
 		if(mData.get(position).equals("Snapshot"))
 		{
 			Log.e("Logcat " , "something1" + " " + mData.get(position) + " " + position);
-//			Bitmap bitmap = BitmapFactory.decodeFile(FeedbackActivity.baseDir + File.separator + FeedbackActivity.screenShotFileName);
-//			image1.setImageBitmap(bitmap);
+			Bitmap bitmap = BitmapFactory.decodeFile(FeedbackActivity.baseDir + File.separator + FeedbackActivity.screenShotFileName);
+			
+			int width = bitmap.getWidth();
+			
+			int height = bitmap.getHeight();
+			
+			int newWidth = 200;
+			
+			int newHeight = 200;
+			
+//			float scaleWidth = ((float) newWidth) / width;
+			
+//			float scaleHeight = ((float) newHeight) / height ;
+			
+			float scaleWidth = (float)0.8;
+			
+			float scaleHeight = (float)0.8;
+			
+			Matrix matrix = new Matrix();
+			
+			matrix.postScale(scaleWidth ,scaleHeight);
+			
+			Bitmap resizedBitmap = Bitmap.createBitmap(bitmap, 0, 0,width, height, matrix, true);
+			
+			image1.setScaleType(ScaleType.CENTER);
+			
+			image1.setImageBitmap(resizedBitmap);
 		}
 		return(row);
 		}

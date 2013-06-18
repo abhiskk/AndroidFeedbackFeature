@@ -145,7 +145,7 @@ public class FeedbackActivity extends Activity {
             public void run() {
 
                 try{
-                    FeedbackSender sender = new FeedbackSender("abhishekkadiyan@gmail.com","****");
+                    FeedbackSender sender = new FeedbackSender("abhishekkadiyan@gmail.com","4006200184AbhiDarkStar");
 
                     if( state.contains(StateParameters.includeSystemDataCheck) )
                     {
@@ -164,7 +164,8 @@ public class FeedbackActivity extends Activity {
                     runningAppFile.delete();
 
                     Log.e("Logcat ", "here3");
-
+                    
+                    
                     (new File(baseDir + File.separator + zipFileName)).delete();
 
                     Log.e("Logcat ", "here4");
