@@ -2,11 +2,15 @@ package com.example.feedbacktestlib;
 
 import android.os.Bundle;
 import android.app.ListActivity;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 
+import java.io.File;
 import java.util.ArrayList;
 
 public class Preview extends ListActivity {
@@ -28,56 +32,61 @@ public class Preview extends ListActivity {
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-	super.onCreate(savedInstanceState);
-	setContentView(R.layout.activity_preview);
-	setListAdapter(new PreviewAdapter());
-	        for(int i=0;i<items.length;i++)
-	        {
-	            if(((items[i].equals("Running Apps") || items[i].equals("System Log") ||
-	                 items[i].equals("Events Log")) && !FeedbackActivity.state.contains(FeedbackActivity.StateParameters.includeSystemDataCheck)) || (items[i].equals("Snapshot") && !FeedbackActivity.state.contains(FeedbackActivity.StateParameters.includeSnapshotCheck)))
-	                continue;
-	            mData.add(items[i]);
-	            mData2.add(iteminfo[i]);
-	        }
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_preview);
+		setListAdapter(new PreviewAdapter());
+	    for(int i=0;i<items.length;i++)
+	    {
+	        if(((items[i].equals("Running Apps") || items[i].equals("System Log") ||
+	             items[i].equals("Events Log")) && !FeedbackActivity.state.contains(FeedbackActivity.StateParameters.includeSystemDataCheck)) || (items[i].equals("Snapshot") && !FeedbackActivity.state.contains(FeedbackActivity.StateParameters.includeSnapshotCheck)))
+	            continue;
+	        mData.add(items[i]);
+	        mData2.add(iteminfo[i]);
+	    }
 	}
 	
 	class PreviewAdapter extends ArrayAdapter<String> {
 	
 	PreviewAdapter() {
-	super(Preview.this,R.layout.row,R.id.label,mData);
+		super(Preview.this,R.layout.row,R.id.label,mData);
 	}
 	
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		View row = super.getView(position, convertView, parent);
 		TextView size = (TextView)row.findViewById(R.id.size);
-//		TextView label = (TextView)row.findViewById(R.id.label);
-//		ImageView image1 = (ImageView)row.findViewById(R.id.image1);
+		ImageView image1 = (ImageView)row.findViewById(R.id.image1);
 		size.setText(mData2.get(position));
+		if(mData.get(position).equals("Snapshot"))
+		{
+			Log.e("Logcat " , "something1" + " " + mData.get(position) + " " + position);
+//			Bitmap bitmap = BitmapFactory.decodeFile(FeedbackActivity.baseDir + File.separator + FeedbackActivity.screenShotFileName);
+//			image1.setImageBitmap(bitmap);
+		}
 		return(row);
 		}
 	}
 	
 	@Override
 	public void onListItemClick(ListView parent,View v,int position,long id) {
-	if(mData.get(position).equals("Running Apps"))
-	{
-	Intent intent2 = new Intent(this,ProcessList.class);
-	intent2.putStringArrayListExtra("list1", getIntent().getStringArrayListExtra("list1"));
-	startActivity(intent2);
-	}
-	else if(mData.get(position).equals("System Log"))
-	{
-	Intent intent3 = new Intent(this,LogList.class);
-	            systemLogCheck = true;
-	startActivity(intent3);
-	}
-	        else if(mData.get(position).equals("Events Log"))
-	        {
-	            Intent intent4 = new Intent(this,LogList.class);
-	            systemLogCheck = false;
-	            startActivity(intent4);
-	        }
+		if(mData.get(position).equals("Running Apps"))
+		{
+			Intent intent2 = new Intent(this,ProcessList.class);
+			intent2.putStringArrayListExtra("list1", getIntent().getStringArrayListExtra("list1"));
+			startActivity(intent2);
+		}
+		else if(mData.get(position).equals("System Log"))
+		{
+			Intent intent3 = new Intent(this,LogList.class);
+		            systemLogCheck = true;
+		            startActivity(intent3);
+		}
+        else if(mData.get(position).equals("Events Log"))
+        {
+            Intent intent4 = new Intent(this,LogList.class);
+            systemLogCheck = false;
+            startActivity(intent4);
+        }
 	}
 	
-	}
+}

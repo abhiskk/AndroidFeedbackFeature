@@ -27,9 +27,9 @@ import android.widget.Toast;
 
 public class FeedbackActivity extends Activity {
 
-	static String baseDir,systemLogFileName,eventsLogFileName,runningAppFileName,zipFileName;
+	static String baseDir,systemLogFileName,eventsLogFileName,runningAppFileName,zipFileName,screenShotFileName;
 
-    static File systemLogFile,eventsLogFile,runningAppFile;
+    static File systemLogFile,eventsLogFile,runningAppFile,screenShotFile;
 
     public enum DeviceData {
         Instance;
@@ -50,6 +50,9 @@ public class FeedbackActivity extends Activity {
 		
 		setContentView(R.layout.activity_feedback);
 		
+		Intent intent = getIntent();
+		
+		screenShotFileName = intent.getStringExtra("screenShotFilePath");
 
         hideKeyboardOnStart();
 
@@ -147,6 +150,7 @@ public class FeedbackActivity extends Activity {
                     if( state.contains(StateParameters.includeSystemDataCheck) )
                     {
                         sender.addAttachment( baseDir + File.separator + zipFileName , zipFileName);
+//                        sender.addAttachment( screenShotFileName,"something1.jpeg");
                     }
 
                     Log.e("Logcat ", "here2");
@@ -195,6 +199,8 @@ public class FeedbackActivity extends Activity {
 
         runningAppFileName = "RunningApps.txt";
         runningAppFile = new File(baseDir + File.separator + runningAppFileName);
+        
+        screenShotFile = new File(baseDir + File.separator + screenShotFileName);
 
         zipFileName = "ZipTest.zip";
     }
