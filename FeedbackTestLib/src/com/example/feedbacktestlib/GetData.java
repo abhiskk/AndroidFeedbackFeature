@@ -155,27 +155,25 @@ public class GetData extends AsyncTask<Void, Integer, Void> {
 
     void getLogs() {
         try {
-//
-//            Process process = Runtime.getRuntime().exec("logcat -v time -d");
-//            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(process.getInputStream()));
-//            StringBuilder tempSystemLog = new StringBuilder();
-//            String line;
-//            while(null != (line = bufferedReader.readLine())) {
-//                tempSystemLog.append(line);
-//                tempSystemLog.append("\n");
-//            }
-//            String tempSystemLogString = (tempSystemLog.toString());
-//            int ind = Math.max(0,tempSystemLogString.length()-200000);
-//            if(ind>0)
-//            {
-//                while(!(tempSystemLogString.charAt(ind) == '\n'))
-//                    ind++;
-//                if(tempSystemLogString.charAt(ind) == '\n' && ind != tempSystemLogString.length()-1)
-//                    ind++;
-//            }
-//            FeedbackActivity.DeviceData.systemLog = tempSystemLogString.substring(ind);
 
-        	FeedbackActivity.DeviceData.systemLog = "something";
+            Process process = Runtime.getRuntime().exec("logcat -v time -d");
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+            StringBuilder tempSystemLog = new StringBuilder();
+            String line;
+            while(null != (line = bufferedReader.readLine())) {
+                tempSystemLog.append(line);
+                tempSystemLog.append("\n");
+            }
+            String tempSystemLogString = (tempSystemLog.toString());
+            int ind = Math.max(0,tempSystemLogString.length()-200000);
+            if(ind>0)
+            {
+                while(!(tempSystemLogString.charAt(ind) == '\n'))
+                    ind++;
+                if(tempSystemLogString.charAt(ind) == '\n' && ind != tempSystemLogString.length()-1)
+                    ind++;
+            }
+            FeedbackActivity.DeviceData.systemLog = tempSystemLogString.substring(ind);
         	
             Process processE = Runtime.getRuntime().exec("logcat -b events -v time -d ");
             BufferedReader bufferedReaderE = new BufferedReader(new InputStreamReader(processE.getInputStream()));

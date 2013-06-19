@@ -23,7 +23,7 @@ public class MainActivity extends Activity {
 		
 	}
 	
-	public void snap(View v)
+	public void snap(View v) 
 	{
 		Bitmap bitmap;
 		View v1 = v.getRootView();

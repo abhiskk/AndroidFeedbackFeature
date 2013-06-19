@@ -41,8 +41,9 @@ public final class R {
 		public static final int activity_log_list = 0x7f030001;
 		public static final int activity_preview = 0x7f030003;
 		public static final int activity_process_list = 0x7f030004;
-		public static final int row = 0x7f030005;
-		public static final int running_apps = 0x7f030006;
+		public static final int row_normal = 0x7f030005;
+		public static final int row_screenshot = 0x7f030006;
+		public static final int running_apps = 0x7f030007;
 	}
 	public static final class menu {
 		public static final int feedback = 0x7f070000;
