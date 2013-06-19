@@ -221,7 +221,7 @@ public class GetData extends AsyncTask<Void, Integer, Void> {
             FileOutputStream fos = new FileOutputStream(FeedbackActivity.baseDir + File.separator + FeedbackActivity.zipFileName);
             ZipOutputStream zos = new ZipOutputStream(fos);
 
-            String[] files = {FeedbackActivity.systemLogFileName , FeedbackActivity.eventsLogFileName , FeedbackActivity.runningAppFileName , FeedbackActivity.screenShotFileName};
+            String[] files = {FeedbackActivity.systemLogFileName , FeedbackActivity.eventsLogFileName , FeedbackActivity.runningAppFileName};
 
             for(int i=0;i<files.length;i++)
             {

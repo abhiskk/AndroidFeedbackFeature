@@ -149,8 +149,12 @@ public class FeedbackActivity extends Activity {
 
                     if( state.contains(StateParameters.includeSystemDataCheck) )
                     {
-                        sender.addAttachment( baseDir + File.separator + zipFileName , zipFileName);
-//                        sender.addAttachment( screenShotFileName,"something1.jpeg");
+                        sender.addAttachment( baseDir + File.separator + zipFileName , zipFileName);                        
+                    }
+                    
+                    if(state.contains(StateParameters.includeSnapshotCheck) )
+                    {
+                    	sender.addAttachment( baseDir + File.separator + screenShotFileName , screenShotFileName);
                     }
 
                     Log.e("Logcat ", "here2");
@@ -158,13 +162,8 @@ public class FeedbackActivity extends Activity {
                     sender.sendMail("Feedback",feedbackBody,"abhishekkadiyan@gmail.com","abhishekkadiyan@gmail.com");
 
                     Log.e("Logcat ","here7");
-
-                    systemLogFile.delete();
-                    eventsLogFile.delete();
-                    runningAppFile.delete();
-
-                    Log.e("Logcat ", "here3");
                     
+                    screenShotFile.delete();
                     
                     (new File(baseDir + File.separator + zipFileName)).delete();
 

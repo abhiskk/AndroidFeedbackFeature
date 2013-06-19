@@ -1,13 +1,13 @@
 package com.example.feedbacktestlib;
 
 import android.os.Bundle;
-import android.R.integer;
 import android.app.ListActivity;
-import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
 import android.widget.ImageView.ScaleType;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -51,31 +51,25 @@ public class Preview extends ListActivity {
 	class PreviewAdapter extends ArrayAdapter<String> {
 	
 	PreviewAdapter() {
-		super(Preview.this,R.layout.row,R.id.label,mData);
+		super(Preview.this,R.id.label,mData);
 	}
 	
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
-		View row = super.getView(position, convertView, parent);
-		TextView size = (TextView)row.findViewById(R.id.size);
-		ImageView image1 = (ImageView)row.findViewById(R.id.image1);
-		size.setText(mData2.get(position));
+		
+		View row = convertView;
+		
+		LayoutInflater vi = (LayoutInflater)getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
 		if(mData.get(position).equals("Snapshot"))
 		{
-			Log.e("Logcat " , "something1" + " " + mData.get(position) + " " + position);
+			row = vi.inflate(R.layout.row_screenshot, null);
+			
 			Bitmap bitmap = BitmapFactory.decodeFile(FeedbackActivity.baseDir + File.separator + FeedbackActivity.screenShotFileName);
 			
 			int width = bitmap.getWidth();
 			
 			int height = bitmap.getHeight();
-			
-			int newWidth = 200;
-			
-			int newHeight = 200;
-			
-//			float scaleWidth = ((float) newWidth) / width;
-			
-//			float scaleHeight = ((float) newHeight) / height ;
 			
 			float scaleWidth = (float)0.8;
 			
@@ -87,11 +81,33 @@ public class Preview extends ListActivity {
 			
 			Bitmap resizedBitmap = Bitmap.createBitmap(bitmap, 0, 0,width, height, matrix, true);
 			
+			ImageView image1 = (ImageView)row.findViewById(R.id.image1);
+			
 			image1.setScaleType(ScaleType.CENTER);
 			
 			image1.setImageBitmap(resizedBitmap);
+			
+			TextView size = (TextView)row.findViewById(R.id.size);
+			
+			size.setText(mData2.get(position));
 		}
-		return(row);
+		
+		else {
+			
+			row = vi.inflate(R.layout.row_normal, null);
+			
+		}
+		
+		TextView label = (TextView)row.findViewById(R.id.label);
+		
+		label.setText(mData.get(position));
+		
+		TextView size = (TextView)row.findViewById(R.id.size);
+		
+		size.setText(mData2.get(position));
+		
+		return (row);
+		
 		}
 	}
 	

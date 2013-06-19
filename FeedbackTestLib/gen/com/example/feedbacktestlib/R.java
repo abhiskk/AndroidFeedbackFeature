@@ -50,8 +50,9 @@ public final class R {
         public static int activity_log_list=0x7f030001;
         public static int activity_preview=0x7f030002;
         public static int activity_process_list=0x7f030003;
-        public static int row=0x7f030004;
-        public static int running_apps=0x7f030005;
+        public static int row_normal=0x7f030004;
+        public static int row_screenshot=0x7f030005;
+        public static int running_apps=0x7f030006;
     }
     public static final class menu {
         public static int feedback=0x7f070000;
