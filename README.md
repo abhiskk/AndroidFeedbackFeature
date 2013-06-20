@@ -10,7 +10,6 @@
 	- < uses-permission android:name = "android.permission.READ_LOGS" / >
 	- < activity android:name = "com.example.feedbacktestlib.FeedbackActivity / >
 	- < activity android:name = "com.example.feedbacktestlib.LogList / >
-	- < activity android:name = "com.example.feedbacktestlib.MakeMessage" / >
 	- < activity android:name = "com.example.feedbacktestlib.Preview / >
 	- < activity android:name = "com.exmaple.feedbacktestlib.ProcessList" / >
 

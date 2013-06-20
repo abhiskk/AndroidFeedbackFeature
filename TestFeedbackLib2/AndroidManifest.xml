@@ -36,10 +36,6 @@
             />
         
         <activity
-            android:name="com.example.feedbacktestlib.MakeMessage"
-            />
-        
-        <activity
             android:name="com.example.feedbacktestlib.Preview"
             />
         
