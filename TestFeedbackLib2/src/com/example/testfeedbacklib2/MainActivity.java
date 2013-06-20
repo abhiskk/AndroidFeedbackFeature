@@ -1,17 +1,13 @@
 package com.example.testfeedbacklib2;
 
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
 
 import com.example.feedbacktestlib.FeedbackActivity;
+import com.example.feedbacktestlib.Screenshot;
 
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -19,6 +15,8 @@ import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
+	private String screenshotFileName = "something.jpeg";
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -44,33 +42,11 @@ public class MainActivity extends Activity {
     }
 	
 	public void snap(View v) 
-	{
-		Bitmap bitmap;
-		View v1 = v.getRootView();
-		v1.setDrawingCacheEnabled(true);
-		bitmap = Bitmap.createBitmap(v1.getDrawingCache());
-		v1.setDrawingCacheEnabled(false);
-		
-		String mPath = getFilesDir().getAbsolutePath() + File.separator + "something1.jpeg";
-		
-		OutputStream fout = null;
-		File imageFile = new File(mPath);
-		
-
-		try {
-		    fout = new FileOutputStream(imageFile);
-		    bitmap.compress(Bitmap.CompressFormat.JPEG, 90, fout);
-		    fout.flush();
-		    fout.close();
-		
-		} catch (FileNotFoundException e) {
-		    e.printStackTrace();
-		} catch (IOException e) {
-		    e.printStackTrace();
-		}
+	{	
+		(new Screenshot()).takeScreenShot(v.getRootView(), getFilesDir().getAbsolutePath() + File.separator + screenshotFileName);
 		
 		Intent intent = new Intent(this,FeedbackActivity.class);
-		intent.putExtra("screenShotFilePath", "something1.jpeg");
+		intent.putExtra("screenShotFilePath", screenshotFileName);
 		startActivity(intent);
 		
 	}
