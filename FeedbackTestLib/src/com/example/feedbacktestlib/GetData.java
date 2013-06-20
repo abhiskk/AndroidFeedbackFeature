@@ -173,7 +173,10 @@ public class GetData extends AsyncTask<Void, Integer, Void> {
                 if(tempSystemLogString.charAt(ind) == '\n' && ind != tempSystemLogString.length()-1)
                     ind++;
             }
-            FeedbackActivity.DeviceData.systemLog = tempSystemLogString.substring(ind);
+            
+        	FeedbackActivity.DeviceData.systemLog = tempSystemLogString.substring(ind);
+        	
+//        	FeedbackActivity.DeviceData.systemLog = "something";
         	
             Process processE = Runtime.getRuntime().exec("logcat -b events -v time -d ");
             BufferedReader bufferedReaderE = new BufferedReader(new InputStreamReader(processE.getInputStream()));

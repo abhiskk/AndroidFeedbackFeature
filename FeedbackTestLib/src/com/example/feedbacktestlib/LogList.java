@@ -6,15 +6,15 @@ import android.widget.TextView;
 
 public class LogList extends Activity {
 
-@Override
-protected void onCreate(Bundle savedInstanceState) {
-super.onCreate(savedInstanceState);
-setContentView(R.layout.activity_log_list);
-TextView tv = (TextView)findViewById(R.id.textview1);
-        if( Preview.systemLogCheck )
-            tv.setText(FeedbackActivity.DeviceData.systemLog);
-        else
-            tv.setText(FeedbackActivity.DeviceData.eventsLog);
-}
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_log_list);
+		TextView tv = (TextView)findViewById(R.id.textview1);
+        	if( Preview.systemLogCheck )
+           		tv.setText(FeedbackActivity.DeviceData.systemLog);
+        	else
+            		tv.setText(FeedbackActivity.DeviceData.eventsLog);
+	}
 
 }

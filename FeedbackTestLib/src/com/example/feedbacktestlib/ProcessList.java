@@ -15,21 +15,18 @@ import android.widget.ListView;
 
 public class ProcessList extends Activity {
 
-  @Override
-  protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_process_list);
+	@Override
+  	protected void onCreate(Bundle savedInstanceState) {
+    		super.onCreate(savedInstanceState);
+    		setContentView(R.layout.activity_process_list);
 
-//    Intent intent = getIntent();
+    		final ListView listview = (ListView) findViewById(R.id.listview);
 
+  		List<String> runningAppsList = new ArrayList<String>();
 
-    final ListView listview = (ListView) findViewById(R.id.listview);
-
-  List<String> runningAppsList = new ArrayList<String>();
-
-  for( ActivityManager.RunningAppProcessInfo runningAppsIterator : FeedbackActivity.DeviceData.runningApps)
-      runningAppsList.add(runningAppsIterator.processName);
-    ArrayList<String> list = (ArrayList<String>) runningAppsList;
-    listview.setAdapter(new ArrayAdapter<String>(this,R.layout.running_apps,list));
-  }
+  		for( ActivityManager.RunningAppProcessInfo runningAppsIterator : FeedbackActivity.DeviceData.runningApps)
+      			runningAppsList.add(runningAppsIterator.processName);
+    		ArrayList<String> list = (ArrayList<String>) runningAppsList;
+    		listview.setAdapter(new ArrayAdapter<String>(this,R.layout.running_apps,list));
+  	}
 }

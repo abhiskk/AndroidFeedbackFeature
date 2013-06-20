@@ -29,204 +29,202 @@ public class FeedbackActivity extends Activity {
 
 	static String baseDir,systemLogFileName,eventsLogFileName,runningAppFileName,zipFileName,screenShotFileName;
 
-    static File systemLogFile,eventsLogFile,runningAppFile,screenShotFile;
+    	static File systemLogFile,eventsLogFile,runningAppFile,screenShotFile;
 
-    public enum DeviceData {
-        Instance;
-        public static String packageName,packageVersion,currentDate,device,sdkVersion,buildId,buildRelease,buildType,
+    	public enum DeviceData {
+        	Instance;
+        	public static String packageName,packageVersion,currentDate,device,sdkVersion,buildId,buildRelease,buildType,
                 buildFingerPrint,brand,phoneType,networkType,systemLog,eventsLog,userId;
-        public static List<RunningAppProcessInfo> runningApps;
-    }
+        	public static List<RunningAppProcessInfo> runningApps;
+    	}
 
-    public enum StateParameters {
-        includeSystemDataCheck,includeSnapshotCheck,systemLogCheck,sendAsAnonymous,dataLoad
-    }
+    	public enum StateParameters {
+        	includeSystemDataCheck,includeSnapshotCheck,systemLogCheck,sendAsAnonymous,dataLoad
+    	}
 
-    public static EnumSet<StateParameters> state = EnumSet.noneOf(StateParameters.class);
+    	public static EnumSet<StateParameters> state = EnumSet.noneOf(StateParameters.class);
 	
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
+		@Override
+		protected void onCreate(Bundle savedInstanceState) {
+			super.onCreate(savedInstanceState);
 		
-		setContentView(R.layout.activity_feedback);
+			setContentView(R.layout.activity_feedback);
 		
-		Intent intent = getIntent();
+			Intent intent = getIntent();
 		
-		screenShotFileName = intent.getStringExtra("screenShotFilePath");
+			screenShotFileName = intent.getStringExtra("screenShotFilePath");
 
-        hideKeyboardOnStart();
+        		hideKeyboardOnStart();
 
-        nameFiles();
+        		nameFiles();
 
-        addItemsToSpinner();
+        		addItemsToSpinner();
 
-        final ProgressBar progress = (ProgressBar)findViewById(R.id.progressBar);
-        final RelativeLayout layoutMain = (RelativeLayout)findViewById(R.id.layoutMain);
+       			final ProgressBar progress = (ProgressBar)findViewById(R.id.progressBar);
+        		final RelativeLayout layoutMain = (RelativeLayout)findViewById(R.id.layoutMain);
         
-        if ( savedInstanceState != null && savedInstanceState.getBoolean("dataLoad"))
-            progress.setVisibility(View.GONE);
-        else
-        {
+        		if ( savedInstanceState != null && savedInstanceState.getBoolean("dataLoad"))
+            			progress.setVisibility(View.GONE);
+        		else
+        		{
 
-            layoutMain.setVisibility(View.GONE);
-            try{
-                PackageInfo manager = getPackageManager().getPackageInfo(getPackageName(),0);
-                new GetData(progress,layoutMain,getApplicationContext(),manager,(TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE),(ActivityManager)this.getSystemService(ACTIVITY_SERVICE)).execute();
-            } catch (PackageManager.NameNotFoundException e) {
-                Log.e("Logcat ", e.getMessage(), e);
-            }
-        }
+            			layoutMain.setVisibility(View.GONE);
+            			try{
+                			PackageInfo manager = getPackageManager().getPackageInfo(getPackageName(),0);
+                			new GetData(progress,layoutMain,getApplicationContext(),manager,(TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE),(ActivityManager)this.getSystemService(ACTIVITY_SERVICE)).execute();
+            		   	} catch (PackageManager.NameNotFoundException e) {
+                			Log.e("Logcat ", e.getMessage(), e);
+            		   	}
+        		}
 		
-	}
+		}
 	
-	@Override
-    public void onSaveInstanceState(Bundle savedInstanceState) {
-        super.onSaveInstanceState(savedInstanceState);
-        savedInstanceState.putBoolean("dataLoad",state.contains(StateParameters.dataLoad));
-    }
+		@Override
+    	public void onSaveInstanceState(Bundle savedInstanceState) {
+        	super.onSaveInstanceState(savedInstanceState);
+        	savedInstanceState.putBoolean("dataLoad",state.contains(StateParameters.dataLoad));
+    	}
 	
-	public void systemAndSnapshotButtonClick(View v) {
-		
-        int id = v.getId();
-		if (id == R.id.buttonSystemData) {
+    	public void systemAndSnapshotButtonClick(View v) {
+    		int id = v.getId();
+    		if (id == R.id.buttonSystemData) {
 			CheckBox checkSystemData = (CheckBox) findViewById(R.id.checkBoxSystemData);
 			checkSystemData.setChecked(!checkSystemData.isChecked());
-		} else if (id == R.id.buttonSnapShot) {
+    		} else if (id == R.id.buttonSnapShot) {
 			CheckBox checkSnapShot = (CheckBox) findViewById(R.id.checkBoxSnapshot);
 			checkSnapShot.setChecked(!checkSnapShot.isChecked());
-		}
-
-    }
+			}
+    	}
 	
-	public void previewButtonClick(View v) {
-        Intent intent = new Intent(this,Preview.class);
+		public void previewButtonClick(View v) {
+        		Intent intent = new Intent(this,Preview.class);
 
-        CheckBox includeSystemData = (CheckBox)findViewById(R.id.checkBoxSystemData);
-        if(includeSystemData.isChecked())
-            state.add(StateParameters.includeSystemDataCheck);
-        else
-            state.remove(StateParameters.includeSystemDataCheck);
+        		CheckBox includeSystemData = (CheckBox)findViewById(R.id.checkBoxSystemData);
+        		if(includeSystemData.isChecked())
+            			state.add(StateParameters.includeSystemDataCheck);
+        		else
+            			state.remove(StateParameters.includeSystemDataCheck);
 
-        CheckBox includeSnapshot = (CheckBox)findViewById(R.id.checkBoxSnapshot);
-        if(includeSnapshot.isChecked())
-            state.add(StateParameters.includeSnapshotCheck);
-        else
-            state.remove(StateParameters.includeSnapshotCheck);
+        		CheckBox includeSnapshot = (CheckBox)findViewById(R.id.checkBoxSnapshot);
+        		if(includeSnapshot.isChecked())
+            			state.add(StateParameters.includeSnapshotCheck);
+       			 else
+            			state.remove(StateParameters.includeSnapshotCheck);
 
-        startActivity(intent);
-    }
+        		startActivity(intent);
+    		}
 	
-	public void sendButtonClick(View v) {
+		public void sendButtonClick(View v) {
 		
-		final EditText Body = (EditText) findViewById(R.id.EditText1);
+			final EditText Body = (EditText) findViewById(R.id.EditText1);
 
-        Spinner sendAsSpinner = (Spinner)findViewById(R.id.sendAsSpinner);
+        		Spinner sendAsSpinner = (Spinner)findViewById(R.id.sendAsSpinner);
 
-        if(sendAsSpinner.getSelectedItem().toString().equals("Anonymous"))
-            state.add(StateParameters.sendAsAnonymous);
-        else
-            state.remove(StateParameters.sendAsAnonymous);
+        		if(sendAsSpinner.getSelectedItem().toString().equals("Anonymous"))
+            			state.add(StateParameters.sendAsAnonymous);
+        		else
+            		state.remove(StateParameters.sendAsAnonymous);
 
-        CheckBox includeSystemDataCheckBox = (CheckBox)findViewById(R.id.checkBoxSystemData);
-        if(includeSystemDataCheckBox.isChecked())
-            state.add(StateParameters.includeSystemDataCheck);
-        else
-            state.remove(StateParameters.includeSystemDataCheck);
+        		CheckBox includeSystemDataCheckBox = (CheckBox)findViewById(R.id.checkBoxSystemData);
+        		
+			if(includeSystemDataCheckBox.isChecked())
+            			state.add(StateParameters.includeSystemDataCheck);
+        		else
+            			state.remove(StateParameters.includeSystemDataCheck);
 
-        displaySendingMessage();
-//
-        MakeMessage sendFeedback = new MakeMessage(Body.getText().toString());
+        		displaySendingMessage();
 
-        final String feedbackBody = sendFeedback.send();
+        		MakeMessage sendFeedback = new MakeMessage(Body.getText().toString());
 
-        Log.e("Logcat ", "here1");
+        		final String feedbackBody = sendFeedback.send();
 
-        new Thread(new Runnable() {
-            public void run() {
+        		Log.e("Logcat ", "here1");
 
-                try{
-                    FeedbackSender sender = new FeedbackSender("abhishekkadiyan@gmail.com","****");
+        		new Thread(new Runnable() {
+            			
+				public void run() {
 
-                    if( state.contains(StateParameters.includeSystemDataCheck) )
-                    {
-                        sender.addAttachment( baseDir + File.separator + zipFileName , zipFileName);                        
-                    }
+                			try{
+                    				FeedbackSender sender = new FeedbackSender("abhishekkadiyan@gmail.com","****");
+
+                    				if( state.contains(StateParameters.includeSystemDataCheck) )
+                    				{
+                        				sender.addAttachment( baseDir + File.separator + zipFileName , zipFileName);                        
+                    				}
                     
-                    if(state.contains(StateParameters.includeSnapshotCheck) )
-                    {
-                    	sender.addAttachment( baseDir + File.separator + screenShotFileName , screenShotFileName);
-                    }
+                    				if(state.contains(StateParameters.includeSnapshotCheck) )
+                    				{
+                    					sender.addAttachment( baseDir + File.separator + screenShotFileName , screenShotFileName);
+                    				}
 
-                    Log.e("Logcat ", "here2");
+                    				Log.e("Logcat ", "here2");
 
-                    sender.sendMail("Feedback",feedbackBody,"abhishekkadiyan@gmail.com","abhishekkadiyan@gmail.com");
+                    				sender.sendMail("Feedback",feedbackBody,"abhishekkadiyan@gmail.com","abhishekkadiyan@gmail.com,abhishek.ka@directi.com");
 
-                    Log.e("Logcat ","here7");
+                    				Log.e("Logcat ","here7");
                     
-                    screenShotFile.delete();
+                    				screenShotFile.delete();
                     
-                    (new File(baseDir + File.separator + zipFileName)).delete();
+                    				(new File(baseDir + File.separator + zipFileName)).delete();
 
-                    Log.e("Logcat ", "here4");
+                    				Log.e("Logcat ", "here4");
 
-                }
-                catch(Exception e)
-                {
-                    Log.e("error",e.getMessage(),e);
-                }
-            }
-        }).start();
+                			}
+                			catch(Exception e)
+                			{
+                    				Log.e("error",e.getMessage(),e);
+                			}
+            			}
+        		}).start();
 
+        		finish();
 
-
-        finish();
-
-}
+    		}
 	
-	public void hideKeyboardOnStart() {
-        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
-    }
+		public void hideKeyboardOnStart() {
+        		getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
+    		}
 
-    public void nameFiles() {
+    		public void nameFiles() {
 
-        baseDir = getFilesDir().getAbsolutePath();
+        		baseDir = getFilesDir().getAbsolutePath();
 
-        systemLogFileName = "SystemLog.txt";
-        systemLogFile = new File(baseDir + File.separator + systemLogFileName);
+        		systemLogFileName = "SystemLog.txt";
+        		systemLogFile = new File(baseDir + File.separator + systemLogFileName);
 
-        eventsLogFileName = "EventsLog.txt";
-        eventsLogFile = new File(baseDir + File.separator + eventsLogFileName);
+        		eventsLogFileName = "EventsLog.txt";
+        		eventsLogFile = new File(baseDir + File.separator + eventsLogFileName);
 
-        runningAppFileName = "RunningApps.txt";
-        runningAppFile = new File(baseDir + File.separator + runningAppFileName);
+        		runningAppFileName = "RunningApps.txt";
+        		runningAppFile = new File(baseDir + File.separator + runningAppFileName);
         
-        screenShotFile = new File(baseDir + File.separator + screenShotFileName);
+        		screenShotFile = new File(baseDir + File.separator + screenShotFileName);
 
-        zipFileName = "ZipTest.zip";
-    }
+        		zipFileName = "ZipTest.zip";
+    		}
     
-    public void addItemsToSpinner() {
+    		public void addItemsToSpinner() {
 
-        Spinner spinner = (Spinner) findViewById(R.id.sendAsSpinner);
+        		Spinner spinner = (Spinner) findViewById(R.id.sendAsSpinner);
 
-        List<String> list = addFieldsToSpinnerList();
+        		List<String> list = addFieldsToSpinnerList();
 
-        ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,list);
+        		ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,list);
 
-        spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(spinnerAdapter);
+        		spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        		spinner.setAdapter(spinnerAdapter);
 
-    }
+    		}
 
-    List<String> addFieldsToSpinnerList() {
-        List<String> list = new ArrayList<String>();
-        list.add("abcd@xyz.com");
-        list.add("Anonymous");
-        return list;
-    }
+    		List<String> addFieldsToSpinnerList() {
+        		List<String> list = new ArrayList<String>();
+        		list.add("abcd@xyz.com");
+        		list.add("Anonymous");
+        		return list;
+    		}
 
-    public void displaySendingMessage() {
-        Toast.makeText(this,"Your feedback is being sent",Toast.LENGTH_SHORT).show();
-    }
+    		public void displaySendingMessage() {
+        		Toast.makeText(this,"Your feedback is being sent",Toast.LENGTH_SHORT).show();
+    		}
 
 }
