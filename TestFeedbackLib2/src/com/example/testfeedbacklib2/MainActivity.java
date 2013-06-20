@@ -53,8 +53,8 @@ public class MainActivity extends Activity {
 	
 	public void change(View v)
 	{
-		TextView temp = (TextView)findViewById(R.id.temp1);
-		temp.setText("nothing");
+		TextView textView = (TextView)findViewById(R.id.testText);
+		textView.setText("(-_-)");
 	}
 
 }

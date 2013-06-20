@@ -10,7 +10,7 @@ public class LogList extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_log_list);
-		TextView tv = (TextView)findViewById(R.id.textview1);
+		TextView tv = (TextView)findViewById(R.id.logText);
         	if( Preview.systemLogCheck )
            		tv.setText(FeedbackActivity.DeviceData.systemLog);
         	else

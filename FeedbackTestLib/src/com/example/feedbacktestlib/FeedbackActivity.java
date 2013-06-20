@@ -117,7 +117,7 @@ public class FeedbackActivity extends Activity {
 	
 		public void sendButtonClick(View v) {
 		
-			final EditText Body = (EditText) findViewById(R.id.EditText1);
+			final EditText Body = (EditText) findViewById(R.id.EditText);
 
         		Spinner sendAsSpinner = (Spinner)findViewById(R.id.sendAsSpinner);
 

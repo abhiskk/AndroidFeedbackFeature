@@ -14,6 +14,9 @@
 	- < activity android:name = "com.example.feedbacktestlib.Preview / >
 	- < activity android:name = "com.exmaple.feedbacktestlib.ProcessList" / >
 
+* For taking screenshot use takeScreenshot method of ScreenShot class. Eg
+	- (new Screenshot()).takeScreenShot(v.getRootView(), getFilesDir().getAbsolutePath() + File.separator + screenshotFileName);
+
 * For starting the feedback activity create an intent and put the location of the screenshot image file in the intent and start the activity. Eg
 	- Intent feedbackIntent = new Intent( this , FeedbackActivity.class ) ;
 	- feedbackIntent.putExtra ( "screentshotFilePath" , "nameOfFileToBeAttachedToMail.jpeg" ) ;

@@ -51,7 +51,7 @@ public class Preview extends ListActivity {
 	class PreviewAdapter extends ArrayAdapter<String> {
 	
 		PreviewAdapter() {
-			super(Preview.this,R.id.label,mData);
+			super(Preview.this,R.id.mainText,mData);
 		}
 
 		@Override
@@ -103,24 +103,24 @@ public class Preview extends ListActivity {
 	
 				Bitmap resizedBitmap = Bitmap.createBitmap(bitmap, 0, 0,width, height, matrix, true);
 	
-				ImageView image1 = (ImageView)row.findViewById(R.id.image1);
+				ImageView image1 = (ImageView)row.findViewById(R.id.screenshotImage);
 	
 				image1.setScaleType(ScaleType.CENTER);
 	
 				image1.setImageBitmap(resizedBitmap);
 	
-				TextView label = (TextView)row.findViewById(R.id.label);
+				TextView label = (TextView)row.findViewById(R.id.mainText);
 	
 				label.setText(mData2.get(position));
 			}
 
 			else if( getItemViewType(position) == 0) {
 
-				TextView label = (TextView)row.findViewById(R.id.label);
+				TextView label = (TextView)row.findViewById(R.id.mainText);
 
 				label.setText(mData.get(position));
 
-				TextView size = (TextView)row.findViewById(R.id.size);
+				TextView size = (TextView)row.findViewById(R.id.subText);
 
 				size.setText(mData2.get(position));
 	
