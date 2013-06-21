@@ -17,6 +17,8 @@ public class MainActivity extends Activity {
 
 	private String screenshotFileName = "something.jpeg";
 	
+	private int cnt = 0;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -46,7 +48,6 @@ public class MainActivity extends Activity {
 		(new Screenshot()).takeScreenShot(v.getRootView(), getFilesDir().getAbsolutePath() + File.separator + screenshotFileName);
 		
 		Intent intent = new Intent(this,FeedbackActivity.class);
-		intent.putExtra("screenShotFilePath", screenshotFileName);
 		startActivity(intent);
 		
 	}
@@ -54,7 +55,13 @@ public class MainActivity extends Activity {
 	public void change(View v)
 	{
 		TextView textView = (TextView)findViewById(R.id.testText);
-		textView.setText("(-_-)");
+		cnt++ ;
+		String temp = "";
+		for(int i=0;i<Math.min(cnt, 5);i++)
+			temp += (" (-_-) ");
+		if(cnt > 5 )
+			temp += "I give up!";
+		textView.setText(temp);
 	}
 
 }

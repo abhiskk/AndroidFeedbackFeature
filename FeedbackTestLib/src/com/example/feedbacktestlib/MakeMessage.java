@@ -14,10 +14,12 @@ public class MakeMessage extends FeedbackActivity {
         StringBuilder feedbackBodyStringBuilder = new StringBuilder();
         feedbackBodyStringBuilder.append("Sent by : ");
 
-        if(state.contains(StateParameters.sendAsAnonymous))
-            feedbackBodyStringBuilder.append("Anonymous");
-        else
-            feedbackBodyStringBuilder.append(DeviceData.userId);
+//        if(state.contains(StateParameters.sendAsAnonymous))
+//            feedbackBodyStringBuilder.append("Anonymous");
+//        else
+//            feedbackBodyStringBuilder.append(DeviceData.userId);
+        
+        feedbackBodyStringBuilder.append(DeviceData.senderIdentity);
 
         feedbackBodyStringBuilder.append("\n\nMessage : ");
         feedbackBodyStringBuilder.append(feedbackBody);

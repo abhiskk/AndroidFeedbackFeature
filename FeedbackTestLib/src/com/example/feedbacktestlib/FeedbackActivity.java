@@ -3,9 +3,15 @@ package com.example.feedbacktestlib;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.EnumSet;
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
+import java.util.regex.Pattern;
 
 import android.os.Bundle;
+import android.accounts.Account;
+import android.accounts.AccountManager;
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.ActivityManager.RunningAppProcessInfo;
@@ -15,6 +21,7 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.telephony.TelephonyManager;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ArrayAdapter;
@@ -34,12 +41,12 @@ public class FeedbackActivity extends Activity {
     	public enum DeviceData {
         	Instance;
         	public static String packageName,packageVersion,currentDate,device,sdkVersion,buildId,buildRelease,buildType,
-                buildFingerPrint,brand,phoneType,networkType,systemLog,eventsLog,userId;
+                buildFingerPrint,brand,phoneType,networkType,systemLog,eventsLog,userId,senderIdentity;
         	public static List<RunningAppProcessInfo> runningApps;
     	}
 
     	public enum StateParameters {
-        	includeSystemDataCheck,includeSnapshotCheck,systemLogCheck,sendAsAnonymous,dataLoad
+        	includeSystemDataCheck,includeSnapshotCheck,systemLogCheck,dataLoad
     	}
 
     	public static EnumSet<StateParameters> state = EnumSet.noneOf(StateParameters.class);
@@ -50,10 +57,6 @@ public class FeedbackActivity extends Activity {
 			
 		
 			setContentView(R.layout.activity_feedback);
-		
-			Intent intent = getIntent();
-		
-			screenShotFileName = intent.getStringExtra("screenShotFilePath");
 
         		hideKeyboardOnStart();
 
@@ -121,10 +124,12 @@ public class FeedbackActivity extends Activity {
 
         		Spinner sendAsSpinner = (Spinner)findViewById(R.id.sendAsSpinner);
 
-        		if(sendAsSpinner.getSelectedItem().toString().equals("Anonymous"))
-            			state.add(StateParameters.sendAsAnonymous);
-        		else
-            		state.remove(StateParameters.sendAsAnonymous);
+//        		if(sendAsSpinner.getSelectedItem().toString().equals("Anonymous"))
+//            			state.add(StateParameters.sendAsAnonymous);
+//        		else
+//            		state.remove(StateParameters.sendAsAnonymous);
+        		
+        		DeviceData.senderIdentity = sendAsSpinner.getSelectedItem().toString();
 
         		CheckBox includeSystemDataCheckBox = (CheckBox)findViewById(R.id.checkBoxSystemData);
         		
@@ -202,6 +207,8 @@ public class FeedbackActivity extends Activity {
         		screenShotFile = new File(baseDir + File.separator + screenShotFileName);
 
         		zipFileName = "ZipTest.zip";
+        		
+        		screenShotFileName = "something.jpeg";
     		}
     
     		public void addItemsToSpinner() {
@@ -219,8 +226,24 @@ public class FeedbackActivity extends Activity {
 
     		List<String> addFieldsToSpinnerList() {
         		List<String> list = new ArrayList<String>();
-        		list.add("abcd@xyz.com");
         		list.add("Anonymous");
+        		
+        		Pattern emailPattern = Patterns.EMAIL_ADDRESS;
+        		Account[] accounts = AccountManager.get(getApplicationContext()).getAccounts();
+        		
+        		Set<String> accountsSet = new HashSet<String>();
+        		
+        		for (Account account : accounts) {
+        			if (emailPattern.matcher(account.name).matches()) {
+        				accountsSet.add(account.name);
+        			}
+        		}
+        		
+        		Iterator<String> accountsSetIterator = accountsSet.iterator();
+        		while(accountsSetIterator.hasNext()) {
+        			list.add(accountsSetIterator.next());
+        		}
+        		
         		return list;
     		}
 
