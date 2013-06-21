@@ -19,6 +19,7 @@ public class MainActivity extends Activity {
 	
 	private int cnt = 0;
 	
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

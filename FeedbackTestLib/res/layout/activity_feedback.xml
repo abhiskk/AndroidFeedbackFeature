@@ -29,8 +29,8 @@
 
             <View
                     android:layout_width="fill_parent"
-                    android:layout_height="1dip"
-                    android:background="#000000"
+                    android:layout_height="3sp"
+                    android:background="?android:attr/dividerHorizontal"
                     />
 
             <LinearLayout
@@ -38,34 +38,55 @@
                 android:layout_height="49dip"
                 android:orientation="horizontal">
 
-                <Button
-                        android:id="@+id/sendButton"
-                        android:layout_height="fill_parent"
-                        android:layout_width="0dip"
-                        android:text="@string/sendButton_text"
-                        android:onClick="sendButtonClick"
-                        android:layout_weight="1"
-                        android:textSize="13sp"
-                        android:background="?android:attr/selectableItemBackground"
-                        />
+                <RelativeLayout
+                    android:layout_height="fill_parent"
+                    android:layout_width="0dip"
+                    android:layout_weight="1"
+                    >
+                
+	                <Button
+	                        android:id="@+id/sendButton"
+	                        android:layout_height="fill_parent"
+	                        android:layout_width="fill_parent"
+	                        android:text="@string/sendButton_text"
+	                        android:onClick="sendButtonClick"
+	                        android:textSize="13sp"
+	                        android:background="?android:attr/selectableItemBackground"
+	                        />
+	                
+	                <View
+	                    	android:layout_width="1.5sp"
+	                    	android:layout_height="fill_parent"
+	                    	android:background="?android:attr/dividerHorizontal"
+	                    	android:layout_alignParentRight="true"
+	                    	/>
+	                    	
+                
+                </RelativeLayout>
+                
+                <RelativeLayout
+                    android:layout_height = "fill_parent"
+                    android:layout_width = "0dip"
+                    android:layout_weight = "1"
+                    >
 
-                <View
-                        android:layout_width="0dip"
-                        android:layout_height="fill_parent"
-                        android:layout_weight="0.01"
-                        android:background="#000000"
-                        />
-
-                <Button
-                        android:id="@+id/previewButton"
-                        android:layout_height="fill_parent"
-                        android:layout_width="0dp"
-                        android:text="@string/previewButton_text"
-                        android:onClick="previewButtonClick"
-                        android:layout_weight="1"
-                        android:textSize="13sp"
-                        android:background="?android:attr/selectableItemBackground"
-                        />
+	                <Button
+	                        android:id="@+id/previewButton"
+	                        android:layout_height="fill_parent"
+	                        android:layout_width="fill_parent"
+	                        android:text="@string/previewButton_text"
+	                        android:onClick="previewButtonClick"
+	                        android:textSize="13sp"
+	                        android:background="?android:attr/selectableItemBackground"
+	                        />
+	                
+	                <View
+	                    	android:layout_width="1.5sp"
+	                    	android:layout_height="fill_parent"
+	                    	android:background="?android:attr/dividerHorizontal"
+	                    	/>
+                
+                </RelativeLayout>
 
             </LinearLayout>
 
