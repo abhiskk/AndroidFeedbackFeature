@@ -1,7 +1,7 @@
 <RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:scrollbars="vertical"
         android:orientation="vertical"
 >
@@ -105,7 +105,7 @@
                 <LinearLayout
                         android:id="@+id/layoutEditText"
                         android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:scrollbars="vertical"
                         android:minHeight="150dp"
                         android:orientation="vertical"
@@ -117,7 +117,7 @@
                               android:minLines="3"
                               android:hint="@string/edittext_hint1"
                               android:scrollbars="vertical"
-                              android:gravity="top|left"
+                              android:gravity="left"    
                             />
 
                 </LinearLayout>

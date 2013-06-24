@@ -2,9 +2,12 @@ package com.example.feedbacktestlib;
 
 import android.os.Bundle;
 import android.app.ListActivity;
+import android.util.Log;
+import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.*;
 import android.widget.ImageView.ScaleType;
 import android.content.Context;
@@ -33,10 +36,26 @@ public class Preview extends ListActivity {
 
 	private ArrayList<String> mData2 = new ArrayList<String>();
 
+	@SuppressWarnings("deprecation")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_preview);
+//		super.setTheme(R.style.AppBaseTheme);
+
+		Display d = getWindowManager().getDefaultDisplay();
+		
+		Log.e("Logcat ","lite " + d.getHeight());
+		
+		if(d.getHeight()>800) {
+		
+			WindowManager.LayoutParams params = getWindow().getAttributes();
+			
+			params.height = 800;
+			
+			this.getWindow().setAttributes(params);
+		
+		}
 		setListAdapter(new PreviewAdapter());
 		for(int i=0;i<items.length;i++)
 		{
@@ -93,9 +112,9 @@ public class Preview extends ListActivity {
 	
 				int height = bitmap.getHeight();
 	
-				float scaleWidth = (float)0.8;
+				float scaleWidth = (float)0.5;
 	
-				float scaleHeight = (float)0.8;
+				float scaleHeight = (float)0.5;
 	
 				Matrix matrix = new Matrix();
 	

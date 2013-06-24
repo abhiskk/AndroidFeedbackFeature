@@ -1,10 +1,15 @@
 <component name="libraryTable">
   <library name="dexedLibs">
     <CLASSES>
+      <root url="jar://$PROJECT_DIR$/bin/dexedLibs/activation-829e783af461b76698cdf21b31c207b5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/dexedLibs/activation-f4bd9b9e721ec16aa8677333b4b19fcc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/dexedLibs/mail-ddb8c7771af3570f1dd44d6ff7f0b2ad.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/dexedLibs/feedbacktestlib-58633d028c1f5ebd8ac441169f2495f7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/dexedLibs/additionnal-9d568cd86128efef4dcf99a2f81513cb.jar!/" />
       <root url="jar://$PROJECT_DIR$/bin/dexedLibs/mail-fc8331d03ba53f4d5c6f3fecd89a5864.jar!/" />
       <root url="jar://$PROJECT_DIR$/bin/dexedLibs/additionnal-bf7e928b8e07e845868bb3bfc97f1179.jar!/" />
-      <root url="jar://$PROJECT_DIR$/bin/dexedLibs/activation-f4bd9b9e721ec16aa8677333b4b19fcc.jar!/" />
-      <root url="jar://$PROJECT_DIR$/bin/dexedLibs/feedbacktestlib-58633d028c1f5ebd8ac441169f2495f7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/dexedLibs/feedbacktestlib-f6c8117be48277279945c561510f9ebf.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/dexedLibs/android-support-v4-3dc9a221d1abf2b9499f83ddbb2c984b.jar!/" />
       <root url="jar://$PROJECT_DIR$/bin/dexedLibs/android-support-v4-4b14ba92e46397605a359e51961a23ff.jar!/" />
     </CLASSES>
     <JAVADOC />

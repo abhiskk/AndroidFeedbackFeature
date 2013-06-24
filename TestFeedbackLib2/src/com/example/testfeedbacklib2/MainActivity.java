@@ -42,15 +42,13 @@ public class MainActivity extends Activity {
                     snap(findViewById(R.id.something1));
             }
             return true;
-    }
+    } 
 	
 	public void snap(View v) 
 	{	
 		(new Screenshot()).takeScreenShot(v.getRootView(), getFilesDir().getAbsolutePath() + File.separator + screenshotFileName);
-		
 		Intent intent = new Intent(this,FeedbackActivity.class);
 		startActivity(intent);
-		
 	}
 	
 	public void change(View v)

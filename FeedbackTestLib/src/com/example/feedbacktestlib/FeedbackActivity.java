@@ -22,6 +22,7 @@ import android.content.pm.PackageManager;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.util.Patterns;
+import android.view.Display;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ArrayAdapter;
@@ -51,13 +52,29 @@ public class FeedbackActivity extends Activity {
 
     	public static EnumSet<StateParameters> state = EnumSet.noneOf(StateParameters.class);
 	
+		@SuppressWarnings("deprecation")
 		@Override
 		protected void onCreate(Bundle savedInstanceState) {
 			super.onCreate(savedInstanceState);
-			
-		
-			setContentView(R.layout.activity_feedback);
 
+			setContentView(R.layout.activity_feedback);
+			
+//			super.setTheme(R.style.AppBaseTheme);
+
+			Display d = getWindowManager().getDefaultDisplay();
+			
+//			Log.e("Logcat ","lite " + d.getHeight());
+			
+			if(d.getHeight()>800) {
+			
+				WindowManager.LayoutParams params = getWindow().getAttributes();
+				
+				params.height = 800;
+				
+				this.getWindow().setAttributes(params);
+			
+			}
+		
         		hideKeyboardOnStart();
 
         		nameFiles();
