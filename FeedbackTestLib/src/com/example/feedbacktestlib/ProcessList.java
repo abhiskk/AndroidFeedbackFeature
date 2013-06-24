@@ -4,12 +4,13 @@ import java.util.ArrayList;
 //import java.util.HashMap;
 import java.util.List;
 
+import com.example.feedbacktestlib.FeedbackActivity.StateParameters;
+
 import android.app.Activity;
 import android.app.ActivityManager;
 //import android.content.Context;
 //import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Display;
 import android.view.WindowManager;
 //import android.view.View;
@@ -22,22 +23,26 @@ public class ProcessList extends Activity {
 	@Override
   	protected void onCreate(Bundle savedInstanceState) {
     		super.onCreate(savedInstanceState);
+    		if(!FeedbackActivity.state.contains(StateParameters.tablet))
+    			super.setTheme(R.style.AppBaseTheme);
     		setContentView(R.layout.activity_process_list);
-//			super.setTheme(R.style.AppBaseTheme);
+//			
 
-			Display d = getWindowManager().getDefaultDisplay();
-			
-			Log.e("Logcat ","lite " + d.getHeight());
-			
-			if(d.getHeight()>800) {
-			
-				WindowManager.LayoutParams params = getWindow().getAttributes();
+    		if(FeedbackActivity.state.contains(StateParameters.tablet)) {
 				
-				params.height = 800;
+				Display d = getWindowManager().getDefaultDisplay();
 				
-				this.getWindow().setAttributes(params);
+				if(d.getHeight()>800) {
+				
+					WindowManager.LayoutParams params = getWindow().getAttributes();
+					
+					params.height = 800;
+					
+					this.getWindow().setAttributes(params);
+				
+				}
+    		}
 			
-			}
     		final ListView listview = (ListView) findViewById(R.id.listview);
 
   		List<String> runningAppsList = new ArrayList<String>();

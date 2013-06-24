@@ -10,9 +10,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="@android:style/Widget.Holo.ProgressBar.Large"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight = "5dp" />
+            android:layout_marginRight = "5dp"
+            android:layout_gravity = "center_vertical|center_horizontal" />
 
     <RelativeLayout android:id="@+id/layoutMain"
         android:layout_width="match_parent"

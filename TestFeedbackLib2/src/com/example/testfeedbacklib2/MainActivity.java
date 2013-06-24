@@ -2,12 +2,11 @@ package com.example.testfeedbacklib2;
 
 import java.io.File;
 
-import com.example.feedbacktestlib.FeedbackActivity;
 import com.example.feedbacktestlib.Screenshot;
+import com.example.feedbacktestlib.Starter;
 
 import android.os.Bundle;
 import android.app.Activity;
-import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -47,8 +46,8 @@ public class MainActivity extends Activity {
 	public void snap(View v) 
 	{	
 		(new Screenshot()).takeScreenShot(v.getRootView(), getFilesDir().getAbsolutePath() + File.separator + screenshotFileName);
-		Intent intent = new Intent(this,FeedbackActivity.class);
-		startActivity(intent);
+		Starter starter = new Starter(this, "abhishekkadiyan@gmail.com", "****", "abhishekkadiyan@gmail.com");
+		starter.start();
 	}
 	
 	public void change(View v)

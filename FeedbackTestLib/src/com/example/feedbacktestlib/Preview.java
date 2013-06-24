@@ -19,6 +19,8 @@ import android.graphics.Matrix;
 import java.io.File;
 import java.util.ArrayList;
 
+import com.example.feedbacktestlib.FeedbackActivity.StateParameters;
+
 public class Preview extends ListActivity {
 
     	public static boolean systemLogCheck;
@@ -40,21 +42,25 @@ public class Preview extends ListActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		if(!FeedbackActivity.state.contains(StateParameters.tablet))
+			super.setTheme(R.style.AppBaseTheme);
 		setContentView(R.layout.activity_preview);
-//		super.setTheme(R.style.AppBaseTheme);
 
-		Display d = getWindowManager().getDefaultDisplay();
-		
-		Log.e("Logcat ","lite " + d.getHeight());
-		
-		if(d.getHeight()>800) {
-		
-			WindowManager.LayoutParams params = getWindow().getAttributes();
+		if(FeedbackActivity.state.contains(StateParameters.tablet))
+		{
+			Display d = getWindowManager().getDefaultDisplay();
 			
-			params.height = 800;
+			Log.e("Logcat ","lite " + d.getHeight());
 			
-			this.getWindow().setAttributes(params);
-		
+			if(d.getHeight()>800) {
+			
+				WindowManager.LayoutParams params = getWindow().getAttributes();
+				
+				params.height = 800;
+				
+				this.getWindow().setAttributes(params);
+			
+			}
 		}
 		setListAdapter(new PreviewAdapter());
 		for(int i=0;i<items.length;i++)

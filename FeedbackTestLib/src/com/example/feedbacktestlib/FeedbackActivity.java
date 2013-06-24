@@ -19,6 +19,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.content.res.Configuration;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.util.Patterns;
@@ -47,7 +48,7 @@ public class FeedbackActivity extends Activity {
     	}
 
     	public enum StateParameters {
-        	includeSystemDataCheck,includeSnapshotCheck,systemLogCheck,dataLoad
+        	includeSystemDataCheck,includeSnapshotCheck,systemLogCheck,dataLoad,tablet
     	}
 
     	public static EnumSet<StateParameters> state = EnumSet.noneOf(StateParameters.class);
@@ -56,22 +57,31 @@ public class FeedbackActivity extends Activity {
 		@Override
 		protected void onCreate(Bundle savedInstanceState) {
 			super.onCreate(savedInstanceState);
-
+			
+			if(!isTablet(this))
+			{
+				super.setTheme(R.style.AppBaseTheme);
+			}
+			
+			else {
+				state.add(StateParameters.tablet);
+			}
+			
 			setContentView(R.layout.activity_feedback);
 			
-//			super.setTheme(R.style.AppBaseTheme);
-
-			Display d = getWindowManager().getDefaultDisplay();
-			
-//			Log.e("Logcat ","lite " + d.getHeight());
-			
-			if(d.getHeight()>800) {
-			
-				WindowManager.LayoutParams params = getWindow().getAttributes();
+				if(isTablet(this)) {
 				
-				params.height = 800;
+				Display d = getWindowManager().getDefaultDisplay();
 				
-				this.getWindow().setAttributes(params);
+				if(d.getHeight()>800) {
+				
+					WindowManager.LayoutParams params = getWindow().getAttributes();
+					
+					params.height = 800;
+					
+					this.getWindow().setAttributes(params);
+				
+				}
 			
 			}
 		
@@ -168,7 +178,7 @@ public class FeedbackActivity extends Activity {
 				public void run() {
 
                 			try{
-                    				FeedbackSender sender = new FeedbackSender("abhishekkadiyan@gmail.com","****");
+                    				FeedbackSender sender = new FeedbackSender(Starter.emailAccount,Starter.emailPassword);
 
                     				if( state.contains(StateParameters.includeSystemDataCheck) )
                     				{
@@ -182,7 +192,7 @@ public class FeedbackActivity extends Activity {
 
                     				Log.e("Logcat ", "here2");
 
-                    				sender.sendMail("Feedback",feedbackBody,"abhishekkadiyan@gmail.com","abhishekkadiyan@gmail.com,abhishek.ka@directi.com");
+                    				sender.sendMail("Feedback",feedbackBody,Starter.emailAccount,Starter.receivingAccounts);
 
                     				Log.e("Logcat ","here7");
                     
@@ -266,6 +276,10 @@ public class FeedbackActivity extends Activity {
 
     		public void displaySendingMessage() {
         		Toast.makeText(this,"Your feedback is being sent",Toast.LENGTH_SHORT).show();
+    		}
+    		
+    		public boolean isTablet(Context context) {
+    			return (context.getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK) >= Configuration.SCREENLAYOUT_SIZE_LARGE;
     		}
 
 }
