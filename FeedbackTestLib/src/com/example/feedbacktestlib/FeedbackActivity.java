@@ -164,6 +164,13 @@ public class FeedbackActivity extends Activity {
             			state.add(StateParameters.includeSystemDataCheck);
         		else
             			state.remove(StateParameters.includeSystemDataCheck);
+			
+				CheckBox includeSnapshotCheckBox = (CheckBox)findViewById(R.id.checkBoxSnapshot);
+				
+				if(includeSnapshotCheckBox.isChecked())
+					state.add(StateParameters.includeSnapshotCheck);
+				else
+					state.remove(StateParameters.includeSnapshotCheck);
 
         		displaySendingMessage();
 

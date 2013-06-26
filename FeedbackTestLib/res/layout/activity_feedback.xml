@@ -4,14 +4,14 @@
         android:layout_height="wrap_content"
         android:scrollbars="vertical"
         android:orientation="vertical"
+        android:layout_gravity = "center_vertical|center_horizontal"
 >
 
     <ProgressBar android:id = "@+id/progressBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="@android:style/Widget.Holo.ProgressBar.Large"
-            android:layout_marginRight = "5dp"
-            android:layout_gravity = "center_vertical|center_horizontal" />
+            android:layout_marginRight = "5dp" />
 
     <RelativeLayout android:id="@+id/layoutMain"
         android:layout_width="match_parent"
