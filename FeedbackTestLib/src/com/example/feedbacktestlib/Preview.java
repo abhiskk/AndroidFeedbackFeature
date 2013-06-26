@@ -1,6 +1,7 @@
 package com.example.feedbacktestlib;
 
 import android.os.Bundle;
+import android.R.integer;
 import android.app.ListActivity;
 import android.util.Log;
 import android.view.Display;
@@ -117,10 +118,20 @@ public class Preview extends ListActivity {
 				int width = bitmap.getWidth();
 	
 				int height = bitmap.getHeight();
+				
+				Display d = getWindowManager().getDefaultDisplay();
+				
+				int width2 = d.getWidth();
+				
+				float scaleWidth = (float) Math.min(0.25, (float) width2 / width );
+				
+				Log.e("Logcat " , "temp " + scaleWidth);
 	
-				float scaleWidth = (float)0.5;
+				float scaleHeight = scaleWidth;
+				
+//				float scaleWidth = (float)0.5;
 	
-				float scaleHeight = (float)0.5;
+//				float scaleHeight = (float)0.5;
 	
 				Matrix matrix = new Matrix();
 	
@@ -136,7 +147,7 @@ public class Preview extends ListActivity {
 	
 				TextView label = (TextView)row.findViewById(R.id.mainText);
 	
-				label.setText(mData2.get(position));
+				label.setText(mData.get(position));
 			}
 
 			else if( getItemViewType(position) == 0) {
