@@ -1,4 +1,6 @@
 
+(README SHOULD BE UPDATED)
+
 * FeedbackTestLib is an Android Library Project .
 
 * Can be used for providing a feedback feature for apps .
