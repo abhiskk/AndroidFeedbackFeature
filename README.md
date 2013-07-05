@@ -1,6 +1,3 @@
-
-(README SHOULD BE UPDATED)
-
 * FeedbackTestLib is an Android Library Project .
 
 * Can be used for providing a feedback feature for apps .
@@ -8,19 +5,19 @@
 * To use it download it and add it as a library to your project . To add as a library go to Project -> properties -> Add library -> browse and select.
 
 * Add the following lines to your AndroidManifest.xml
-	- <uses-permission android:name = "android.permission.INTERNET" />
-	- <uses-permission android:name = "android.permission.READ_LOGS" />
-	- <uses-permission android:name = "android.permission.GET_ACCOUNTS />
-	- <activity
+	- \<uses-permission android:name = "android.permission.INTERNET" />
+	- \<uses-permission android:name = "android.permission.READ_LOGS" />
+	- \<uses-permission android:name = "android.permission.GET_ACCOUNTS />
+	- \<activity
 		android:theme = "@android:style/Theme.Holo.Light.Dialog" 
 		android:name = "com.example.feedbacktestlib.FeedbackActivity />
-	- <activity 
+	- \<activity 
 		android:theme = "@android:style/Theme.Holo.Light.Dialog" 
 		android:name = "com.example.feedbacktestlib.LogList />
-	- <activity 
+	- \<activity 
 		android:theme = "@android:style/Theme.Holo.Light.Dialog" 
 		android:name = "com.example.feedbacktestlib.Preview />
-	- <activity 
+	- \<activity 
 		android:theme = "@android:style/Theme.Holo.Light.Dialog" 
 		android:name = "com.exmaple.feedbacktestlib.ProcessList" />
 
