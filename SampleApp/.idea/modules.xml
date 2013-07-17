@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../FeedbackLibrary/FeedbackLibrary.iml" filepath="$PROJECT_DIR$/../FeedbackLibrary/FeedbackLibrary.iml" />
-      <module fileurl="file://$PROJECT_DIR$/SampleApp.iml" filepath="$PROJECT_DIR$/SampleApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TestFeedbackLib2.iml" filepath="$PROJECT_DIR$/TestFeedbackLib2.iml" />
     </modules>
   </component>
 </project>

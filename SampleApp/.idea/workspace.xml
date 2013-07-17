@@ -30,13 +30,13 @@
     <list default="true" id="f389b373-542d-49ce-b3fb-4d60a82ea324" name="Default" comment="" />
     <ignored path="TestFeedbackLib2.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/fragment.java" changelist="f389b373-542d-49ce-b3fb-4d60a82ea324" time="1373622858248" ignored="false" />
+    <file path="/fragment.java" changelist="f389b373-542d-49ce-b3fb-4d60a82ea324" time="1374043081185" ignored="false" />
     <file path="/Dummy.txt" changelist="f389b373-542d-49ce-b3fb-4d60a82ea324" time="1374041635821" ignored="false" />
     <file path="/FeedbackActivity.java" changelist="f389b373-542d-49ce-b3fb-4d60a82ea324" time="1373957279082" ignored="false" />
     <file path="/Preview.java" changelist="f389b373-542d-49ce-b3fb-4d60a82ea324" time="1373895896001" ignored="false" />
     <file path="/PaintView.java" changelist="f389b373-542d-49ce-b3fb-4d60a82ea324" time="1373635093796" ignored="false" />
     <file path="/EditScreenshot.java" changelist="f389b373-542d-49ce-b3fb-4d60a82ea324" time="1373631920692" ignored="false" />
-    <file path="/AndroidManifest.xml" changelist="f389b373-542d-49ce-b3fb-4d60a82ea324" time="1374041346577" ignored="false" />
+    <file path="/AndroidManifest.xml" changelist="f389b373-542d-49ce-b3fb-4d60a82ea324" time="1374042713281" ignored="false" />
     <file path="$PROJECT_DIR$/../FeedbackTestLib/gen/com/example/feedbacktestlib/BuildConfig.java" changelist="f389b373-542d-49ce-b3fb-4d60a82ea324" time="1373628740696" ignored="false" />
     <file path="/FingerPaint.java" changelist="f389b373-542d-49ce-b3fb-4d60a82ea324" time="1373957920801" ignored="false" />
     <file path="/activity_main.xml" changelist="f389b373-542d-49ce-b3fb-4d60a82ea324" time="1373949020911" ignored="false" />
@@ -83,7 +83,6 @@
     <file path="$PROJECT_DIR$/.idea/libraries/dexedLibs.xml" changelist="f389b373-542d-49ce-b3fb-4d60a82ea324" time="1374041698231" ignored="false" />
     <file path="$PROJECT_DIR$/res/layout/main.xml" changelist="f389b373-542d-49ce-b3fb-4d60a82ea324" time="1374041987374" ignored="false" />
     <file path="$PROJECT_DIR$/src/com/example/SampleApp/MyActivity.java" changelist="f389b373-542d-49ce-b3fb-4d60a82ea324" time="1374041917774" ignored="false" />
-    <file path="$PROJECT_DIR$/build.xml" changelist="f389b373-542d-49ce-b3fb-4d60a82ea324" time="1374041917774" ignored="false" />
     <file path="$PROJECT_DIR$/res/values/strings.xml" changelist="f389b373-542d-49ce-b3fb-4d60a82ea324" time="1374041917774" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -144,31 +143,22 @@
     <favorites_list name="TestFeedbackLib2" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5193983">
+    <splitter split-orientation="horizontal" split-proportion="0.5122399">
       <split-first>
         <leaf>
           <file leaf-file-name="FeedbackActivity.java" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/../FeedbackLibrary/src/com/example/feedbacktestlib/FeedbackActivity.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="275" column="0" selection-start="9533" selection-end="9533" vertical-scroll-proportion="0.0">
+                <state line="77" column="14" selection-start="2489" selection-end="2489" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Preview.java" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="Preview.java" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/../FeedbackLibrary/src/com/example/feedbacktestlib/Preview.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="117" column="49" selection-start="4578" selection-end="4578" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="AndroidManifest.xml" pinned="false" current="true" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="61" column="0" selection-start="2227" selection-end="2227" vertical-scroll-proportion="0.8913044">
+                <state line="38" column="50" selection-start="1791" selection-end="1791" vertical-scroll-proportion="-0.42502952">
                   <folding />
                 </state>
               </provider>
@@ -226,19 +216,19 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/../FeedbackLibrary/AndroidManifest.xml">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="2" column="46" selection-start="154" selection-end="154" vertical-scroll-proportion="0.0">
+                <state line="23" column="69" selection-start="1000" selection-end="1000" vertical-scroll-proportion="0.39160046">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="FeedbackSender.java" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="FeedbackSender.java" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/../FeedbackLibrary/src/com/example/feedbacktestlib/FeedbackSender.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="12" column="0" selection-start="334" selection-end="334" vertical-scroll-proportion="0.01724138">
+                <state line="12" column="0" selection-start="334" selection-end="334" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -270,8 +260,8 @@
         <option value="$PROJECT_DIR$/../FeedbackTestLib/src/com/example/feedbacktestlib/Preview.java" />
         <option value="$PROJECT_DIR$/src/com/example/testfeedbacklib2/MainActivity.java" />
         <option value="$PROJECT_DIR$/../FeedbackLibrary/src/com/example/feedbacktestlib/Screenshot.java" />
-        <option value="$PROJECT_DIR$/../FeedbackLibrary/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/../FeedbackLibrary/AndroidManifest.xml" />
       </list>
     </option>
   </component>
@@ -317,6 +307,30 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TestFeedbackLib2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SampleApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TestFeedbackLib2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SampleApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="libs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="PackagesPane" />
@@ -329,7 +343,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/workspace/test/EChat" />
     <property name="AndroidLayoutSelectedEditor" value="text-editor" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="001938b214b7be" />
@@ -339,6 +353,11 @@
     <property name="restartRequiresConfirmation" value="true" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/libs" />
+    </key>
   </component>
   <component name="RunManager" selected="Android Application.TestFeedbackLib2">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -531,12 +550,13 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32855567" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32673267" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32986537" sideWeight="0.5413451" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32007343" sideWeight="0.6714443" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32007343" sideWeight="0.6714443" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19471948" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32986537" sideWeight="0.6714443" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -545,7 +565,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296582" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32855567" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -659,42 +678,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../FeedbackLibrary/src/com/example/feedbacktestlib/FeedbackActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="275" column="0" selection-start="9533" selection-end="9533" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/adt-bundle-linux-x86_64-20130514/sdk/platforms/android-17/android.jar!/android/graphics/Path.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="41" column="16" selection-start="1337" selection-end="1337" vertical-scroll-proportion="0.33293977" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../FeedbackLibrary/src/com/example/feedbacktestlib/PictureLayout.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="36" selection-start="36" selection-end="36" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../FeedbackLibrary/src/com/example/feedbacktestlib/FingerPaint.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="78" selection-start="1454" selection-end="1454" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../FeedbackLibrary/src/com/example/feedbacktestlib/FeedbackSender.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="0" selection-start="334" selection-end="334" vertical-scroll-proportion="0.01724138">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../FeedbackLibrary/src/com/example/feedbacktestlib/Preview.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="117" column="49" selection-start="4578" selection-end="4578" vertical-scroll-proportion="0.0">
+        <state line="12" column="0" selection-start="334" selection-end="334" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -706,16 +697,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../FeedbackLibrary/src/com/example/feedbacktestlib/PictureLayout.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="36" selection-start="36" selection-end="36" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../FeedbackLibrary/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="46" selection-start="154" selection-end="154" vertical-scroll-proportion="0.0">
+        <state line="23" column="69" selection-start="1000" selection-end="1000" vertical-scroll-proportion="0.39160046">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../FeedbackLibrary/src/com/example/feedbacktestlib/FeedbackActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="77" column="14" selection-start="2489" selection-end="2489" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../FeedbackLibrary/src/com/example/feedbacktestlib/FingerPaint.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="78" selection-start="1454" selection-end="1454" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="0" selection-start="2227" selection-end="2227" vertical-scroll-proportion="0.8913044">
+        <state line="61" column="0" selection-start="2227" selection-end="2227" vertical-scroll-proportion="0.89104116">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../FeedbackLibrary/src/com/example/feedbacktestlib/Preview.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="50" selection-start="1791" selection-end="1791" vertical-scroll-proportion="-0.42502952">
           <folding />
         </state>
       </provider>

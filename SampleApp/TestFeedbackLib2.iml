@@ -24,7 +24,7 @@
     <orderEntry type="jdk" jdkName="Android 4.2.2 Platform" jdkType="Android SDK" />
     <orderEntry type="library" name="com.android.ide.eclipse.adt.DEPENDENCIES" level="application" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="FeedbackTestLib" />
+    <orderEntry type="module" module-name="FeedbackLibrary" />
   </component>
 </module>
 
