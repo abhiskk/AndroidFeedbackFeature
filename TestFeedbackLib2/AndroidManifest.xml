@@ -6,7 +6,7 @@
 
     <uses-sdk
         android:minSdkVersion="11"
-        android:targetSdkVersion="17" />
+        android:targetSdkVersion="10" />
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_LOGS" />
@@ -29,22 +29,32 @@
         <activity 
             android:theme="@android:style/Theme.Holo.Light.Dialog"
             android:name="com.example.feedbacktestlib.FeedbackActivity"
+            android:label="Send feedback"
             />
         
         <activity
             android:theme="@android:style/Theme.Holo.Light.Dialog"
             android:name="com.example.feedbacktestlib.LogList"
+            android:label="Logs"
             />
         
         <activity
             android:theme="@android:style/Theme.Holo.Light.Dialog"
             android:name="com.example.feedbacktestlib.Preview"
+            android:label="Feedback preview"
             />
         
         <activity
             android:theme="@android:style/Theme.Holo.Light.Dialog"
             android:name="com.example.feedbacktestlib.ProcessList"
+            android:label="Running apps"
             />
+        <activity
+            android:name="com.example.feedbacktestlib.FingerPaint"
+            android:theme="@android:style/Theme.Holo.Light.Dialog"
+            android:label="Edit screenshot"
+            >
+        </activity>
         
     </application>
 

@@ -9,6 +9,8 @@ import java.util.List;
 import java.util.Set;
 import java.util.regex.Pattern;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.accounts.Account;
 import android.accounts.AccountManager;
@@ -36,257 +38,238 @@ import android.widget.Toast;
 
 public class FeedbackActivity extends Activity {
 
-	static String baseDir,systemLogFileName,eventsLogFileName,runningAppFileName,zipFileName,screenShotFileName;
+    static String baseDir, systemLogFileName, eventsLogFileName, runningAppFileName, zipFileName, screenShotFileName, screenShotBackupName;
 
-    	static File systemLogFile,eventsLogFile,runningAppFile,screenShotFile;
+    static File systemLogFile, eventsLogFile, runningAppFile;
 
-    	public enum DeviceData {
-        	Instance;
-        	public static String packageName,packageVersion,currentDate,device,sdkVersion,buildId,buildRelease,buildType,
-                buildFingerPrint,brand,phoneType,networkType,systemLog,eventsLog,userId,senderIdentity;
-        	public static List<RunningAppProcessInfo> runningApps;
-    	}
+    public enum DeviceData {
+        Instance;
+        public static String packageName, packageVersion, currentDate, device, sdkVersion, buildId, buildRelease, buildType,
+                buildFingerPrint, brand, phoneType, networkType, systemLog, eventsLog, userId, senderIdentity;
+        public static List<RunningAppProcessInfo> runningApps;
+    }
 
-    	public enum StateParameters {
-        	includeSystemDataCheck,includeSnapshotCheck,systemLogCheck,dataLoad,tablet
-    	}
+    public enum StateParameters {
+        includeSystemDataCheck, includeSnapshotCheck, systemLogCheck, dataLoad, tablet
+    }
 
-    	public static EnumSet<StateParameters> state = EnumSet.noneOf(StateParameters.class);
-	
-		@SuppressWarnings("deprecation")
-		@Override
-		protected void onCreate(Bundle savedInstanceState) {
-			super.onCreate(savedInstanceState);
-			
-			if(!isTablet(this))
-			{
-				super.setTheme(R.style.AppBaseTheme);
-			}
-			
-			else {
-				state.add(StateParameters.tablet);
-			}
-			
-			setContentView(R.layout.activity_feedback);
-			
-				if(isTablet(this)) {
-				
-				Display d = getWindowManager().getDefaultDisplay();
-				
-				if(d.getHeight()>800) {
-				
-					WindowManager.LayoutParams params = getWindow().getAttributes();
-					
-					params.height = 800;
-					
-					this.getWindow().setAttributes(params);
-				
-				}
-			
-			}
-		
-        		hideKeyboardOnStart();
 
-        		nameFiles();
+    public static EnumSet<StateParameters> state = EnumSet.noneOf(StateParameters.class);
 
-        		addItemsToSpinner();
+    public static Bitmap defaultScreenshot;
 
-       			final ProgressBar progress = (ProgressBar)findViewById(R.id.progressBar);
-        		final RelativeLayout layoutMain = (RelativeLayout)findViewById(R.id.layoutMain);
-        
-        		if ( savedInstanceState != null && savedInstanceState.getBoolean("dataLoad"))
-            			progress.setVisibility(View.GONE);
-        		else
-        		{
+    @SuppressWarnings("deprecation")
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
-            			layoutMain.setVisibility(View.GONE);
-            			try{
-                			PackageInfo manager = getPackageManager().getPackageInfo(getPackageName(),0);
-                			new GetData(progress,layoutMain,getApplicationContext(),manager,(TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE),(ActivityManager)this.getSystemService(ACTIVITY_SERVICE)).execute();
-            		   	} catch (PackageManager.NameNotFoundException e) {
-                			Log.e("Logcat ", e.getMessage(), e);
-            		   	}
-        		}
-		
-		}
-	
-		@Override
-    	public void onSaveInstanceState(Bundle savedInstanceState) {
-        	super.onSaveInstanceState(savedInstanceState);
-        	savedInstanceState.putBoolean("dataLoad",state.contains(StateParameters.dataLoad));
-    	}
-	
-    	public void systemAndSnapshotButtonClick(View v) {
-    		int id = v.getId();
-    		if (id == R.id.buttonSystemData) {
-			CheckBox checkSystemData = (CheckBox) findViewById(R.id.checkBoxSystemData);
-			checkSystemData.setChecked(!checkSystemData.isChecked());
-    		} else if (id == R.id.buttonSnapShot) {
-			CheckBox checkSnapShot = (CheckBox) findViewById(R.id.checkBoxSnapshot);
-			checkSnapShot.setChecked(!checkSnapShot.isChecked());
-			}
-    	}
-	
-		public void previewButtonClick(View v) {
-        		Intent intent = new Intent(this,Preview.class);
+        if (!isTablet(this)) {
+            super.setTheme(R.style.AppBaseTheme);
+        } else {
+            state.add(StateParameters.tablet);
+        }
 
-        		CheckBox includeSystemData = (CheckBox)findViewById(R.id.checkBoxSystemData);
-        		if(includeSystemData.isChecked())
-            			state.add(StateParameters.includeSystemDataCheck);
-        		else
-            			state.remove(StateParameters.includeSystemDataCheck);
+        setContentView(R.layout.activity_feedback);
 
-        		CheckBox includeSnapshot = (CheckBox)findViewById(R.id.checkBoxSnapshot);
-        		if(includeSnapshot.isChecked())
-            			state.add(StateParameters.includeSnapshotCheck);
-       			 else
-            			state.remove(StateParameters.includeSnapshotCheck);
+        if (isTablet(this)) {
 
-        		startActivity(intent);
-    		}
-	
-		public void sendButtonClick(View v) {
-		
-			final EditText Body = (EditText) findViewById(R.id.EditText);
+            Display d = getWindowManager().getDefaultDisplay();
 
-        		Spinner sendAsSpinner = (Spinner)findViewById(R.id.sendAsSpinner);
+            if (d.getHeight() > 800) {
 
-//        		if(sendAsSpinner.getSelectedItem().toString().equals("Anonymous"))
-//            			state.add(StateParameters.sendAsAnonymous);
-//        		else
-//            		state.remove(StateParameters.sendAsAnonymous);
-        		
-        		DeviceData.senderIdentity = sendAsSpinner.getSelectedItem().toString();
+                WindowManager.LayoutParams params = getWindow().getAttributes();
 
-        		CheckBox includeSystemDataCheckBox = (CheckBox)findViewById(R.id.checkBoxSystemData);
-        		
-			if(includeSystemDataCheckBox.isChecked())
-            			state.add(StateParameters.includeSystemDataCheck);
-        		else
-            			state.remove(StateParameters.includeSystemDataCheck);
-			
-				CheckBox includeSnapshotCheckBox = (CheckBox)findViewById(R.id.checkBoxSnapshot);
-				
-				if(includeSnapshotCheckBox.isChecked())
-					state.add(StateParameters.includeSnapshotCheck);
-				else
-					state.remove(StateParameters.includeSnapshotCheck);
+                params.height = 800;
 
-        		displaySendingMessage();
+                this.getWindow().setAttributes(params);
 
-        		MakeMessage sendFeedback = new MakeMessage(Body.getText().toString());
+            }
 
-        		final String feedbackBody = sendFeedback.send();
+        }
 
-        		Log.e("Logcat ", "here1");
+        hideKeyboardOnStart();
 
-        		new Thread(new Runnable() {
-            			
-				public void run() {
+        nameFiles();
 
-                			try{
-                    				FeedbackSender sender = new FeedbackSender(Starter.emailAccount,Starter.emailPassword);
+        addItemsToSpinner();
 
-                    				if( state.contains(StateParameters.includeSystemDataCheck) )
-                    				{
-                        				sender.addAttachment( baseDir + File.separator + zipFileName , zipFileName);                        
-                    				}
-                    
-                    				if(state.contains(StateParameters.includeSnapshotCheck) )
-                    				{
-                    					sender.addAttachment( baseDir + File.separator + screenShotFileName , screenShotFileName);
-                    				}
+        final ProgressBar progress = (ProgressBar) findViewById(R.id.progressBar);
+        final RelativeLayout layoutMain = (RelativeLayout) findViewById(R.id.layoutMain);
 
-                    				Log.e("Logcat ", "here2");
+        if (savedInstanceState != null && savedInstanceState.getBoolean("dataLoad"))
+            progress.setVisibility(View.GONE);
+        else {
 
-                    				sender.sendMail("Feedback",feedbackBody,Starter.emailAccount,Starter.receivingAccounts);
+            layoutMain.setVisibility(View.GONE);
+            try {
+                PackageInfo manager = getPackageManager().getPackageInfo(getPackageName(), 0);
+                new GetData(progress, layoutMain, getApplicationContext(), manager, (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE), (ActivityManager) this.getSystemService(ACTIVITY_SERVICE)).execute();
+            } catch (PackageManager.NameNotFoundException e) {
+                Log.e("Logcat ", e.getMessage(), e);
+            }
+        }
 
-                    				Log.e("Logcat ","here7");
-                    
-                    				screenShotFile.delete();
-                    
-                    				(new File(baseDir + File.separator + zipFileName)).delete();
+        defaultScreenshot = BitmapFactory.decodeFile(baseDir + File.separator + screenShotBackupName);
 
-                    				Log.e("Logcat ", "here4");
+    }
 
-                			}
-                			catch(Exception e)
-                			{
-                    				Log.e("error",e.getMessage(),e);
-                			}
-            			}
-        		}).start();
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
+        savedInstanceState.putBoolean("dataLoad", state.contains(StateParameters.dataLoad));
+    }
 
-        		finish();
+    public void systemAndSnapshotButtonClick(View v) {
+        int id = v.getId();
+        if (id == R.id.buttonSystemData) {
+            CheckBox checkSystemData = (CheckBox) findViewById(R.id.checkBoxSystemData);
+            checkSystemData.setChecked(!checkSystemData.isChecked());
+        } else if (id == R.id.buttonSnapShot) {
+            CheckBox checkSnapShot = (CheckBox) findViewById(R.id.checkBoxSnapshot);
+            checkSnapShot.setChecked(!checkSnapShot.isChecked());
+        }
+    }
 
-    		}
-	
-		public void hideKeyboardOnStart() {
-        		getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
-    		}
+    public void previewButtonClick(View v) {
+        Intent intent = new Intent(this, Preview.class);
+        CheckBox includeSystemData = (CheckBox) findViewById(R.id.checkBoxSystemData);
+        if (includeSystemData.isChecked())
+            state.add(StateParameters.includeSystemDataCheck);
+        else
+            state.remove(StateParameters.includeSystemDataCheck);
+        CheckBox includeSnapshot = (CheckBox) findViewById(R.id.checkBoxSnapshot);
+        if (includeSnapshot.isChecked())
+            state.add(StateParameters.includeSnapshotCheck);
+        else
+            state.remove(StateParameters.includeSnapshotCheck);
 
-    		public void nameFiles() {
+        startActivity(intent);
+    }
 
-        		baseDir = getFilesDir().getAbsolutePath();
+    public void sendButtonClick(View v) {
 
-        		systemLogFileName = "SystemLog.txt";
-        		systemLogFile = new File(baseDir + File.separator + systemLogFileName);
+        final EditText Body = (EditText) findViewById(R.id.EditText);
 
-        		eventsLogFileName = "EventsLog.txt";
-        		eventsLogFile = new File(baseDir + File.separator + eventsLogFileName);
+        Spinner sendAsSpinner = (Spinner) findViewById(R.id.sendAsSpinner);
 
-        		runningAppFileName = "RunningApps.txt";
-        		runningAppFile = new File(baseDir + File.separator + runningAppFileName);
-        
-        		screenShotFile = new File(baseDir + File.separator + screenShotFileName);
+        DeviceData.senderIdentity = sendAsSpinner.getSelectedItem().toString();
 
-        		zipFileName = "ZipTest.zip";
-        		
-        		screenShotFileName = "something.jpeg";
-    		}
-    
-    		public void addItemsToSpinner() {
+        CheckBox includeSystemDataCheckBox = (CheckBox) findViewById(R.id.checkBoxSystemData);
 
-        		Spinner spinner = (Spinner) findViewById(R.id.sendAsSpinner);
+        if (includeSystemDataCheckBox.isChecked())
+            state.add(StateParameters.includeSystemDataCheck);
+        else
+            state.remove(StateParameters.includeSystemDataCheck);
 
-        		List<String> list = addFieldsToSpinnerList();
+        CheckBox includeSnapshotCheckBox = (CheckBox) findViewById(R.id.checkBoxSnapshot);
 
-        		ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,list);
+        if (includeSnapshotCheckBox.isChecked())
+            state.add(StateParameters.includeSnapshotCheck);
+        else
+            state.remove(StateParameters.includeSnapshotCheck);
 
-        		spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        		spinner.setAdapter(spinnerAdapter);
+        displaySendingMessage();
 
-    		}
+        MakeMessage sendFeedback = new MakeMessage(Body.getText().toString());
 
-    		List<String> addFieldsToSpinnerList() {
-        		List<String> list = new ArrayList<String>();
-        		list.add("Anonymous");
-        		
-        		Pattern emailPattern = Patterns.EMAIL_ADDRESS;
-        		Account[] accounts = AccountManager.get(getApplicationContext()).getAccounts();
-        		
-        		Set<String> accountsSet = new HashSet<String>();
-        		
-        		for (Account account : accounts) {
-        			if (emailPattern.matcher(account.name).matches()) {
-        				accountsSet.add(account.name);
-        			}
-        		}
-        		
-        		Iterator<String> accountsSetIterator = accountsSet.iterator();
-        		while(accountsSetIterator.hasNext()) {
-        			list.add(accountsSetIterator.next());
-        		}
-        		
-        		return list;
-    		}
+        final String feedbackBody = sendFeedback.send();
 
-    		public void displaySendingMessage() {
-        		Toast.makeText(this,"Your feedback is being sent",Toast.LENGTH_SHORT).show();
-    		}
-    		
-    		public boolean isTablet(Context context) {
-    			return (context.getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK) >= Configuration.SCREENLAYOUT_SIZE_LARGE;
-    		}
+        new Thread(new Runnable() {
+
+            public void run() {
+
+                try {
+                    FeedbackSender sender = new FeedbackSender(Starter.emailAccount, Starter.emailPassword);
+
+                    if (state.contains(StateParameters.includeSystemDataCheck)) {
+                        sender.addAttachment(baseDir + File.separator + zipFileName, zipFileName);
+                    }
+
+                    if (state.contains(StateParameters.includeSnapshotCheck)) {
+                        sender.addAttachment(baseDir + File.separator + screenShotFileName, screenShotFileName);
+                    }
+
+                    sender.sendMail("Feedback", feedbackBody, Starter.emailAccount, Starter.receivingAccounts);
+
+                    (new File(baseDir + File.separator + screenShotFileName)).delete();
+
+                    (new File(baseDir + File.separator + zipFileName)).delete();
+
+                } catch (Exception e) {
+                    Log.e("error", e.getMessage(), e);
+                }
+            }
+        }).start();
+
+        finish();
+
+    }
+
+    public void hideKeyboardOnStart() {
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
+    }
+
+    public void nameFiles() {
+
+        baseDir = getFilesDir().getAbsolutePath();
+
+        systemLogFileName = "SystemLog.txt";
+        systemLogFile = new File(baseDir + File.separator + systemLogFileName);
+
+        eventsLogFileName = "EventsLog.txt";
+        eventsLogFile = new File(baseDir + File.separator + eventsLogFileName);
+
+        runningAppFileName = "RunningApps.txt";
+        runningAppFile = new File(baseDir + File.separator + runningAppFileName);
+
+        zipFileName = "ZipTest.zip";
+
+        screenShotFileName = "FeedbackLibScreenshot.jpeg";
+        screenShotBackupName = "FeedbackLibScreenshotBackup.jpeg";
+    }
+
+    public void addItemsToSpinner() {
+
+        Spinner spinner = (Spinner) findViewById(R.id.sendAsSpinner);
+
+        List<String> list = addFieldsToSpinnerList();
+
+        ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, list);
+
+        spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(spinnerAdapter);
+
+    }
+
+    List<String> addFieldsToSpinnerList() {
+        List<String> list = new ArrayList<String>();
+        list.add("Anonymous");
+
+        Pattern emailPattern = Patterns.EMAIL_ADDRESS;
+        Account[] accounts = AccountManager.get(getApplicationContext()).getAccounts();
+
+        Set<String> accountsSet = new HashSet<String>();
+
+        for (Account account : accounts) {
+            if (emailPattern.matcher(account.name).matches()) {
+                accountsSet.add(account.name);
+            }
+        }
+
+        Iterator<String> accountsSetIterator = accountsSet.iterator();
+        while (accountsSetIterator.hasNext()) {
+            list.add(accountsSetIterator.next());
+        }
+
+        return list;
+    }
+
+    public void displaySendingMessage() {
+        Toast.makeText(this, "Your feedback is being sent", Toast.LENGTH_SHORT).show();
+    }
+
+    public boolean isTablet(Context context) {
+        return (context.getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK) >= Configuration.SCREENLAYOUT_SIZE_LARGE;
+    }
 
 }

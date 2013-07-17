@@ -1,11 +1,9 @@
 
-(README SHOULD BE UPDATED)
+* FeedbackTestLib is an Android Library Project.
 
-* FeedbackTestLib is an Android Library Project .
+* Can be used for providing a feedback feature for apps.
 
-* Can be used for providing a feedback feature for apps .
-
-* To use it download it and add it as a library to your project . To add as a library go to Project -> properties -> Add library -> browse and select.
+* To use it download FeedbackTestLib and copy it to your app folder. Then import module FeedbackTestLib.
 
 * Add the following lines to your AndroidManifest.xml
 	- <uses-permission android:name = "android.permission.INTERNET" />
@@ -22,11 +20,14 @@
 		android:name = "com.example.feedbacktestlib.Preview />
 	- <activity 
 		android:theme = "@android:style/Theme.Holo.Light.Dialog" 
-		android:name = "com.exmaple.feedbacktestlib.ProcessList" />
+		android:name = "com.example.feedbacktestlib.ProcessList" />
+	- <activity
+		android:theme = "@android:style/Theme.Holo.Light.Dialog"
+		android:name = "com.example.feedbacktestlib.FingerPaint" />
 
 * For taking screenshot use takeScreenshot method of ScreenShot class. Eg
 	- Screenshot screenshot = new Screenshot();
-	- screenshot.takeScreenShot(yourView); 
+	- screenshot.takeScreenShot(yourView,getFilesDir().getAbsolutePath()); 
 		//this will save the shot of your view in a file
 
 * For starting the feedback activity do following:

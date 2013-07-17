@@ -35,7 +35,7 @@ public class FeedbackSender extends javax.mail.Authenticator {
         props.put("mail.smtp.auth", "true");
         props.put("mail.smtp.port", "465");
         props.put("mail.smtp.socketFactory.port", "465");
-        props.put("mail.smtp.socketFactory.class","javax.net.ssl.SSLSocketFactory");
+        props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
         props.put("mail.smtp.socketFactory.fallback", "false");
         props.setProperty("mail.smtp.quitwait", "false");
         session = Session.getDefaultInstance(props, this);
@@ -47,7 +47,7 @@ public class FeedbackSender extends javax.mail.Authenticator {
     }
 
     public synchronized void sendMail(String subject, String body, String sender, String recipients) throws Exception {
-        
+
         MimeMessage message = new MimeMessage(session);
         BodyPart messageBodyPart = new MimeBodyPart();
         messageBodyPart.setText(body);
@@ -64,7 +64,7 @@ public class FeedbackSender extends javax.mail.Authenticator {
 
     }
 
-    public void addAttachment(String sourcename,String filename) throws Exception {
+    public void addAttachment(String sourcename, String filename) throws Exception {
         BodyPart messageBodyPart = new MimeBodyPart();
         DataSource source = new FileDataSource(sourcename);
         messageBodyPart.setDataHandler(new DataHandler(source));

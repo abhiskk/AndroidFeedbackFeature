@@ -12,29 +12,40 @@ import android.view.View;
 public class Screenshot {
 
     public Screenshot() {
-    	
-    }
-    
-    public void takeScreenShot(View view ,String path) {
-    	view.setDrawingCacheEnabled(true);
-		Bitmap bitmap = Bitmap.createBitmap(view.getDrawingCache());
-		view.setDrawingCacheEnabled(false);
-		
-		OutputStream fout = null;
-		File imageFile = new File(path);
-		
 
-		try {
-		    fout = new FileOutputStream(imageFile);
-		    bitmap.compress(Bitmap.CompressFormat.JPEG, 90, fout);
-		    fout.flush();
-		    fout.close();
-		
-		} catch (FileNotFoundException e) {
-		    e.printStackTrace();
-		} catch (IOException e) {
-		    e.printStackTrace();
-		}
+    }
+
+    public void takeScreenShot(View view, String basePath) {
+
+        String path = basePath + File.separator + "FeedbackLibScreenshot.jpeg";
+        String backupPath = basePath + File.separator + "FeedbackLibScreenshotBackup.jpeg";
+
+        view.setDrawingCacheEnabled(true);
+        Bitmap bitmap = Bitmap.createBitmap(view.getDrawingCache());
+        view.setDrawingCacheEnabled(false);
+
+        OutputStream fout;
+        File imageFile = new File(path);
+
+        OutputStream foutBackup;
+        File backupFile = new File(backupPath);
+
+        try {
+            fout = new FileOutputStream(imageFile);
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 90, fout);
+            fout.flush();
+            fout.close();
+
+            foutBackup = new FileOutputStream(backupFile);
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 90, foutBackup);
+            foutBackup.flush();
+            foutBackup.close();
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 }

@@ -26,7 +26,7 @@ public class GetData extends AsyncTask<Void, Integer, Void> {
     TelephonyManager tManager;
     ActivityManager activityManager;
 
-    public GetData( final ProgressBar progress,final RelativeLayout relativeLayout ,Context cValue,PackageInfo mValue,TelephonyManager tValue,ActivityManager aValue) {
+    public GetData(final ProgressBar progress, final RelativeLayout relativeLayout, Context cValue, PackageInfo mValue, TelephonyManager tValue, ActivityManager aValue) {
         this.progress = progress;
         this.relativeLayout = relativeLayout;
         mainContext = cValue;
@@ -42,7 +42,7 @@ public class GetData extends AsyncTask<Void, Integer, Void> {
 
         FeedbackActivity.DeviceData.packageVersion = manager.versionName;
 
-        Calendar c =Calendar.getInstance();
+        Calendar c = Calendar.getInstance();
 
         FeedbackActivity.DeviceData.currentDate = String.valueOf(c.get(Calendar.DATE)) + "-" + String.valueOf(c.get(Calendar.MONTH)) + "-" + String.valueOf(c.get(Calendar.YEAR));
 
@@ -70,9 +70,9 @@ public class GetData extends AsyncTask<Void, Integer, Void> {
 
         FeedbackActivity.DeviceData.runningApps = activityManager.getRunningAppProcesses();
 
-        writeToFile(FeedbackActivity.systemLogFile,FeedbackActivity.DeviceData.systemLog);
+        writeToFile(FeedbackActivity.systemLogFile, FeedbackActivity.DeviceData.systemLog);
 
-        writeToFile(FeedbackActivity.eventsLogFile,FeedbackActivity.DeviceData.eventsLog);
+        writeToFile(FeedbackActivity.eventsLogFile, FeedbackActivity.DeviceData.eventsLog);
 
         getRunningApps();
 
@@ -90,20 +90,18 @@ public class GetData extends AsyncTask<Void, Integer, Void> {
         FeedbackActivity.state.add(FeedbackActivity.StateParameters.dataLoad);
     }
 
-    void writeToFile(File f,String data) {
-        try{
+    void writeToFile(File f, String data) {
+        try {
             BufferedWriter in = new BufferedWriter(new FileWriter(f));
             in.write(data);
             in.close();
-        }
-        catch (IOException e){
-            Log.e("error",e.getMessage(),e);
+        } catch (IOException e) {
+            Log.e("error", e.getMessage(), e);
         }
     }
 
     String getPhoneType(int phoneTypeVal) {
-        switch (phoneTypeVal)
-        {
+        switch (phoneTypeVal) {
             case TelephonyManager.PHONE_TYPE_NONE:
                 return "None";
             case TelephonyManager.PHONE_TYPE_GSM:
@@ -116,8 +114,7 @@ public class GetData extends AsyncTask<Void, Integer, Void> {
     }
 
     String getNetworkType(int networkVal) {
-        switch (networkVal)
-        {
+        switch (networkVal) {
             case TelephonyManager.NETWORK_TYPE_1xRTT:
                 return "1xRTT";
             case TelephonyManager.NETWORK_TYPE_CDMA:
@@ -160,39 +157,35 @@ public class GetData extends AsyncTask<Void, Integer, Void> {
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(process.getInputStream()));
             StringBuilder tempSystemLog = new StringBuilder();
             String line;
-            while(null != (line = bufferedReader.readLine())) {
+            while (null != (line = bufferedReader.readLine())) {
                 tempSystemLog.append(line);
                 tempSystemLog.append("\n");
             }
             String tempSystemLogString = (tempSystemLog.toString());
-            int ind = Math.max(0,tempSystemLogString.length()-200000);
-            if(ind>0)
-            {
-                while(!(tempSystemLogString.charAt(ind) == '\n'))
+            int ind = Math.max(0, tempSystemLogString.length() - 200000);
+            if (ind > 0) {
+                while (!(tempSystemLogString.charAt(ind) == '\n'))
                     ind++;
-                if(tempSystemLogString.charAt(ind) == '\n' && ind != tempSystemLogString.length()-1)
+                if (tempSystemLogString.charAt(ind) == '\n' && ind != tempSystemLogString.length() - 1)
                     ind++;
             }
-            
-        	FeedbackActivity.DeviceData.systemLog = tempSystemLogString.substring(ind);
-        	
-//        	FeedbackActivity.DeviceData.systemLog = "something";
-        	
+
+            FeedbackActivity.DeviceData.systemLog = tempSystemLogString.substring(ind);
+
             Process processE = Runtime.getRuntime().exec("logcat -b events -v time -d ");
             BufferedReader bufferedReaderE = new BufferedReader(new InputStreamReader(processE.getInputStream()));
             StringBuilder tempEventsLog = new StringBuilder();
             String lineE;
-            while(null != (lineE = bufferedReaderE.readLine())) {
+            while (null != (lineE = bufferedReaderE.readLine())) {
                 tempEventsLog.append(lineE);
                 tempEventsLog.append("\n");
             }
             String tempEventsLogString = (tempEventsLog.toString());
-            int indE = Math.max(0,tempEventsLogString.length()-100000);
-            if(indE>0)
-            {
-                while(!(tempEventsLogString.charAt(indE) == '\n'))
+            int indE = Math.max(0, tempEventsLogString.length() - 100000);
+            if (indE > 0) {
+                while (!(tempEventsLogString.charAt(indE) == '\n'))
                     indE++;
-                if(tempEventsLog.charAt(indE) == '\n' && indE != tempEventsLogString.length()-1)
+                if (tempEventsLog.charAt(indE) == '\n' && indE != tempEventsLogString.length() - 1)
                     indE++;
             }
             FeedbackActivity.DeviceData.eventsLog = tempEventsLogString.substring(indE);
@@ -206,34 +199,32 @@ public class GetData extends AsyncTask<Void, Integer, Void> {
 
     void getRunningApps() {
         StringBuilder temp = new StringBuilder();
-        for(ActivityManager.RunningAppProcessInfo iterator : FeedbackActivity.DeviceData.runningApps)
-        {
+        for (ActivityManager.RunningAppProcessInfo iterator : FeedbackActivity.DeviceData.runningApps) {
             temp.append("\n");
             temp.append(iterator.processName);
         }
-        writeToFile(FeedbackActivity.runningAppFile,temp.toString());
+        writeToFile(FeedbackActivity.runningAppFile, temp.toString());
     }
 
     void populateZipFile() {
         byte[] buffer = new byte[1024];
 
-        try{
+        try {
 
             FileOutputStream fos = new FileOutputStream(FeedbackActivity.baseDir + File.separator + FeedbackActivity.zipFileName);
             ZipOutputStream zos = new ZipOutputStream(fos);
 
-            String[] files = {FeedbackActivity.systemLogFileName , FeedbackActivity.eventsLogFileName , FeedbackActivity.runningAppFileName};
+            String[] files = {FeedbackActivity.systemLogFileName, FeedbackActivity.eventsLogFileName, FeedbackActivity.runningAppFileName};
 
-            for(int i=0;i<files.length;i++)
-            {
+            for (int i = 0; i < files.length; i++) {
                 ZipEntry ze = new ZipEntry(files[i]);
                 zos.putNextEntry(ze);
                 FileInputStream in = new FileInputStream(FeedbackActivity.baseDir + File.separator + files[i]);
 
                 int len;
 
-                while((len = in.read(buffer)) > 0) {
-                    zos.write(buffer,0,len);
+                while ((len = in.read(buffer)) > 0) {
+                    zos.write(buffer, 0, len);
                 }
 
                 in.close();
@@ -243,7 +234,7 @@ public class GetData extends AsyncTask<Void, Integer, Void> {
 
             zos.close();
 
-        } catch (IOException ex){
+        } catch (IOException ex) {
             ex.printStackTrace();
         }
     }
@@ -252,7 +243,6 @@ public class GetData extends AsyncTask<Void, Integer, Void> {
         FeedbackActivity.systemLogFile.delete();
         FeedbackActivity.eventsLogFile.delete();
         FeedbackActivity.runningAppFile.delete();
-//        FeedbackActivity.screenShotFile.delete();
     }
 
 }

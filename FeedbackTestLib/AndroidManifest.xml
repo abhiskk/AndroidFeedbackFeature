@@ -41,6 +41,11 @@
             android:label="@string/title_activity_log_list"
             android:theme="@android:style/Theme.Holo.Light.Dialog" >
         </activity>
+        <activity
+            android:name="com.example.feedbacktestlib.FingerPaint"
+            android:label="something11"
+            android:theme="@android:style/Theme.Holo.Light.Dialog" >
+        </activity>
     </application>
 
 </manifest>
