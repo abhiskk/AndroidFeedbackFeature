@@ -1,9 +1,4 @@
-
 * FeedbackTestLib is an Android Library Project.
-
-* Can be used for providing a feedback feature for apps.
-
-* FeedbackTestLib is an Android Library Project .
 
 * To use it download FeedbackTestLib and copy it to your app folder. Then import module FeedbackTestLib.
 
@@ -23,10 +18,9 @@
 	- \<activity 
 		android:theme = "@android:style/Theme.Holo.Light.Dialog" 
 		android:name = "com.example.feedbacktestlib.ProcessList" />
-	- <activity
+	- \<activity
 		android:theme = "@android:style/Theme.Holo.Light.Dialog"
 		android:name = "com.example.feedbacktestlib.FingerPaint" />
-
 * For taking screenshot use takeScreenshot method of ScreenShot class. Eg
 	- Screenshot screenshot = new Screenshot();
 	- screenshot.takeScreenShot(yourView,getFilesDir().getAbsolutePath()); 

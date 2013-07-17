@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-
-    <string name="app_name">TestFeedbackLib2</string>
-    <string name="action_settings">Settings</string>
-    <string name="Text1">0010100000101101010111110010110100101001</string>
-    <string name="Text2">"Don't press"</string>
-
-</resources>
