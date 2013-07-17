@@ -18,7 +18,7 @@ public class FingerPaint extends GraphicsActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 //        if (!FeedbackActivity.state.contains(FeedbackActivity.StateParameters.tablet))
-            super.setTheme(R.style.AppBaseTheme);
+        super.setTheme(R.style.AppBaseTheme);
 
 //        if (FeedbackActivity.state.contains(FeedbackActivity.StateParameters.tablet)) {
 //            Display d = getWindowManager().getDefaultDisplay();

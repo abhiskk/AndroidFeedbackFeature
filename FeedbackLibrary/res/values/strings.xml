@@ -9,8 +9,8 @@
     <string name="title_activity_process_list">ProcessList</string>
     <string name="title_activity_log_list">LogList</string>
     <string name="description">Something</string>
-    <string name="systemdata"> Include system data</string>
-    <string name="snapshot"> Include screenshot</string>
+    <string name="systemdata">Include system data</string>
+    <string name="snapshot">Include screenshot</string>
     <string name="prompt1">"Send as : "</string>
     <string name="prompt2">" Anonymous"</string>
     <string name="title_activity_preview">Preview</string>

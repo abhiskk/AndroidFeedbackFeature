@@ -4,20 +4,20 @@
         android:layout_height="wrap_content"
         android:scrollbars="vertical"
         android:orientation="vertical"
-        android:layout_gravity = "center_vertical|center_horizontal"
->
+        android:layout_gravity="center_vertical|center_horizontal"
+        >
 
-    <ProgressBar android:id = "@+id/progressBar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="@android:style/Widget.Holo.ProgressBar.Large"
-            android:layout_marginRight = "5dp" />
+    <ProgressBar android:id="@+id/progressBar"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 style="@android:style/Widget.Holo.ProgressBar.Large"
+                 android:layout_marginRight="5dp"/>
 
     <RelativeLayout android:id="@+id/layoutMain"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scrollbars="vertical"
-        android:orientation="vertical">
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scrollbars="vertical"
+                    android:orientation="vertical">
 
         <LinearLayout
                 android:id="@+id/bottomLayout"
@@ -33,68 +33,68 @@
                     />
 
             <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="49dip"
-                android:orientation="horizontal">
+                    android:layout_width="fill_parent"
+                    android:layout_height="49dip"
+                    android:orientation="horizontal">
 
                 <RelativeLayout
-                    android:layout_height="fill_parent"
-                    android:layout_width="0dip"
-                    android:layout_weight="1"
-                    >
-                
-	                <Button
-	                        android:id="@+id/sendButton"
-	                        android:layout_height="fill_parent"
-	                        android:layout_width="fill_parent"
-	                        android:text="@string/sendButton_text"
-	                        android:onClick="sendButtonClick"
-	                        android:textSize="13sp"
-	                        android:background="?android:attr/selectableItemBackground"
-	                        />
-	                
-	                <View
-	                    	android:layout_width="1.5sp"
-	                    	android:layout_height="fill_parent"
-	                    	android:background="?android:attr/dividerHorizontal"
-	                    	android:layout_alignParentRight="true"
-	                    	/>
-	                    	
-                
+                        android:layout_height="fill_parent"
+                        android:layout_width="0dip"
+                        android:layout_weight="1"
+                        >
+
+                    <Button
+                            android:id="@+id/sendButton"
+                            android:layout_height="fill_parent"
+                            android:layout_width="fill_parent"
+                            android:text="@string/sendButton_text"
+                            android:onClick="sendButtonClick"
+                            android:textSize="13sp"
+                            android:background="?android:attr/selectableItemBackground"
+                            />
+
+                    <View
+                            android:layout_width="1.5sp"
+                            android:layout_height="fill_parent"
+                            android:background="?android:attr/dividerHorizontal"
+                            android:layout_alignParentRight="true"
+                            />
+
+
                 </RelativeLayout>
-                
-                <RelativeLayout
-                    android:layout_height = "fill_parent"
-                    android:layout_width = "0dip"
-                    android:layout_weight = "1"
-                    >
 
-	                <Button
-	                        android:id="@+id/previewButton"
-	                        android:layout_height="fill_parent"
-	                        android:layout_width="fill_parent"
-	                        android:text="@string/previewButton_text"
-	                        android:onClick="previewButtonClick"
-	                        android:textSize="13sp"
-	                        android:background="?android:attr/selectableItemBackground"
-	                        />
-	                
-	                <View
-	                    	android:layout_width="1.5sp"
-	                    	android:layout_height="fill_parent"
-	                    	android:background="?android:attr/dividerHorizontal"
-	                    	/>
-                
+                <RelativeLayout
+                        android:layout_height="fill_parent"
+                        android:layout_width="0dip"
+                        android:layout_weight="1"
+                        >
+
+                    <Button
+                            android:id="@+id/previewButton"
+                            android:layout_height="fill_parent"
+                            android:layout_width="fill_parent"
+                            android:text="@string/previewButton_text"
+                            android:onClick="previewButtonClick"
+                            android:textSize="13sp"
+                            android:background="?android:attr/selectableItemBackground"
+                            />
+
+                    <View
+                            android:layout_width="1.5sp"
+                            android:layout_height="fill_parent"
+                            android:background="?android:attr/dividerHorizontal"
+                            />
+
                 </RelativeLayout>
 
             </LinearLayout>
 
         </LinearLayout>
 
-        <ScrollView 
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_above="@id/bottomLayout" >
+        <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@id/bottomLayout">
 
             <RelativeLayout
                     android:layout_width="match_parent"
@@ -116,7 +116,7 @@
                               android:minLines="3"
                               android:hint="@string/edittext_hint1"
                               android:scrollbars="vertical"
-                              android:gravity="left"    
+                              android:gravity="left"
                             />
 
                 </LinearLayout>
@@ -130,9 +130,9 @@
                         >
 
                     <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        >
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            >
 
                         <View
                                 android:layout_width="fill_parent"
@@ -164,11 +164,11 @@
                         </LinearLayout>
 
                         <Button android:id="@+id/buttonSystemData"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:background="?android:attr/selectableItemBackground"
-                            android:onClick="systemAndSnapshotButtonClick"
-                            />
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="?android:attr/selectableItemBackground"
+                                android:onClick="systemAndSnapshotButtonClick"
+                                />
 
                     </RelativeLayout>
 
@@ -179,9 +179,9 @@
                             />
 
                     <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        >
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            >
 
                         <LinearLayout
                                 android:layout_width="fill_parent"
@@ -221,10 +221,10 @@
                             />
 
                     <LinearLayout
-                        android:layout_height="wrap_content"
-                        android:layout_width="match_parent"
-                        android:orientation="horizontal"
-                        >
+                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:orientation="horizontal"
+                            >
 
                         <TextView
                                 android:layout_height="wrap_content"
@@ -235,10 +235,10 @@
                                 android:paddingLeft="3sp"
                                 android:paddingTop="10sp"/>
 
-                        <Spinner android:id = "@+id/sendAsSpinner"
-                            android:layout_height="wrap_content"
-                            android:layout_width="wrap_content"
-                            />
+                        <Spinner android:id="@+id/sendAsSpinner"
+                                 android:layout_height="wrap_content"
+                                 android:layout_width="wrap_content"
+                                />
 
                     </LinearLayout>
 

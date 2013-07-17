@@ -1,6 +1,8 @@
-* FeedbackTestLib is an Android Library Project.
+* FeedbackLibrary is an Android Library Project.
 
-* To use it download FeedbackTestLib and copy it to your app folder. Then import module FeedbackTestLib.
+* To use it download and import the module FeedbackLibrary.
+
+* SampleApp is an example app which uses FeedbackLibrary.
 
 * Add the following lines to your AndroidManifest.xml
 	- \<uses-permission android:name = "android.permission.INTERNET" />
@@ -24,7 +26,7 @@
 * For taking screenshot use takeScreenshot method of ScreenShot class. Eg
 	- Screenshot screenshot = new Screenshot();
 	- screenshot.takeScreenShot(yourView,getFilesDir().getAbsolutePath()); 
-		//this will save the shot of your view in a file
+		//this will save the screenshot of your view in a file
 
 * For starting the feedback activity do following:
 	- Starter starter = new Starter(context, "sendingaccount@gmail.com", "passwordOfSendingAccount" , "receivingAccount1@abc.com,receivingAccount2@abc.com");
