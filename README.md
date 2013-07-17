@@ -1,11 +1,9 @@
-<<<<<<< HEAD
 
 * FeedbackTestLib is an Android Library Project.
 
 * Can be used for providing a feedback feature for apps.
-=======
+
 * FeedbackTestLib is an Android Library Project .
->>>>>>> b46edf7349411993ae85af0bcdfc3d7a5280c6e1
 
 * To use it download FeedbackTestLib and copy it to your app folder. Then import module FeedbackTestLib.
 
