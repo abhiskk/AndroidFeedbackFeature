@@ -38,7 +38,7 @@ public class  MainActivity extends Activity {
 
     public void snap(View v) {
         (new Screenshot()).takeScreenShot(v.getRootView(), getFilesDir().getAbsolutePath());
-        Starter starter = new Starter(this, "abhishekkadiyan@gmail.com", "98124006AbhiDarkStar", "abhishekkadiyan@gmail.com");
+        Starter starter = new Starter(this, "abhishekkadiyan@gmail.com", "****", "abhishekkadiyan@gmail.com");
         starter.start();
     }
 

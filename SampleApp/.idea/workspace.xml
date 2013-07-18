@@ -151,16 +151,16 @@
       <file leaf-file-name="FeedbackActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../FeedbackLibrary/src/com/example/FeedbackLibrary/FeedbackActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="184" column="0" selection-start="6464" selection-end="6464" vertical-scroll-proportion="0.0">
+            <state line="250" column="128" selection-start="8807" selection-end="8807" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FeedbackSender.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="FeedbackSender.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../FeedbackLibrary/src/com/example/FeedbackLibrary/FeedbackSender.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="75" column="18" selection-start="2773" selection-end="2773" vertical-scroll-proportion="0.49372384">
+            <state line="17" column="56" selection-start="522" selection-end="522" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -168,10 +168,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="MainActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/example/testfeedbacklib2/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="63" selection-start="741" selection-end="741" vertical-scroll-proportion="0.0">
+            <state line="40" column="78" selection-start="1126" selection-end="1126" vertical-scroll-proportion="0.51365185">
               <folding />
             </state>
           </provider>
@@ -200,9 +200,9 @@
         <option value="$PROJECT_DIR$/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/../FeedbackLibrary/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/../FeedbackLibrary/src/com/example/feedbacktestlib/FingerPaint.java" />
-        <option value="$PROJECT_DIR$/src/com/example/testfeedbacklib2/MainActivity.java" />
-        <option value="$PROJECT_DIR$/../FeedbackLibrary/src/com/example/FeedbackLibrary/FeedbackActivity.java" />
         <option value="$PROJECT_DIR$/../FeedbackLibrary/src/com/example/FeedbackLibrary/FeedbackSender.java" />
+        <option value="$PROJECT_DIR$/../FeedbackLibrary/src/com/example/FeedbackLibrary/FeedbackActivity.java" />
+        <option value="$PROJECT_DIR$/src/com/example/testfeedbacklib2/MainActivity.java" />
       </list>
     </option>
   </component>
@@ -559,8 +559,8 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32986537" sideWeight="0.5413451" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24703088" sideWeight="0.8064" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1936" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24703088" sideWeight="0.8064" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1936" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32986537" sideWeight="0.6714443" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
@@ -726,26 +726,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/testfeedbacklib2/MainActivity.java">
+    <entry file="file://$PROJECT_DIR$/../FeedbackLibrary/src/com/example/FeedbackLibrary/FeedbackSender.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="63" selection-start="741" selection-end="741" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="17" column="56" selection-start="522" selection-end="522" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../FeedbackLibrary/src/com/example/FeedbackLibrary/FeedbackActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="184" column="0" selection-start="6464" selection-end="6464" vertical-scroll-proportion="0.0">
+        <state line="250" column="128" selection-start="8807" selection-end="8807" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../FeedbackLibrary/src/com/example/FeedbackLibrary/FeedbackSender.java">
+    <entry file="file://$PROJECT_DIR$/src/com/example/testfeedbacklib2/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="18" selection-start="2773" selection-end="2773" vertical-scroll-proportion="0.49372384">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="40" column="78" selection-start="1126" selection-end="1126" vertical-scroll-proportion="0.51365185">
+          <folding />
         </state>
       </provider>
     </entry>

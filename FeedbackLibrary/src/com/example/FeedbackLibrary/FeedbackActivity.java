@@ -222,7 +222,7 @@ public class FeedbackActivity extends Activity {
         runningAppFileName = "RunningApps.txt";
         runningAppFile = new File(baseDir + File.separator + runningAppFileName);
 
-        zipFileName = "ZipTest.zip";
+        zipFileName = "FeedbackFilesZip.zip";
 
         screenShotFileName = "FeedbackLibScreenshot.jpeg";
         screenShotBackupName = "FeedbackLibScreenshotBackup.jpeg";
