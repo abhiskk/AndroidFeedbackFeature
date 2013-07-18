@@ -10,7 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-public class MainActivity extends Activity {
+public class  MainActivity extends Activity {
 
     private int cnt = 0;
 
@@ -38,7 +38,7 @@ public class MainActivity extends Activity {
 
     public void snap(View v) {
         (new Screenshot()).takeScreenShot(v.getRootView(), getFilesDir().getAbsolutePath());
-        Starter starter = new Starter(this, "abhishekkadiyan@gmail.com", "****", "abhishekkadiyan@gmail.com");
+        Starter starter = new Starter(this, "abhishekkadiyan@gmail.com", "98124006AbhiDarkStar", "abhishekkadiyan@gmail.com");
         starter.start();
     }
 

@@ -15,14 +15,10 @@
     </content>
     <orderEntry type="jdk" jdkName="Android 4.2.2 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="activation" level="project" />
-    <orderEntry type="library" name="additionnal" level="project" />
     <orderEntry type="library" name="android-support-v4 (2)" level="project" />
-    <orderEntry type="library" name="mail" level="project" />
-    <orderEntry type="library" name="activation" level="project" />
-    <orderEntry type="library" name="mail" level="project" />
-    <orderEntry type="library" name="activation (2)" level="project" />
-    <orderEntry type="library" name="mail (2)" level="project" />
+    <orderEntry type="library" exported="" name="activation (3)" level="project" />
+    <orderEntry type="library" exported="" name="mail (3)" level="project" />
+    <orderEntry type="library" name="additionnal (2)" level="project" />
   </component>
 </module>
 
