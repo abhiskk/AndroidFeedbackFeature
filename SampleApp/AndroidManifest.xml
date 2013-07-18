@@ -28,29 +28,29 @@
 
         <activity
                 android:theme="@android:style/Theme.Holo.Light.Dialog"
-                android:name="com.example.feedbacktestlib.FeedbackActivity"
+                android:name="com.example.FeedbackLibrary.FeedbackActivity"
                 android:label="Send feedback"
                 />
 
         <activity
                 android:theme="@android:style/Theme.Holo.Light.Dialog"
-                android:name="com.example.feedbacktestlib.LogList"
+                android:name="com.example.FeedbackLibrary.LogList"
                 android:label="Logs"
                 />
 
         <activity
                 android:theme="@android:style/Theme.Holo.Light.Dialog"
-                android:name="com.example.feedbacktestlib.Preview"
+                android:name="com.example.FeedbackLibrary.Preview"
                 android:label="Feedback preview"
                 />
 
         <activity
                 android:theme="@android:style/Theme.Holo.Light.Dialog"
-                android:name="com.example.feedbacktestlib.ProcessList"
+                android:name="com.example.FeedbackLibrary.ProcessList"
                 android:label="Running apps"
                 />
         <activity
-                android:name="com.example.feedbacktestlib.FingerPaint"
+                android:name="com.example.FeedbackLibrary.FingerPaint"
                 android:theme="@android:style/Theme.Holo.Light.Dialog"
                 android:label="Edit screenshot"
                 >

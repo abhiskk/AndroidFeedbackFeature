@@ -1,4 +1,4 @@
-package com.example.feedbacktestlib;
+package com.example.FeedbackLibrary;
 
 import java.security.AccessController;
 import java.security.Provider;

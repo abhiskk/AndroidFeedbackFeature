@@ -1,9 +1,7 @@
-package com.example.feedbacktestlib;
+package com.example.FeedbackLibrary;
 
 import android.os.Bundle;
-import android.R.integer;
 import android.app.ListActivity;
-import android.util.Log;
 import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,7 +18,7 @@ import android.graphics.Matrix;
 import java.io.File;
 import java.util.ArrayList;
 
-import com.example.feedbacktestlib.FeedbackActivity.StateParameters;
+import com.example.FeedbackLibrary.FeedbackActivity.StateParameters;
 
 public class Preview extends ListActivity {
 

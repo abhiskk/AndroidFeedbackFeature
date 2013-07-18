@@ -1,4 +1,4 @@
-package com.example.feedbacktestlib;
+package com.example.FeedbackLibrary;
 
 import android.app.ActivityManager;
 import android.content.Context;

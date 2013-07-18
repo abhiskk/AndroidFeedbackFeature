@@ -1,10 +1,9 @@
-package com.example.feedbacktestlib;
+package com.example.FeedbackLibrary;
 
-import com.example.feedbacktestlib.FeedbackActivity.StateParameters;
+import com.example.FeedbackLibrary.FeedbackActivity.StateParameters;
 
 import android.os.Bundle;
 import android.app.Activity;
-import android.util.Log;
 import android.view.Display;
 import android.view.WindowManager;
 import android.widget.TextView;

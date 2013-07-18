@@ -1,4 +1,4 @@
-package com.example.feedbacktestlib;
+package com.example.FeedbackLibrary;
 
 import java.io.File;
 import java.util.ArrayList;

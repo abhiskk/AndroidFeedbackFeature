@@ -1,4 +1,4 @@
-package com.example.feedbacktestlib;
+package com.example.FeedbackLibrary;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;

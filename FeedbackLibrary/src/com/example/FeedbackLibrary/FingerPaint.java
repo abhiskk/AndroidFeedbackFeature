@@ -1,4 +1,4 @@
-package com.example.feedbacktestlib;
+package com.example.FeedbackLibrary;
 
 import android.content.Context;
 import android.content.pm.ActivityInfo;
@@ -17,18 +17,8 @@ public class FingerPaint extends GraphicsActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        if (!FeedbackActivity.state.contains(FeedbackActivity.StateParameters.tablet))
-        super.setTheme(R.style.AppBaseTheme);
 
-//        if (FeedbackActivity.state.contains(FeedbackActivity.StateParameters.tablet)) {
-//            Display d = getWindowManager().getDefaultDisplay();
-//
-//            if (d.getHeight() > 800) {
-//                WindowManager.LayoutParams params = getWindow().getAttributes();
-//                params.height = 800;
-//                this.getWindow().setAttributes(params);
-//            }
-//        }
+        super.setTheme(R.style.AppBaseTheme);
 
         testBitmap = BitmapFactory.decodeFile(FeedbackActivity.baseDir + File.separator + FeedbackActivity.screenShotFileName);
 
@@ -164,12 +154,6 @@ public class FingerPaint extends GraphicsActivity {
         super.onCreateOptionsMenu(menu);
 
         menu.add(0, ERASE_MENU_ID, 0, "Clear changes");
-        return true;
-    }
-
-    @Override
-    public boolean onPrepareOptionsMenu(Menu menu) {
-        super.onPrepareOptionsMenu(menu);
         return true;
     }
 

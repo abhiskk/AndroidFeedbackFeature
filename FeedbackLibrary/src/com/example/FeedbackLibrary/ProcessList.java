@@ -1,10 +1,10 @@
-package com.example.feedbacktestlib;
+package com.example.FeedbackLibrary;
 
 import java.util.ArrayList;
 //import java.util.HashMap;
 import java.util.List;
 
-import com.example.feedbacktestlib.FeedbackActivity.StateParameters;
+import com.example.FeedbackLibrary.FeedbackActivity.StateParameters;
 
 import android.app.Activity;
 import android.app.ActivityManager;

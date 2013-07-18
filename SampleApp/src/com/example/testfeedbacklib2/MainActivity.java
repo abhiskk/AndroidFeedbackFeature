@@ -1,7 +1,7 @@
 package com.example.testfeedbacklib2;
 
-import com.example.feedbacktestlib.Screenshot;
-import com.example.feedbacktestlib.Starter;
+import com.example.FeedbackLibrary.Screenshot;
+import com.example.FeedbackLibrary.Starter;
 
 import android.os.Bundle;
 import android.app.Activity;
